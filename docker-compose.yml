@@ -9,12 +9,13 @@ services:
     container_name: apache
     restart: always
     ports:
-      - '30001:80'
+      - '4000:80'
     environment:
       MYSQL_ROOT_PASSWORD: root_pass
     networks:
       default:
         ipv4_address: 172.18.1.8
+
   #mysql section..    
   mysql_db:
     build: 
@@ -85,15 +86,15 @@ services:
     depends_on:
       - mysql_db
     ports:
-      - "3005:3005"
+      - "3000:3000"
       - "443:443" #for rest api
     environment:
       - DEBUG=idm:*
       - IDM_DB_HOST=mysql_db
-      - IDM_DB_PASS=root_pass #password of root mysql!
       - IDM_DB_USER=root
-      - IDM_HOST=http://localhost:3005
-      - IDM_PORT=3005
+      - IDM_DB_PASS=root_pass #password of root mysql!
+      - IDM_HOST=http://localhost:3000
+      - IDM_PORT=3000
       - IDM_ADMIN_USER=tdel
       - IDM_ADMIN_EMAIL=tdel@test.com
       - IDM_ADMIN_PASS=1234
