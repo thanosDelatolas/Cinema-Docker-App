@@ -1,0 +1,25 @@
+sudo docker image prune -a
+sudo docker exec -it mysql_db mysql -u root -p
+
+sudo docker-compose up -d
+VOLUME: test_docker_mysql_dat
+sudo docker exec -it mongo_db mongo --username "root" --password 
+
+app-logic: http://localhost:30001/
+phpmyadmin: http://localhost:8080/
+mongo-express : http://localhost:8081/
+login: http://localhost:3005/
+
+sudo docker-compose up -d --build
+sudo docker-compose down
+
+
+mongo
+db.cinema_collection.insert({username: "thanosdel", user_role: "ADMIN"} )
+db.cinema_collection.find({username: "thanosdel"})
+
+
+keyrock credentials
+admin@test.com
+1234
+
