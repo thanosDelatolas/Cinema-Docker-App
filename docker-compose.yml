@@ -82,7 +82,7 @@ services:
     container_name: mongo_express
 
   keyrock:
-    image: fiware/idm
+    image: fiware/idm:latest
     container_name: fiware-keyrock
     hostname: keyrock
     depends_on:
