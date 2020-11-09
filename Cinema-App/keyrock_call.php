@@ -1,49 +1,30 @@
 <?php
     // login to authorize a user
-    $keyrock_service = "http://172.18.1.5:3000/v1/auth/tokens";
+    $keyrock_service = "http://172.18.1.5:3000/oauth2/authorize";
+    $client_id = "7ffbed02-ac0c-4784-8c52-2cf8d77f85fd";
+    $client_secret = "1dacab95-4511-49bf-ba39-80119f37b094";
 
-    /*Set timezone */
-    date_default_timezone_set("Europe/Athens");
+    $authorization = base64_encode($client_id.":".$client_secret);
+    $access_token_url = "http://172.18.1.5:3000/idm/oauth2/authorize";
+
+    $redirect_uri ="http://localhost:4000/welcome.php";
 
     function keyrcok_call($email,$password){
-        //Initialize a cURL session
-        $curl = curl_init($keyrock_service);
-
-        $postData = array(
-            'name' => $email,
-            'password' => $password,
-            
-        );
-       
-        
-
-        $credentials = json_encode($postData);
-        $headers = array(
-            'Content-Type: application/json', 
-        );
+        $header = array("Authorization Basic:".$authorization);
       
-
-        $options = array(
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POSTFIELDS => $credentials,
-            CURLOPT_HTTPHEADER => $headers,
-            CURLOPT_FOLLOWLOCATION => true,
-        );
-        curl_setopt_array($curl, $options);
-
-        // grab URL and pass it to the browser
-        $result = curl_exec($curl);
-        //echo $result;
-
-        // close cURL resource, and free up system resources
-        //curl_close($curl);
-        echo curl_errno($curl);
-        print curl_error($curl);
-
-        $info = curl_getinfo($curl);
-        $response_info = $info['http_code'];
-
-        echo "<br>".$response_info;
+        //Initialize a cURL session
+        $curl = curl_init();
+      
+       curl_setopt($curl,CURLOPT_URL, $access_token_url);
+       curl_setopt($curl,CURLOPT_HTTPGET,true);
+       curl_setopt($curl,CURLOPT_POSTFIELDS, http_build_query([
+            'response_type' => 'code',
+            'client_id' => $client_id,
+            'redirect_uri' => $redirect_uri,
+       ]));
+       curl_setopt($curl, CURLOPT_HTTPAUTH,CURLAUTH_BASIC);
+       $result = curl_exec($curl);
+       echo json_encode($result->code);
         
         
     }
