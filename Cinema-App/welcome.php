@@ -46,13 +46,12 @@
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
         $result = curl_exec($curl);
         curl_close($curl);
-        $result = json_encode($result);
-        echo $result;
+        $result = json_decode($result);
+       
+        $role = $result->roles[0]->name;
+        echo $role;
         
     }
     
-    
-    
-   
 
 ?>
