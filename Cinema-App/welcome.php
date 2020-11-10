@@ -28,12 +28,27 @@
         $result = curl_exec($curl);
         curl_close($curl);
         $result = json_decode($result);
+
         $_SESSION['access_token'] = $result->access_token ;
         $_SESSION['refresh_token'] = $result->refresh_token;
+
         header("Location: ".$GLOBALS['redirect_uri']);
     }
     else{
-        echo $_SESSION['access_token'];
+        //get user info
+        $curl = curl_init();
+        $url = $GLOBALS['user_info_url']."?" .http_build_query([
+            'access_token' => $_SESSION['access_token']
+        ]);
+        curl_setopt($curl,CURLOPT_URL, $url);
+
+        curl_setopt($curl, CURLOPT_HTTPGET, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
+        $result = curl_exec($curl);
+        curl_close($curl);
+        $result = json_encode($result);
+        echo $result;
+        
     }
     
     
