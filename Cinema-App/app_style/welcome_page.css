@@ -1,0 +1,16 @@
+body{
+    color:  #00154F ;
+    background-color: whitesmoke;
+}
+
+
+.user_details{
+    position: absolute;  
+    left: 35%; 
+    top: 20%;
+    font-size: 28px !important;
+}
+/*to have text in boder*/
+fieldset {
+    border: 7px solid #4f3a00;
+}

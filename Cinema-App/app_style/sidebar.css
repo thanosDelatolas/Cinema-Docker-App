@@ -1,0 +1,55 @@
+.sidebar {
+    height: 100%;
+    width: 85px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #dddddd ;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    white-space: nowrap;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 28px ;
+    color: darkblue;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+
+a:hover,.icon-text:hover {
+    color: blue;
+    cursor: pointer;
+}
+
+
+
+.material-icons,
+.icon-text {
+    vertical-align: middle;
+    color: darkblue;
+    font-size:28px
+   
+}
+
+.material-icons {
+    padding-bottom: 3px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-left: 100px;
+   
+}
+.bottom_fa{
+    position: absolute; 
+    bottom: 10%; 
+    
+}
