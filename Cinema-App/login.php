@@ -1,7 +1,7 @@
 <?php 
-  
- 
-
+  /*
+  * redirect to keyrock login!!!
+  */
    $client_id = "7ffbed02-ac0c-4784-8c52-2cf8d77f85fd";
    $client_secret = "1dacab95-4511-49bf-ba39-80119f37b094";
 
@@ -13,15 +13,11 @@
    $keyrock_url = $auth_url."?". http_build_query([
       'client_id' => $client_id,
       'response_type' => 'code',
-      'state' => 'xyz',
-      'redirect_uri' => $redirect_uri,
-      'scope' => 'permanent'
-     
+      'state' => 'get_code',
+      'redirect_uri' => $redirect_uri,     
    ]);
-   header("location: ".$keyrock_url);
+   header("location: ".$keyrock_url); 
 
-  
- 
    
 ?>
 

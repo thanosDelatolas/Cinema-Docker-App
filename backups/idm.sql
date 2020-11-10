@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql_db
--- Generation Time: Nov 09, 2020 at 03:05 PM
+-- Generation Time: Nov 10, 2020 at 10:30 AM
 -- Server version: 5.7.32
 -- PHP Version: 7.4.11
 
@@ -138,6 +138,52 @@ CREATE TABLE `oauth_authorization_code` (
   `user_id` varchar(36) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `oauth_authorization_code`
+--
+
+INSERT INTO `oauth_authorization_code` (`authorization_code`, `expires`, `redirect_uri`, `scope`, `valid`, `extra`, `oauth_client_id`, `user_id`) VALUES
+('05b79463baf6e4fd5c36045c2dd5dce67023969d', '2020-11-10 09:44:05', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('0cf74abaef9e6dd6a2712f1d95751daa95d49af4', '2020-11-10 09:54:47', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('1a9525823a00227002f60d8fbb82de55031ee302', '2020-11-10 10:15:42', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('1de1545539cbf7491ebc07a22fccbbfb2120bdda', '2020-11-10 10:04:22', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('290e0ef117236979a2b25734a2092f69f3c2857a', '2020-11-10 10:01:07', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('2d2641dc9c423e4a8d23f720bd45bafb5fbae750', '2020-11-10 10:07:22', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('37d28ae32100b4ad4320a45695b46ec04280cb74', '2020-11-10 10:09:15', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('3f0885c41f6a29dd8a423d844efc59975edbe3fc', '2020-11-10 10:17:35', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('402b0f5097c7da4892a4aebdea1242ca2162699b', '2020-11-10 09:44:42', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('440088f8c0ad286c09444133fc0e9087914838ef', '2020-11-10 10:31:06', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('44125f8f8eb785d8fccf6c97fbf9768290d29116', '2020-11-10 10:13:18', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('52775fd781c1d2464e145b6b926f6abdae1d59c3', '2020-11-10 09:53:58', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('568b314e8a804d1074880e5a98993309ae688815', '2020-11-10 09:56:16', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('5fae5d278bb48b62de19f32ec584762ea7fea78f', '2020-11-10 09:53:12', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('642ce64bdecc2b6cfadee61a74a4efbf0a80b02f', '2020-11-10 10:07:48', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('6efc7d83e4f507368f2f7e9e5258a2a22a4c0fa6', '2020-11-10 09:49:25', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('72db062aadafd9c0274841673efcf66d81c47496', '2020-11-10 09:57:46', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('7fe0b2567578dcf455e7662aa77d8bba96d963c2', '2020-11-10 10:03:05', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('856aaac2ac531a4b93a2c4f200435e301b4a4eb5', '2020-11-10 09:58:11', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('8b619386872f9a60cdeb8a7aa75ba972a3ce5815', '2020-11-10 09:58:15', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('9634d1abdb0309a07153e8d96183a27ede72e2a7', '2020-11-10 10:32:02', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('a206f8fce16a507aa86d8283c3fc551985f40d0d', '2020-11-10 09:45:03', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('a3098043a1e2b61ac40564f639fa8fe629929278', '2020-11-10 09:55:48', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('aaa17cf5d8d5d942729e83793782e888cdaa12bd', '2020-11-10 09:26:52', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('aec9d042bf405887b462c85d0ffc0498244f8481', '2020-11-10 09:56:17', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('b50cb4a8e5c3328973434a906a7bcdfe51c25882', '2020-11-10 10:00:40', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('b71ac964387707f7755c16136255fcde8bd6e312', '2020-11-10 10:24:09', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('bdaa46c58427a55e109d376f25802901e2bf44e9', '2020-11-10 09:24:43', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('c11f7a2c4022280c73bb2bd50258ea6bb383882c', '2020-11-10 10:19:24', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('c16592209bc6003ff8bdef312c87180773ed801f', '2020-11-10 09:45:55', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('c65a9d1e93805b47dd7dd8db73414d9df3d3a572', '2020-11-10 10:02:28', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('cac284b46be24ce774c7d9174c2dd0bf8462c3c4', '2020-11-10 09:44:42', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('cce70537725ed0d1bc0c27cb7f72e0d0e81f6b39', '2020-11-10 10:26:24', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('cebe8ce1ed38d45105fac7e4bcf4a2bfb435f340', '2020-11-10 09:39:37', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('d358a249c077a6785f9c3816d7575c31f285ce84', '2020-11-10 09:48:40', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('d8297bf5d71c4494280afbb36118e21c03e70f9e', '2020-11-10 09:49:48', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('e33a9cc720aa6f73f764e1c59c9e25b4d8b1a638', '2020-11-10 10:23:25', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('eb2cfe168abf37d48a0a25430a616ec3008711df', '2020-11-10 10:21:28', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('f35ecb2dfed37ef080a8ddf3e68372c78815ef8f', '2020-11-10 10:33:43', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin'),
+('fa5e279dff60a80a3d57e2676bcc63588f8f6396', '2020-11-10 10:00:57', 'http://localhost:4000/welcome.php', 'permanent', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'admin');
+
 -- --------------------------------------------------------
 
 --
@@ -167,7 +213,7 @@ CREATE TABLE `oauth_client` (
 --
 
 INSERT INTO `oauth_client` (`id`, `name`, `description`, `secret`, `url`, `redirect_uri`, `image`, `grant_type`, `response_type`, `client_type`, `scope`, `extra`, `token_types`, `jwt_secret`, `redirect_sign_out_uri`) VALUES
-('7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'Cinema-Paradiso', 'OAuth 2.0 in Cinema Paradiso', '1dacab95-4511-49bf-ba39-80119f37b094', 'http://localhost:4000/index.php', 'http://localhost:4000/welcome.php', 'default', 'authorization_code,implicit,password,client_credentials,refresh_token,hybrid', 'code,token', NULL, NULL, NULL, NULL, NULL, 'http://localhost:4000/logout.php'),
+('7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'Cinema-Paradiso', 'OAuth 2.0 in Cinema Paradiso', '1dacab95-4511-49bf-ba39-80119f37b094', 'http://localhost:4000/login.php', 'http://localhost:4000/welcome.php', 'default', 'authorization_code,implicit,password,client_credentials,refresh_token,hybrid', 'code,token', NULL, NULL, NULL, NULL, NULL, ''),
 ('idm_admin_app', 'idm', 'idm', NULL, '', '', 'default', '', '', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -481,6 +527,13 @@ CREATE TABLE `user_authorized_application` (
   `login_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `user_authorized_application`
+--
+
+INSERT INTO `user_authorized_application` (`id`, `user_id`, `oauth_client_id`, `shared_attributes`, `login_date`) VALUES
+(1, 'admin', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'username,email,identity_attributes,image,gravatar,eidas_profile', '2020-11-10 09:19:43');
+
 -- --------------------------------------------------------
 
 --
@@ -754,7 +807,7 @@ ALTER TABLE `trusted_application`
 -- AUTO_INCREMENT for table `user_authorized_application`
 --
 ALTER TABLE `user_authorized_application`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user_organization`

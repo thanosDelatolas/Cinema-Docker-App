@@ -5,7 +5,7 @@
     $client_secret = "1dacab95-4511-49bf-ba39-80119f37b094";
 
     $authorization = base64_encode($client_id.":".$client_secret);
-    $access_token_url = "http://172.18.1.5:3000/idm/oauth2/authorize";
+    $access_token_url = "http://172.18.1.5:3000/oauth2/authorize";
 
     $redirect_uri ="http://localhost:4000/welcome.php";
 
