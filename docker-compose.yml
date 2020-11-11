@@ -1,11 +1,11 @@
 version: '3.7'
 
 services:
-  #apache section..
-  apache:
+  #Application logic...
+  app_logic_apache:
     build: 
       context: .
-      dockerfile:  './dockerfiles/apache/Dockerfile'
+      dockerfile:  './dockerfiles/apache_app_logic/Dockerfile'
     container_name: apache
     restart: always
     ports:
@@ -24,9 +24,7 @@ services:
     hostname: mysql_db
     restart: always
     ports:
-      - '3306:3306'
-    expose:
-      - "3306"
+      - '3306:3306' 
     environment:
       - MYSQL_ROOT_PASSWORD=root_pass
       - MYSQL_ROOT_HOST=172.18.1.5 # allows root connections from 172.18.1.5 which is keyrock
@@ -39,15 +37,15 @@ services:
       - mysql_dat:/var/lib/mysql  #all the contents of /var/lib/mysql will be permently saved to mysql_dat volume
       #- docker-entrypoint-initdb.d #to init the db
     
-  #phpmyadmin for mysql
-  phpmyadmin:
+  #phpmyadmin for mysql keyrock!!
+  phpmyadmin_keyrock:
     depends_on:
       - mysql_db
     image: phpmyadmin/phpmyadmin
     container_name: phpmyadmin
     restart: always
     ports:
-      - '8080:80'
+      - '4040:80' #expose in port 4040 to local machine 
     environment:
       PMA_HOST: mysql_db
       MYSQL_ROOT_PASSWORD: root_pass 
@@ -55,9 +53,9 @@ services:
       default:
         ipv4_address: 172.18.1.7 
   #mongo db section...
-  mongo_db:
+  mongo_db_data_storage:
     build: 
-      context: './dockerfiles/mongo_db/'
+      context: './dockerfiles/mongo_db_data_storage/'
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -66,12 +64,12 @@ services:
     ports: 
       - '27017:27017'
     volumes: 
-      - mongo_dat:/data/db
+      - mongo_db_data_storage:/data/db
   #mongo-express for MONGO DB 
-  mongo-express:
+  mongo_express_data_storage:
     image: mongo-express
     depends_on: 
-      - mongo_db
+      - mongo_db_data_storage
     restart: always
     ports:
       - 8081:8081
@@ -88,7 +86,7 @@ services:
     depends_on:
       - mysql_db
     ports:
-      - "3000:3000"
+      - "3005:3000"
       - "443:443" #for rest api
     environment:
       - DEBUG=idm:*
@@ -114,5 +112,5 @@ networks:
         - subnet: 172.18.1.0/24
 volumes: 
   mysql_dat:
-  mongo_dat:
+  mongo_db_data_storage:
   
