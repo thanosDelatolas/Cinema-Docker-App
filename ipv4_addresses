@@ -1,0 +1,5 @@
+app logic: 172.18.1.8
+web app: 172.18.1.9
+mysql: 172.18.1.6
+phpmyadmin: 172.18.1.7 
+keyrock: 172.18.1.5
