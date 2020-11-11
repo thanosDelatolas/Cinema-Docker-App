@@ -32,6 +32,7 @@
     <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
         <a href="#"><span><i class="fa fa-file-movie-o"></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Movies</span></a><br>
         <a href="#"><span><i class='fas fa-user-tie'></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Owner</span></a><br>
+        <a onclick='logout()' class="bottom_fa" ><span><i class="fas fa-sign-out-alt"></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Log out</span></a><br>
     </div>
 
     <div id="main">
@@ -40,7 +41,7 @@
             <table>
                 <tr>
                     <td>Username:&nbsp;</td>
-                    <td><?php echo $_SESSION['username']; ?></td>
+                    <td><?php echo trim($_SESSION['username']); ?></td>
                 </tr>
                 
                 <tr>

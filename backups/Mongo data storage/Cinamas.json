@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "5fac44e1b711b9d9961da7b1"
+  },
+  "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be",
+  "name": "Cine Thisio in Athens"
+},{
+  "_id": {
+    "$oid": "5fac4537b711b9d9961da7b2"
+  },
+  "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be",
+  "name": "Village Cinemas"
+},{
+  "_id": {
+    "$oid": "5fac4580b711b9d9961da7b3"
+  },
+  "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be",
+  "name": "Colosseum Kino"
+},{
+  "_id": {
+    "$oid": "5fac4d45717cc5b3fb0b5bec"
+  },
+  "owner_id": "849dd351-3239-4318-b07d-18347e51cae6",
+  "name": "Matadero Cineteca"
+},{
+  "_id": {
+    "$oid": "5fac4dda873768b6e7f3806f"
+  },
+  "owner_id": "849dd351-3239-4318-b07d-18347e51cae6",
+  "name": "The Castro Theatre"
+},{
+  "_id": {
+    "$oid": "5fac4ec6873768b6e7f38070"
+  },
+  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9",
+  "name": "Grauman’s Chinese Theatre"
+},{
+  "_id": {
+    "$oid": "5fac4ed7873768b6e7f38071"
+  },
+  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9",
+  "name": "The Senator"
+}]

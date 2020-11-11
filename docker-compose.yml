@@ -9,13 +9,11 @@ services:
     container_name: app_logic_apache
     restart: always
     #dont expose this container!! no ports!
-    environment:
-      MYSQL_ROOT_PASSWORD: root_pass
     networks:
       default:
         ipv4_address: 172.18.1.8
 
-  #Web app...
+  #Web app...8081
   web_app_apache:
     build: 
       context: .
@@ -79,6 +77,9 @@ services:
       - '27017:27017'
     volumes: 
       - mongo_db_data_storage:/data/db
+    networks:
+      default:
+        ipv4_address: 172.18.1.10
 
   #mongo-express for MONGO DB 
   mongo_express_data_storage:
@@ -91,8 +92,11 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: root_pass
-      ME_CONFIG_MONGODB_SERVER: mongo_db
+      ME_CONFIG_MONGODB_SERVER: mongo_db_data_storage
     container_name: mongo_express_data_storage
+    networks:
+      default:
+        ipv4_address: 172.18.1.11
 
   keyrock:
     image: fiware/idm:latest
@@ -116,10 +120,7 @@ services:
    
     networks:
       default:
-        ipv4_address: 172.18.1.5
-
-
-   
+        ipv4_address: 172.18.1.5   
 networks:
   default:
     ipam:

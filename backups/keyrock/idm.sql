@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql_db
--- Generation Time: Nov 10, 2020 at 05:10 PM
+-- Generation Time: Nov 11, 2020 at 09:20 PM
 -- Server version: 5.7.32
 -- PHP Version: 7.4.11
 
@@ -126,6 +126,7 @@ CREATE TABLE `oauth_access_token` (
 INSERT INTO `oauth_access_token` (`access_token`, `expires`, `scope`, `refresh_token`, `valid`, `extra`, `oauth_client_id`, `user_id`, `iot_id`, `authorization_code`) VALUES
 ('04c54ede716b7a8c5a7c98fbe8b4e857ddc99d20', '2020-11-10 14:46:06', 'bearer', 'ea5a66edbe0edf935f388f93309a269ae94193d7', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '42958076603801d30c90b1c4dd50a33c81f69a6c'),
 ('052c7576422eeb53e1714e5d15d8e25e7d23e436', '2020-11-10 16:35:31', 'bearer', 'd45202630ebe70d0a27710bb211bbb41c734d57c', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '56ca15be5832935079e6011cb328a22958340b3e'),
+('065f92ed7934cba4d2d292d3a7c1a76320bb8497', '2020-11-11 19:56:11', 'bearer', '332fa4cc6fe994930292504665676dbdb52aa03b', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, NULL),
 ('091de5abe02efd1abcac3a856694477cc33aa81d', '2020-11-10 14:11:28', 'bearer', '48bfacdd0317a1b0d58e3c40e5e4f84a92808e58', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, 'a891756ced78ca5f25f723fa07fff33f0751686a'),
 ('0a2252c77e4add96b4ec8701019a72c0d26c231e', '2020-11-10 14:36:15', 'bearer', '38a9c1d6d50f72459b087343b2f0d56b7a4defaa', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '194526eef49716ed6eeaa4000ec9c84a169b6650'),
 ('0fb04e377c8692e5ace6b719e119bceb296d26cb', '2020-11-10 15:11:12', 'bearer', 'f2e68ebfab5f08f5a161516430c88e28f71452e2', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '7a9dc63af86d898289aa9cd1d103d68009ce9fdd'),
@@ -150,8 +151,10 @@ INSERT INTO `oauth_access_token` (`access_token`, `expires`, `scope`, `refresh_t
 ('41ca8c5e7a1d6986012cd018945a72e3c77699e5', '2020-11-10 14:46:06', 'bearer', '7605d26c51637ef326ba1559a0ae7c55acf0caae', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '216403219199483a34cd18813d69fb2fa863d372'),
 ('4546363c4002557ecb5dc85ba265fd9996fe425f', '2020-11-10 14:58:06', 'bearer', '1ba7e52945f84580eee2b32257ebd0698f3dad92', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '7552e56fa54ca089c666768fc6f0daba7c581b09'),
 ('46e33da18e63366d880e3a76ee9caf7f8e2b4d11', '2020-11-10 16:41:00', 'bearer', '9cb40c813db8ce834e9839e196baf2533c898f45', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '47bcebc74c4e2fd0ea86b5c70a21d3fdbd1aff7e'),
+('4b1019ab63de1f45a9c3cb3a30dc714ddd2355e1', '2020-11-11 22:06:39', 'bearer', '98aa4baee807f50a9393262bf1ca75c41e1f2b21', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '849dd351-3239-4318-b07d-18347e51cae6', NULL, NULL),
 ('4d8f60bcae3264e6ecd9b3a0a9ecbb7f167dbf7e', '2020-11-10 14:30:36', 'bearer', '3af7275e6376061946438757481cde362f5f031a', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'cd1fa0e4-3df3-4681-86aa-3d8fa3218665', NULL, 'b0fcd74d21c03b8931d4765754f217fccb877390'),
 ('4f9e74b290aa2b84b0fc4c9b344554835e550670', '2020-11-10 14:55:08', 'bearer', '743836dc276b8de2c3951ad0bdad509443c0f414', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '5925890b8e10dfb46e46ed163c84e2130664c441'),
+('518664b0577587874f7e9c765a52e39169e7c80b', '2020-11-11 22:06:27', 'bearer', 'd2b54fff6a2964816dbfe5ebc6e8d2bd725b80e2', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, NULL),
 ('51d2c659a2fce9ae4c059b68b2097baddd0d1194', '2020-11-10 16:40:35', 'bearer', 'b31163e022563c34882ad4a264ee1127002f0898', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '9a33d2451ef7674a9d7393bd829ad52da3083bc7'),
 ('580d03734bbfb3bb8e16a25e4bbfbb419f128ec4', '2020-11-10 15:04:52', 'bearer', '08e3a84e820a04e7f784395ed6a0972ce22f1f99', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '1b251416d3878ddd1d54376080b60cad954239be'),
 ('5a2a39197cae2981d11c9b86e2cee2ce64ca872f', '2020-11-10 14:51:03', 'bearer', '6788cde92fb856e0f1fdea9ed91e4bca66aa1f11', 1, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '13527fb2c03a54ee2d5fc670923460249f068889'),
@@ -404,7 +407,7 @@ CREATE TABLE `oauth_client` (
 --
 
 INSERT INTO `oauth_client` (`id`, `name`, `description`, `secret`, `url`, `redirect_uri`, `image`, `grant_type`, `response_type`, `client_type`, `scope`, `extra`, `token_types`, `jwt_secret`, `redirect_sign_out_uri`) VALUES
-('7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'TD Cinemas', 'The best way to be informed about your favorite movies!!\r\nOr\r\nThe best way to manage your Cinemas!', '1dacab95-4511-49bf-ba39-80119f37b094', 'http://localhost:4000/login.php', 'http://localhost:4000/welcome.php', 'default', 'authorization_code,implicit,password,client_credentials,refresh_token,hybrid', 'code,token', NULL, NULL, NULL, NULL, NULL, 'http://localhost:4000/logout.php'),
+('7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'TD Cinemas', 'The best way to be informed about your favorite movies!!\r\nOr\r\nThe best way to manage your Cinemas!', '1dacab95-4511-49bf-ba39-80119f37b094', 'http://172.18.1.8/app_logic_web_app_api.php', 'http://172.18.1.8/app_logic_web_app_api.php', 'default', 'authorization_code,implicit,password,client_credentials,refresh_token,hybrid', 'code,token', NULL, NULL, NULL, NULL, NULL, ''),
 ('idm_admin_app', 'idm', 'idm', NULL, '', '', 'default', '', '', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -452,6 +455,7 @@ INSERT INTO `oauth_refresh_token` (`refresh_token`, `expires`, `scope`, `oauth_c
 ('2e2a53b9ad9d9727926b939513ec2b88a04f0a27', '2020-11-24 13:56:41', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '4ff6536582ba71ffa7fe676482b603b7ec079630', 1),
 ('31e7ae804c9475c4c8b6596a80bea9b019fa4a80', '2020-11-24 13:12:37', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, 'f6d27f3d6d61b52f227b50617359d5abeb69f305', 1),
 ('3312e071a792c02e6dc38463ed4032e659c17dd5', '2020-11-24 13:41:41', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, 'c1090317bf5dfba962daaa34befded4964cff245', 1),
+('332fa4cc6fe994930292504665676dbdb52aa03b', '2020-11-25 18:56:11', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, NULL, 1),
 ('33add80f21816ef25dc3c3e7bac48c727619a955', '2020-11-24 14:05:20', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, 'e40fcc94abe01b0855bc73401da5eaff4e80df11', 1),
 ('38a9c1d6d50f72459b087343b2f0d56b7a4defaa', '2020-11-24 13:36:15', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '194526eef49716ed6eeaa4000ec9c84a169b6650', 1),
 ('3905e68f6c8f64bfbb711614ba740137c0210cbc', '2020-11-24 14:04:30', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '68c6fc1f2dcd547120aedc6120d185c74398d20c', 1),
@@ -483,6 +487,7 @@ INSERT INTO `oauth_refresh_token` (`refresh_token`, `expires`, `scope`, `oauth_c
 ('952d745d48eca44ff6fb44286a6fdc172a195fa8', '2020-11-24 13:38:07', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, 'a708a5e267f28d18ec273a5668114e37bd60fdb7', 1),
 ('9593a815b1e5de224c9a4ffbdf9a9927e68d42ee', '2020-11-24 15:22:14', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '7633f885be32ac4c556f9e05a0a33c8c2ce6311a', 1),
 ('981df93e4f8f30d1e5f80ad9523b7aedd7bdeaf7', '2020-11-24 14:11:36', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, 'ca5f648117ba9e80b01ed95500fcf2d19aebd0a0', 1),
+('98aa4baee807f50a9393262bf1ca75c41e1f2b21', '2020-11-25 21:06:39', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '849dd351-3239-4318-b07d-18347e51cae6', NULL, NULL, 1),
 ('9cb40c813db8ce834e9839e196baf2533c898f45', '2020-11-24 15:41:00', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '47bcebc74c4e2fd0ea86b5c70a21d3fdbd1aff7e', 1),
 ('9d5cecb1dc0c85ec35823dffd063c27596c82ca6', '2020-11-24 14:01:01', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '5cbe694892f7166d8e1da65028036f171259bb33', 1),
 ('9ee852bfc831793e047eaefbb2e7162a7473495e', '2020-11-24 13:49:46', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '8dbc63dadd8745613709520066642f3e4bdab0a1', 1),
@@ -497,6 +502,7 @@ INSERT INTO `oauth_refresh_token` (`refresh_token`, `expires`, `scope`, `oauth_c
 ('c16f74ecffe4fe876f2f53fec6c6a44a64476a73', '2020-11-24 13:57:19', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '39c91325def93a71264739eb2da7b27854b0884f', 1),
 ('c9c562ada0726dbdea2932308e6d5e8b1e2ed555', '2020-11-24 15:04:38', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'cd1fa0e4-3df3-4681-86aa-3d8fa3218665', NULL, '9c1d7454df8d51419f1b0d709ddbc3cef2cce6f7', 1),
 ('cc5580322412a5ef8687441da6a9c3eb80694b78', '2020-11-24 14:10:26', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '08effdd7841b3a27b923e6b06be653c016a518db', 1),
+('d2b54fff6a2964816dbfe5ebc6e8d2bd725b80e2', '2020-11-25 21:06:27', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, NULL, 1),
 ('d45202630ebe70d0a27710bb211bbb41c734d57c', '2020-11-24 15:35:31', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, '56ca15be5832935079e6011cb328a22958340b3e', 1),
 ('d4b13fa3e568c1623d95656cde8d776b3abf88d5', '2020-11-24 13:40:46', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, 'fd36367aaec6ab88f7d66e81c8cac28339c0bafc', 1),
 ('db6926da25328b9575e097bb664cc48c7348a553', '2020-11-24 14:10:27', 'bearer', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '0b10e960-70d4-4318-b6d0-e9132430ab09', NULL, 'a1965407627549f28ca44b7469bc8dc27d4174c3', 1),
@@ -641,9 +647,11 @@ CREATE TABLE `role_assignment` (
 --
 
 INSERT INTO `role_assignment` (`id`, `role_organization`, `oauth_client_id`, `role_id`, `organization_id`, `user_id`) VALUES
-(12, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '592236e2-e2bf-4471-8c11-7f715f5e9d65', NULL, '5565f5dd-02ea-4bd7-ba31-bb76a82657be'),
-(13, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'provider', NULL, 'admin'),
-(14, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '9cfc0b6f-2bc3-4a6f-af91-9ff79e8c09b4', NULL, '0b10e960-70d4-4318-b6d0-e9132430ab09');
+(15, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '592236e2-e2bf-4471-8c11-7f715f5e9d65', NULL, '5565f5dd-02ea-4bd7-ba31-bb76a82657be'),
+(16, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'provider', NULL, 'admin'),
+(17, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '9cfc0b6f-2bc3-4a6f-af91-9ff79e8c09b4', NULL, '0b10e960-70d4-4318-b6d0-e9132430ab09'),
+(18, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '592236e2-e2bf-4471-8c11-7f715f5e9d65', NULL, '849dd351-3239-4318-b07d-18347e51cae6'),
+(19, NULL, '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', '592236e2-e2bf-4471-8c11-7f715f5e9d65', NULL, 'b73be024-d4ec-414a-9f49-d386f4f9e2c9');
 
 -- --------------------------------------------------------
 
@@ -797,7 +805,9 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `username`, `description`, `website`, `image`, `gravatar`, `email`, `password`, `date_password`, `enabled`, `admin`, `extra`, `scope`, `starters_tour_ended`, `eidas_id`, `salt`) VALUES
 ('0b10e960-70d4-4318-b6d0-e9132430ab09', 'user1', '', '', 'default', 0, 'user1@test.com', '883cf9ce23673b23f12c1341d599b7f9813cb68e', '2020-11-10 13:04:03', 1, 0, '{\"visible_attributes\": [\"username\", \"description\", \"website\", \"identity_attributes\", \"image\", \"gravatar\"]}', NULL, 0, NULL, 'c4d8df0ea9bb152f'),
 ('5565f5dd-02ea-4bd7-ba31-bb76a82657be', 'owner1', '', '', 'default', 0, 'owner1@test.com', '49299d32cd9332347a1eb26380fd1de0ae7735f4', '2020-11-10 13:13:39', 1, 0, '{\"visible_attributes\": [\"username\", \"description\", \"website\", \"identity_attributes\", \"image\", \"gravatar\"]}', NULL, 0, NULL, 'a438c35fe6456475'),
+('849dd351-3239-4318-b07d-18347e51cae6', 'owner3', NULL, NULL, 'default', 0, 'owner3@test.com', '71d69e5871844ece907b39b5b2b4c93aa2d4a43b', '2020-11-11 20:21:30', 1, 0, '{\"visible_attributes\": [\"username\", \"description\", \"website\", \"identity_attributes\", \"image\", \"gravatar\"]}', NULL, 0, NULL, '3c9da3066f4ac9bd'),
 ('admin', 'tdel', 'Admin of the system', '', 'default', 0, 'tdel@test.com', '35f05d4c283aef953aded586b7b9efd9209eb67a', '2020-11-09 08:54:37', 1, 1, '{\"visible_attributes\": [\"username\", \"description\"]}', NULL, 0, NULL, '433c709bf9b2b8c5'),
+('b73be024-d4ec-414a-9f49-d386f4f9e2c9', 'owner2', NULL, NULL, 'default', 0, 'owner2@test.com', 'a9fe11d23b9ea3b68176e528f9bd101644ef1aaf', '2020-11-11 20:20:24', 1, 0, '{\"visible_attributes\": [\"username\", \"description\", \"website\", \"identity_attributes\", \"image\", \"gravatar\"]}', NULL, 0, NULL, '7322889bc5f9cef7'),
 ('cd1fa0e4-3df3-4681-86aa-3d8fa3218665', 'movies_freak', NULL, NULL, 'default', 0, 'movies_freak@test.com', 'ee359d119dba83e1e5c444eb7bc4876fbbeaf802', '2020-11-10 13:28:59', 1, 0, '{\"visible_attributes\": [\"username\", \"description\", \"website\", \"identity_attributes\", \"image\", \"gravatar\"]}', NULL, 0, NULL, '94fdbec195f0caf4');
 
 -- --------------------------------------------------------
@@ -821,7 +831,8 @@ CREATE TABLE `user_authorized_application` (
 INSERT INTO `user_authorized_application` (`id`, `user_id`, `oauth_client_id`, `shared_attributes`, `login_date`) VALUES
 (1, 'admin', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'username,email,identity_attributes,image,gravatar,eidas_profile', '2020-11-10 09:19:43'),
 (2, '0b10e960-70d4-4318-b6d0-e9132430ab09', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'username,email,identity_attributes,image,gravatar,eidas_profile', '2020-11-10 13:11:28'),
-(3, 'cd1fa0e4-3df3-4681-86aa-3d8fa3218665', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'username,email,identity_attributes,image,gravatar,eidas_profile', '2020-11-10 13:30:36');
+(3, 'cd1fa0e4-3df3-4681-86aa-3d8fa3218665', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'username,email,identity_attributes,image,gravatar,eidas_profile', '2020-11-10 13:30:36'),
+(4, '849dd351-3239-4318-b07d-18347e51cae6', '7ffbed02-ac0c-4784-8c52-2cf8d77f85fd', 'username,email', '2020-11-11 21:06:39');
 
 -- --------------------------------------------------------
 
@@ -860,7 +871,9 @@ CREATE TABLE `user_registration_profile` (
 --
 
 INSERT INTO `user_registration_profile` (`id`, `activation_key`, `activation_expires`, `reset_key`, `reset_expires`, `verification_key`, `verification_expires`, `user_email`, `disable_2fa_key`, `disable_2fa_expires`) VALUES
-(1, '0x5dtnka121', '2020-11-11 13:28:59', NULL, NULL, NULL, NULL, 'movies_freak@test.com', NULL, NULL);
+(1, '0x5dtnka121', '2020-11-11 13:28:59', NULL, NULL, NULL, NULL, 'movies_freak@test.com', NULL, NULL),
+(2, 'ysu5nmllms', '2020-11-12 20:20:24', NULL, NULL, NULL, NULL, 'owner2@test.com', NULL, NULL),
+(3, '9yi13ztt1ja', '2020-11-12 20:21:30', NULL, NULL, NULL, NULL, 'owner3@test.com', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -1079,7 +1092,7 @@ ALTER TABLE `ptp`
 -- AUTO_INCREMENT for table `role_assignment`
 --
 ALTER TABLE `role_assignment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `role_permission`
@@ -1103,7 +1116,7 @@ ALTER TABLE `trusted_application`
 -- AUTO_INCREMENT for table `user_authorized_application`
 --
 ALTER TABLE `user_authorized_application`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user_organization`
@@ -1115,7 +1128,7 @@ ALTER TABLE `user_organization`
 -- AUTO_INCREMENT for table `user_registration_profile`
 --
 ALTER TABLE `user_registration_profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

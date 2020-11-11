@@ -28,7 +28,7 @@
         curl_setopt($curl,CURLOPT_POSTFIELDS, http_build_query([
             'grant_type' => 'password',
             'username'    => $_GET['email'],
-            'password' => $_GET['password']
+            'password' => $_GET['password'],
         ]));
     
         //make the request
@@ -38,7 +38,7 @@
 
         $access_token = $result->access_token;
         $refresh_token = $result->refresh_token;
-
+        
         //get user info
         $curl = curl_init();
         $url = $GLOBALS['user_info_url']."?" .http_build_query([
@@ -60,8 +60,7 @@
             "role" => $result->roles[0]->name,
             "username" => $result->username,
             "email" => $result->email,
-            "user_id" => $result->id,
-
+            "user_id" => $result->id
         );
 
         //return to app logic

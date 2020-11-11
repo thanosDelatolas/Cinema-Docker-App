@@ -15,3 +15,11 @@ function toggleSidebar() {
     }
 }
 
+function logout(){
+    var r = confirm("Do you really want to log out?");
+    if (r) {
+
+        window.location.href = '/logout.php'
+    }
+}
+

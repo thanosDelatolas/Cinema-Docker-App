@@ -3,3 +3,18 @@ web app: 172.18.1.9
 mysql: 172.18.1.6
 phpmyadmin: 172.18.1.7 
 keyrock: 172.18.1.5
+
+
+
+{
+    "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9",
+    "name": "Busan Cinema Centre"
+
+}
+
+
+{
+    "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9",
+    "name": "The Senator"
+
+}

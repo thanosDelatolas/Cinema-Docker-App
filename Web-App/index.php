@@ -41,6 +41,7 @@
             $_SESSION["username"] = $response->username;
             $_SESSION["email"] = $response->email;
             $_SESSION["user_id"] = $response->id;
+            
             header("Location: welcome.php");
             exit;
         }
