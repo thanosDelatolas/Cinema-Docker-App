@@ -1,25 +1,15 @@
 <?php
-
-    require 'keyrock_call.php';
     require 'global_vars.php';
     
     /**
      * This file is the api for communication between Web-App and App-Logic
      * 
-     * $_GET['login'] =>  login with keyrock!
+     * $_GET['login'] =>  login with keyrock with password and email from keyrock!
      * 
     */
     
     if (isset($_GET['login']) && $_GET['login'] == 'login') {
-        //redirect to keyrock
-       
-        $keyrock_url = $auth_url."?". http_build_query([
-            'client_id' =>  $GLOBALS['client_id'],
-            'response_type' => 'code',
-            'state' => 'get_code',
-            'redirect_uri' => $GLOBALS['redirect_uri'],     
-        ]);
-       
+
         $authorization = base64_encode($GLOBALS['client_id'].":". $GLOBALS['client_secret']);
 
         //Initialize a cURL session
@@ -45,28 +35,39 @@
         $result = curl_exec($curl);
         curl_close($curl);
         $result= json_decode($result);
+
+        $access_token = $result->access_token;
+        $refresh_token = $result->refresh_token;
+
         //get user info
         $curl = curl_init();
         $url = $GLOBALS['user_info_url']."?" .http_build_query([
-            'access_token' => $result->access_token
+            'access_token' => $access_token
         ]);
+
         curl_setopt($curl,CURLOPT_URL, $url);
 
         curl_setopt($curl, CURLOPT_HTTPGET, true);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
         $result = curl_exec($curl);
         curl_close($curl);
-        echo $result;
+
+        $result = json_decode($result);
+
+        $array = array(
+            "access_token" => $access_token, 
+            "refresh_token" => $refresh_token,
+            "role" => $result->roles[0]->name,
+            "username" => $result->username,
+            "email" => $result->email,
+            "user_id" => $result->id,
+
+        );
+
+        //return to app logic
+        echo json_encode($array);
 
     }
-    
-    if (isset($_GET['url'])) {
-       
-        header("Location: ".$_GET['url']);
-        exit;
-        
-    }  
-    
     
 
 ?>

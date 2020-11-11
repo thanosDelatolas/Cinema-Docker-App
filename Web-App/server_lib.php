@@ -22,9 +22,9 @@
         if(!isset($_SESSION['loggedin'])){
 
             $_SESSION['server_msg'] = 'You are not logged in yet ';
-            $_SESSION['next_page'] ='http://localhost/Cinema-App/index.php';
+            $_SESSION['next_page'] ='http://localhost/index.php';
            
-            header("Location:  http://localhost/Cinema-App/php_pages/err_msg.php");
+            header("Location:  http://localhost/err_page.php");
             exit;
             
         }
@@ -33,25 +33,11 @@
             $_SESSION['server_msg'] = 'Please wait an admin to confirm your registration';
             $_SESSION['next_page'] =$GLOBALS['keyrock_official'];
           
-            header("Location:  http://localhost:4000/err_page.php");
+            header("Location:  http://localhost/err_page.php");
             exit;
         }
         
-        //only for users
-        if($page == 'movies' && $_SESSION['user_role'] != 'USER'){
-            $_SESSION['server_msg'] = 'You are '.$_SESSION['user_role'].' so you cannot access '.$page.' page';
-            $_SESSION['next_page'] ='http://localhost/Cinema-App/php_pages/welcome.php';
-            header("Location:   http://localhost:4000/err_page.php");
-            exit;
-            
-        }
-        //cinema owner
-        elseif($page == 'owner' && $_SESSION['user_role'] != 'CINEMAOWNER'){
-            $_SESSION['server_msg'] = 'You are '.$_SESSION['user_role'].' so you cannot access '.$page.' page';
-            $_SESSION['next_page'] ='http://localhost/Cinema-App/php_pages/welcome.php';
-            header("Location:  http://localhost/Cinema-App/php_pages/err_msg.php");
-            exit;
-        }
+        
        
     }
 ?>
