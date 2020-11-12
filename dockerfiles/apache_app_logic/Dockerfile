@@ -9,5 +9,3 @@ COPY ././App-Logic/ /App-Logic/
 
 RUN cp -r /App-Logic/* /var/www/html/.
 
-#mongo db extention for php
-# ??

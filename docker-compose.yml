@@ -13,7 +13,7 @@ services:
       default:
         ipv4_address: 172.18.1.8
 
-  #Web app...8081
+  #Web app...80
   web_app_apache:
     build: 
       context: .
@@ -121,6 +121,22 @@ services:
     networks:
       default:
         ipv4_address: 172.18.1.5   
+  
+  #apache for data storage!
+  data_storage_apache:
+    build: 
+      context: .
+      dockerfile:  './dockerfiles/apache_data_storage/Dockerfile'
+    container_name: data_storage_apache
+    restart: always
+    ports:
+      - '4000:80' #expose for now
+    
+    networks:
+      default:
+        ipv4_address: 172.18.1.14
+
+  
 networks:
   default:
     ipam:
