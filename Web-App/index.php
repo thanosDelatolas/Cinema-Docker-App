@@ -3,15 +3,13 @@
     session_start();
 
     if (isset($_POST['email'])) {
-       // make get request APPLICATION LOGIC
+        // make get request APPLICATION LOGIC
         $ch = curl_init();
-        $url = $GLOBALS['App-Logic']."?" .http_build_query([
+        $url = $GLOBALS['App-Logic-Login']."?" .http_build_query([
             'login' => 'login', //a flag to execute the right code in App-Logic! 
             'email' => $_POST['email'],
             'password' => $_POST['password']
         ]);
-        
-        
         
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
@@ -40,7 +38,7 @@
             $_SESSION["role"] = $response->role;
             $_SESSION["username"] = $response->username;
             $_SESSION["email"] = $response->email;
-            $_SESSION["user_id"] = $response->id;
+            $_SESSION["user_id"] = $response->user_id;
             
             header("Location: welcome.php");
             exit;

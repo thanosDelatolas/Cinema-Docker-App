@@ -1,0 +1,90 @@
+body{
+    background-color: whitesmoke
+}
+  
+.search{
+
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 84%;
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 2px solid gray; /* Add a grey border */
+
+    margin-bottom: 12px; /* Add some space below the input */
+
+}
+
+#searchable_table {
+    border-collapse: collapse; /* Collapse borders */
+    width: 90%; /* Full-width */
+
+    font-size: 18px; /* Increase font-size */
+    position: relative;
+
+
+}
+/**
+* Make header remains on the top of the page!
+*/
+#searchable_table th{
+    position: sticky;
+    top: 0;
+    background-color: gray;
+}
+#searchable_table th, #searchable_table td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+
+}
+
+#searchable_table tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid gray;
+
+}
+
+#searchable_table tr.header {
+    /* Add a grey background color to the table header and on hover */
+    background-color: gray;
+
+}
+
+#searchable_table tr:hover{
+    background-color: lightgray;
+
+}
+/* for td*/
+.icon{
+    text-align: center !important;
+}
+
+/* for icons*/
+.ic{
+    color:wheat; 
+    font-size:18px; 
+    background-color:#f1f1f1; 
+    cursor:pointer; 
+    border: none;
+}
+/* for favorite icons*/
+.ic_fav{
+    
+color:red; 
+font-size:18px; 
+background-color:#f1f1f1; 
+cursor:pointer; 
+border: none;
+
+}
+
+
+
+
+/* Darker background on mouse-over */
+.ic_fav:hover {
+    background-color: RoyalBlue;
+}
+
+.ic:hover {
+    background-color: RoyalBlue;
+}

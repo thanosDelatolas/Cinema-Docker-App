@@ -2,7 +2,7 @@
     require 'global_vars.php';
     
     /**
-     * This file is the api for communication between Web-App and App-Logic
+     * This file receives login requests from Web-App and specifically from index.php
      * 
      * $_GET['login'] =>  login with keyrock with password and email from keyrock!
      * 

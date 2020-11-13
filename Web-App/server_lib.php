@@ -29,9 +29,16 @@
             
         }
         //if is loggedin but NOT CONFIRMED
-        if($_SESSION['role'] != 'CINEMAOWNER' and $_SESSION['role'] != 'USER'){
+        if($page=='welcome' and $_SESSION['role'] != 'CINEMAOWNER' and $_SESSION['role'] != 'USER'){
             $_SESSION['server_msg'] = 'Please wait an admin to confirm your registration';
             $_SESSION['next_page'] =$GLOBALS['keyrock_official'];
+          
+            header("Location:  http://localhost/err_page.php");
+            exit;
+        }
+        if($page=='movies' and $_SESSION['role'] != 'USER'){
+            $_SESSION['server_msg'] = 'Only USERS can access this page.';
+            $_SESSION['next_page'] =$GLOBALS['welcome'];
           
             header("Location:  http://localhost/err_page.php");
             exit;
