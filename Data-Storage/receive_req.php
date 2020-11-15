@@ -92,4 +92,49 @@
         echo $result->getInsertedCount();
 
     }
+
+
+    /** Get all movies and all cinemas that an CINEMAOWNER has! */
+    if (isset($_GET['get_owner_data']) && $_GET['get_owner_data'] == true){
+        $filter = [
+            'owner_id' => $_GET['user_id'],
+            
+        ];
+       
+        $options = [];
+
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $cinemas  = $manager->executeQuery('cinema_db.Cinemas', $query);
+        $cinemas = $cinemas->toArray();
+     
+        
+        foreach($cinemas as $cin){
+     
+           $filter = ['playing_in' => (string)$cin->_id ];
+           $options = [];
+
+           $query = new \MongoDB\Driver\Query($filter, $options);
+           $movies  = $manager->executeQuery('cinema_db.Movies', $query);
+           $movies_array = $movies->toArray();
+           
+           foreach($movies_array as $m){
+              $owner_data[] = array( 
+                 "cin_name" => $cin->name, 
+                 "cin_id" =>(string)$cin->_id,
+                 "title" => $m->title,
+                 "category" => $m->category, 
+                 "description" => $m->description,
+                 "mov_id" => (string)$m->_id,
+                 "start_date" => $m->start_date->toDateTime()->format('Y-m-d'), 
+                 "end_date" => $m->end_date->toDateTime()->format('Y-m-d')
+              ); 
+           }           
+           
+        }
+
+        //return to app logic
+        echo json_encode($owner_data,true);
+    }
+
+    
 ?>

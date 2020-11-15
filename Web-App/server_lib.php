@@ -43,6 +43,14 @@
             header("Location:  http://localhost/err_page.php");
             exit;
         }
+
+        if($page=='movies' and $_SESSION['role'] != 'CINEMAOWNER'){
+            $_SESSION['server_msg'] = 'Only CINEMAOWNER can access this page.';
+            $_SESSION['next_page'] =$GLOBALS['welcome'];
+          
+            header("Location:  http://localhost/err_page.php");
+            exit;
+        }
         
         
        
