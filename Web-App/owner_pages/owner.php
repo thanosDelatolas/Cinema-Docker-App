@@ -88,6 +88,66 @@
             ?>
         </table>
     </div>
+
+
+    <div id="myModal" class="modal">
+            <table class="modal_table">
+              
+                <tr>
+                    <td colspan="3" class="details"><h1 class="h_title" id="movid_text"></h1></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">Cinema:</td>
+                    <td><input id="cinema" class="in" type="text" name="cinema" placeholder="Cinema"></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">Title:</td>
+                    <td><input id="title" class="in" type="text" name="title" placeholder="title"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">Category:</td>
+                    <td><input id="category" class="in" type="text" name="category" placeholder="category"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">Start date:</td>
+                    <td><input id="start_date" class="in" type="date" name="start_date" placeholder="yyyy/mm/dd"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">End date:</td>
+                    <td><input id="end_date" class="in" type="date" name="end_date" placeholder="yyyy/mm/dd"></td>
+                </tr>
+                <tr>
+                    <td colspan="1">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td></td>
+                    
+                    <td> 
+                    <button type="button" id="changes" class="changes_btn" >Make changes</button>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <button type="button" id="cancel" class="cancel_btn" 
+                    onclick="cancelFUNC()">Cancel</button></td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3" align="center" >
+                        <p id="err_msg" class = "err_msg">
+                            
+                        </p>
+                    </td>
+                </tr>
+               
+            </table>
+        </div>
+    </div>
+
 </body>
 
 </html>

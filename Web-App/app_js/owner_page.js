@@ -21,24 +21,23 @@ function search_cinemas(){
     tr = table.getElementsByTagName("tr");
 
     //table's columns
-    var movid_col,title_col,cin_col,category_col,sd_col,ed_col;
+    var title_col,cin_col,category_col,sd_col,ed_col;
 
     //each column text
-    var movid_col_txt,title_col_txt,cin_col_txt,category_col_txt,sd_col_txt,ed_col_txt;
+    var title_col_txt,cin_col_txt,category_col_txt,sd_col_txt,ed_col_txt;
     /** 
     * Loop through all table rows, and hide those who don't match the search query 
     * based on title,cinema,category,start_date,end_date
     */  
     for (i = 0; i < tr.length; i++) {
-        movid_col = tr[i].getElementsByTagName("td")['movid'];
         title_col = tr[i].getElementsByTagName("td")['title'];
         cin_col = tr[i].getElementsByTagName("td")['cinema'];
         category_col = tr[i].getElementsByTagName("td")['category'];
         sd_col = tr[i].getElementsByTagName("td")['start_d'];
         ed_col = tr[i].getElementsByTagName("td")['end_d'];
         
-        if (title_col && cin_col && category_col && sd_col && ed_col && movid_col) {
-            movid_col_txt = movid_col.textContent || movid_col.innerText;
+        if (title_col && cin_col && category_col && sd_col && ed_col) {
+           
             title_col_txt = title_col.textContent || title_col.innerText;
             cin_col_txt = cin_col.textContent || cin_col.innerText;
             category_col_txt = category_col.textContent || category_col.innerText;
@@ -48,7 +47,7 @@ function search_cinemas(){
             //if one or more columns has the filter words
             if (title_col_txt.toUpperCase().indexOf(filter) > -1 || cin_col_txt.toUpperCase().indexOf(filter) > -1 
                 || category_col_txt.toUpperCase().indexOf(filter) > -1 || sd_col_txt.toUpperCase().indexOf(filter) > -1
-                || ed_col_txt.toUpperCase().indexOf(filter) > -1 || movid_col_txt.indexOf(filter) > -1
+                || ed_col_txt.toUpperCase().indexOf(filter) > -1 
                 
             ){
                 tr[i].style.display = ""; //hide this row

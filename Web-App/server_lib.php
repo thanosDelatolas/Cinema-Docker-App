@@ -44,7 +44,7 @@
             exit;
         }
 
-        if($page=='movies' and $_SESSION['role'] != 'CINEMAOWNER'){
+        if($page=='owner' and $_SESSION['role'] != 'CINEMAOWNER'){
             $_SESSION['server_msg'] = 'Only CINEMAOWNER can access this page.';
             $_SESSION['next_page'] =$GLOBALS['welcome'];
           
