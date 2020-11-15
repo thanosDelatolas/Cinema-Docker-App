@@ -30,7 +30,8 @@
 <script src="../app_js/owner_page.js"></script>
 
 <!--movies_jquery.js has the 
-    -> REQUESTS TO APP-LOGIC
+    -> REQUESTS TO APP-LOGIC and
+    -> the modal functionality
 -->
 <script src="../app_js/owner_jquery.js"></script>
 
