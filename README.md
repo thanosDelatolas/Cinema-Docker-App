@@ -9,5 +9,5 @@ The architecture is :
 
 I developed from scratch:  
 * Web-App
-* Applciation-Logic  
+* Application-Logic  
 * Data-Storage
