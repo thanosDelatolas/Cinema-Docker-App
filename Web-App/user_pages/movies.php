@@ -59,7 +59,7 @@
                 
                 //time to make GET-request in the rest API to take favorites of this user!!
                 require '../make_request.php';
-                //get movies with curl GET request!! (REST APi)
+                //get movies with curl GET request!! (REST API)
                 $movies = get_movies();
                 
                 //get favorites of the user with curl GET request(REST API)

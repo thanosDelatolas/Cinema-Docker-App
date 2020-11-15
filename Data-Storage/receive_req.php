@@ -61,7 +61,7 @@
         
     }
 
-
+    /** Remove favoirets! */
     if (isset($_GET['remove_fav']) && $_GET['remove_fav'] == true){
         $filter = [
             'userid' => $_GET['user_id'],
@@ -75,6 +75,21 @@
         $result = $manager->executeBulkWrite('cinema_db.Favorites', $bulk,$writeConcern);
         echo $result->getDeletedCount();
 
-        
+    }
+
+    /** Add favoirets! */
+    if (isset($_GET['add_fav']) && $_GET['add_fav'] == true){
+        $filter = [
+            'userid' => $_GET['user_id'],
+            'movid' => $_GET['mov_id']
+            
+        ];
+       
+        $bulk = new MongoDB\Driver\BulkWrite();
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+        $bulk->insert($filter);
+        $result = $manager->executeBulkWrite('cinema_db.Favorites', $bulk,$writeConcern);
+        echo $result->getInsertedCount();
+
     }
 ?>
