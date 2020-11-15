@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="../app_style/sidebar.css"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Add jquery -->
     
     <title>Movies</title>
 </head>
@@ -26,9 +26,13 @@
 
 <!--movies_page.js has the 
     -> search_movies function 
-    -> fav_clicked function
 -->
 <script src="../app_js/movies_page.js"></script>
+
+<!--movies_jquery.js has the 
+    -> REQUESTS TO APP-LOGIC
+-->
+<script src="../app_js/movies_jquery.js"></script>
 
 
 <body>
@@ -61,7 +65,7 @@
                 //get favorites of the user with curl GET request(REST API)
                 $favorites = get_favorites($_SESSION['user_id']);
               
-               
+                $row_num=1;
                 foreach($movies as $curr_movie) {
                     $is_favorite=false;
                    //see if current movie is in favorites!
@@ -78,26 +82,29 @@
                     "<td name='cinema'>".$curr_movie["playing_in"]."</td>"
                     ."<td name ='category'>".$curr_movie["category"]."</td>"
                     ."<td name ='start_d'>".$curr_movie["start_date"]."</td>"
-                    ."<td name ='end_d'>".$curr_movie["end_date"]."</td>";
+                    ."<td name ='end_d'>".$curr_movie["end_date"]."</td>"
+                    //hidden user_id,mov_id for curl requests!
+                    ."<td name='user_id' hidden='true'>".$_SESSION['user_id']."</td>"
+                    ."<td name='mov_id' hidden='true'>".$curr_movie["oid"]."</td>".
+                    "</td>";
                     //must add favorites and </td>
 
-                    //if current movie is favorite add hear button
+                    //ids to be recognized from jquery
                     if($is_favorite == true){
                         $table_row = $table_row."<td class='icon'>
-                        <button class = 'ic_fav' 
-                        onclick='fav_clicked()'>
+                        <button class='ic_fav' id='remove_fav_'".intval($row_num).">
                         <i class='fa fa-heart'></i></button>"."</td>"
                         ."</tr>";
                     }
                     else{
                         $table_row = $table_row."<td class='icon'>
-                        <button class='ic' 
-                        onclick='fav_clicked()'>
+                        <button class='ic'  id='add_fav_'".intval($row_num).">
                         <i class='fa fa-heart'></i></button>"."</td>" 
                         ."</tr>";
 
                     }
                     echo $table_row;
+                    $row_num =  $row_num + 1;
 
                 }
 
