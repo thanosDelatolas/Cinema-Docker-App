@@ -101,15 +101,65 @@
         echo $response;  
     }
 
-     /**
+    /**
      * Request from Web-App to fetch all data of a CINEMAOWNER
-     */
+    */
     if (isset($_GET['get_owner_data']) && $_GET['get_owner_data'] == true){
      
         $ch = curl_init();
         $url = $GLOBALS['Data-Storage']."?" .http_build_query([
             'get_owner_data' => true, //a flag to execute the right code in App-Logic! 
             'user_id' => $_GET['user_id'],
+        ]);
+
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        //return response
+        echo $response;  
+    }
+
+
+    /**
+     * Request from Web-App to fetch only Cinmas
+    */
+    if (isset($_GET['get_cinemas']) && $_GET['get_cinemas'] == true){
+     
+        $ch = curl_init();
+        $url = $GLOBALS['Data-Storage']."?" .http_build_query([
+            'get_cinemas' => true, //a flag to execute the right code in App-Logic! 
+            'owner_id' => $_GET['owner_id'],
+        ]);
+
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        //return response
+        echo $response;  
+    }
+
+    /**
+     * Request from Web-App to modify movie
+    */
+    if (isset($_POST['modify_movie']) && $_POST['modify_movie'] == true){
+     
+        $ch = curl_init();
+        $url = $GLOBALS['Data-Storage']."?" .http_build_query([
+            'modify_movie' => true, //a flag to execute the right code in App-Logic! 
+            'mov_id' => $_POST['mov_id'],
+            'playing_in' => $_POST['playing_in'],
+            'title' => $_POST['title'],
+            'category' => $_POST['category'],
+            'start_date' => $_POST['start_date'],
+            'end_date' => $_POST['end_date']
         ]);
 
         curl_setopt($ch,CURLOPT_URL, $url);

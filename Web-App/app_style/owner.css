@@ -160,3 +160,21 @@ background-color: gray;
 .icon_edit:hover{
     background-color: lightgray;
 }
+
+.select_cin{
+    border-radius: 10px;
+    background: white;
+    padding: 4px;
+    width: 311px;
+    height: 30px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.mytitle{
+    margin-left: 30%;
+    font-size: 24px;
+    color: darkslategray;
+
+   
+}

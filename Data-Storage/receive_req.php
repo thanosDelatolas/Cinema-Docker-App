@@ -136,5 +136,61 @@
         echo json_encode($owner_data,true);
     }
 
+
+     /** Get all cinemas of a cinemaowner */
+     if (isset($_GET['get_cinemas']) && $_GET['get_cinemas'] == true){
+        $filter = [
+            'owner_id' => $_GET['owner_id'],
+            
+        ];
+       
+        $options = [
+            'projection' => ['name' => 1, '_id' => 1]
+        ];
+      
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $cinemas  = $manager->executeQuery('cinema_db.Cinemas', $query);
+        $cinemas = $cinemas->toArray();
+
+        foreach($cinemas as $cin){
+            $cin_array[] = array( 
+                "name" => $cin->name, 
+                "cin_id" =>(string)$cin->_id
+            ); 
+
+        }
+    
+        //return to app logic
+        echo json_encode($cin_array,true);
+    }
+    
+    //a cinema owner wants to modify movie
+    if (isset($_GET['modify_movie']) && $_GET['modify_movie'] == true){
+        $filter = [
+            '_id' => new MongoDB\BSON\ObjectId( $_GET['mov_id'])
+            
+        ];
+        $start_date = strtotime($_GET['start_date']);
+        $end_date = strtotime($_GET['end_date']);
+        //data tha will be modified
+        $mod_data = [
+            '$set' => [
+                'playing_in' => $_GET['playing_in'],
+                'title' => $_GET['title'],
+                'category' => $_GET['category'],
+                'start_date' => new MongoDB\BSON\UTCDateTime($start_date*1000),
+                'end_date' => new MongoDB\BSON\UTCDateTime($end_date*1000)
+
+            ]
+        ];
+        $bulk = new MongoDB\Driver\BulkWrite();
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+        $bulk->update($filter,$mod_data);
+        $result = $manager->executeBulkWrite('cinema_db.Movies', $bulk,$writeConcern);
+        echo $result->getModifiedCount();
+       
+
+    }
+
     
 ?>

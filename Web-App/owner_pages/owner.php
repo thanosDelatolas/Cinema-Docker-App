@@ -37,14 +37,15 @@
 
 <body>
     <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
-        <a href="http://localhost/Cinema-App/php_pages/welcome.php"><span><i class="fa fa-home"></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Home</span></a><br>
+        <a href="http://localhost/welcome.php"><span><i class="fa fa-home"></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Home</span></a><br>
         <a href="#"><span><i class='fas fa-handshake'></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Bye/Sell</span></a><br>
         
         <a onclick='logout()' class="bottom_fa" ><span><i class="fas fa-sign-out-alt"></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Log out</span></a><br>
     </div>
 
     <div id="main">
-        <input type="text" id="mov_search" class="search" onkeyup="search_cinemas()" placeholder="Search in your Cinemas..">
+        <h1 class="mytitle">Time to modify your movies, <?php echo $_SESSION['username']?></h1>
+        <input type="text" id="mov_search" class="search" onkeyup="search_in_cinemas()" placeholder="Search movies in your cinemas..">
 
         <table id="searchable_table">
             <tr class="header">
@@ -58,12 +59,12 @@
             </tr>
             <!-- GET with curl request contents! -->
             <?php
-                //time to make GET-request in the rest API to take favorites of this user!!
+                //time to make GET-request in the rest API to take cinemas and movies of this cinemaowner!!
                 require '../make_request.php';
 
                 //Returns all movies playing in all of his/her cinemas
                 $owner_data = get_owner_data($_SESSION['user_id']);
-
+               
                 $row = 1;
                 foreach($owner_data as $data){
                     $table_row= "<tr>"
@@ -99,7 +100,23 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td class="label">Cinema:</td>
-                    <td><input id="cinema" class="in" type="text" name="cinema" placeholder="Cinema"></td>
+                    <td>
+                        <select class="select_cin" id="sel_cinema">
+                        <?php
+                            //time to make GET-request in the rest API to take only cinemas of tis cinemaowner!
+                           
+                            //get cinemas of the cinemaowner from data storage
+                            $cinames = get_cinemas($_SESSION['user_id']);
+                            foreach($cinames as $cin){
+                                
+                                $select_row= "<option value=".$cin['cin_id'].">".$cin['name']."</option>";
+                                echo $select_row;
+                            }
+                            
+                        ?>
+                        </select>
+                    </td>
+                   
                 </tr>
 
                 <tr>

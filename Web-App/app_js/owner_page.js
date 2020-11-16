@@ -5,7 +5,7 @@ function cancelFUNC(){
                 
 }
 
-function search_cinemas(){
+function search_in_cinemas(){
     // Declare variables
     var input, filter, table, tr, i;
     input = document.getElementById("mov_search");
