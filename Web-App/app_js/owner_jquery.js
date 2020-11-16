@@ -70,7 +70,7 @@ $(document).ready(function(){
         }
         
         else{
-            var application_logic_url = "http://172.18.1.8/rest_api.php"
+            var application_logic_url = "http://172.18.1.8/rest_api.php";
 
             $.ajax({
                 type: "post",
@@ -101,4 +101,34 @@ $(document).ready(function(){
     
         
     });
+    /**for all buttons with id=trash_1,trash_2,...etc
+     * When cinema owner wants to delete a movie!
+     */ 
+    $('button[id^="trash_"]').click(function(){
+        //get text of each column
+        var movid = $(this).closest("tr").find('td:eq(6)').text();
+        var r = confirm("Do you really want to delete movie with id:\n "+movid);
+        if(r){
+            var application_logic_url = "http://172.18.1.8/rest_api.php";
+
+            $.ajax({
+                type: "post",
+                url: application_logic_url,
+                dataType:"json",
+                data: {
+                    del_movie: true, //to know which section of code will be executed!
+                    movid : movid,
+                
+                },
+                success: function (response) {
+                    //if a movie is deleted!
+                    if(response>0) {
+                        window.document.location.reload();
+                    }
+                }
+            });
+
+        }
+    });
 });
+

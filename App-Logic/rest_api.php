@@ -172,6 +172,24 @@
         //return response
         echo $response;  
     }
+    // a cinema owner wants to delte a movie
+    if (isset($_POST['del_movie']) && $_POST['del_movie'] == true){
+        $ch = curl_init();
+        $url = $GLOBALS['Data-Storage']."?" .http_build_query([
+            'del_movie' => true, //a flag to execute the right code in App-Logic! 
+            'mov_id' => $_POST['movid']
+        ]);
+
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        //return response
+        echo $response;  
+    }
 
 
 

@@ -84,6 +84,7 @@
                    ."<td class='icon'> <button id='trash_'".intval($row)." class ='icon_edit'><i class='fa fa-trash' aria-hidden='true'></i></button>"."</td>"
                    ."</tr>";
                    $row=$row+1;
+                   
                    echo $table_row;
                 }
             ?>

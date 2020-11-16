@@ -191,6 +191,36 @@
        
 
     }
+    /**
+     * a cinema owner wants to delete a movie
+     * Must remove from favorites!
+     */ 
+    if (isset($_GET['del_movie']) && $_GET['del_movie'] == true){
+        $filter = [
+            '_id' => new MongoDB\BSON\ObjectId( $_GET['mov_id'])
+            
+        ];
+        // delete movie!
+        $bulk = new MongoDB\Driver\BulkWrite();
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+        $bulk->delete($filter);
+        $result = $manager->executeBulkWrite('cinema_db.Movies', $bulk,$writeConcern);
+        $deleted_movie_count = $result->getDeletedCount();
+
+        //delete from favorites!!(A user will be notified from Orion)
+
+        $bulk = new MongoDB\Driver\BulkWrite();
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+        $filter = [
+            'movid' =>  $_GET['mov_id']
+            
+        ];
+        $bulk->delete($filter);
+        $result = $manager->executeBulkWrite('cinema_db.Favorites', $bulk,$writeConcern);
+        
+        echo $deleted_movie_count;
+
+    }
 
     
 ?>
