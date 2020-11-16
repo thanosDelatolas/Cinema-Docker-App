@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Add jquery -->
     
-    <title>Owner Page</title>
+    <title>Owner bye/sell Cinema</title>
 </head>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
@@ -34,7 +34,7 @@
     -> REQUESTS TO APP-LOGIC and
     -> the modal functionality
 -->
-<script src="../app_js/owner_jquery.js"></script>
+<script src="../app_js/owner_add_rem.js"></script>
 
 <body>
     <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
@@ -93,6 +93,84 @@
                 previous page!</p>";
             ?>
         </h1>
+
+        <!-- Modal forms -->
+        <div id="myModal2" class="modal">
+            <table class="modal_table">
+                <tr>
+                    <td colspan="3" class="details"><h1 class="h_title" id="movid_text">Buy Movie</h1></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">Movie:</td>
+                    <td><input id="title" class="in" type="text" name="Movie" placeholder="Movie's tilte"></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">Cinema:</td>
+                    <td>
+                        <select class="select_cin" id="sel_cinema">
+                        <?php
+                            //time to make GET-request in the rest API to take only cinemas of tis cinemaowner!
+                           
+                            //get cinemas of the cinemaowner from data storage
+                            $cinames = get_cinemas($_SESSION['user_id']);
+                            foreach($cinames as $cin){
+                                
+                                $select_row= "<option value=".$cin['cin_id'].">".$cin['name']."</option>";
+                                echo $select_row;
+                            }
+                            
+                        ?>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">Category:</td>
+                    <td><input id="category" class="in" type="text" name="Category" placeholder="Movie's category"></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">Start date:</td>
+                    <td><input id="start_date" class="in" type="date" name="start_date" placeholder="Start date"></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">End date:</td>
+                    <td><input id="end_date" class="in" type="date" name="end_date" placeholder="End date"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="1">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td></td>
+                    
+                    <td> 
+                        <button type="button" id="buy_movie" class="buy_btn" >Buy Movie</button>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <button type="button" id="cancel1" class="cancel_btn" 
+                        onclick="cancelFUNC()">Cancel</button>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3" align="center" >
+                        <p id="err_msg2" class = "err_msg">
+                            
+                        </p>
+                    </td>
+                </tr>
+
+
+            </table>
+        </div>
 
     </div>
 </body>
