@@ -192,6 +192,29 @@
     }
 
 
+    /**
+     * Returns last movie which is inserted in any of a CINEMAOWNER'S cinemas
+    */
+    if (isset($_GET['get_last_movie']) && $_GET['get_last_movie'] == true){
+     
+        $ch = curl_init();
+        $url = $GLOBALS['Data-Storage']."?" .http_build_query([
+            'get_last_movie' => true, //a flag to execute the right code in App-Logic! 
+            'owner_id' => $_GET['owner_id'],
+        ]);
+
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        //return response
+        echo $response;  
+    }
+
+
 
 
 ?>

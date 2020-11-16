@@ -25,7 +25,7 @@
 <script src="../app_js/basic_utilities.js"></script>
 
 <!--movies_page.js has the 
-    -> search_cinemas function 
+    -> search_in_cinemas function 
 -->
 <script src="../app_js/owner_page.js"></script>
 
@@ -38,7 +38,7 @@
 <body>
     <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
         <a href="http://localhost/welcome.php"><span><i class="fa fa-home"></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Home</span></a><br>
-        <a href="#"><span><i class='fas fa-handshake'></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Bye/Sell</span></a><br>
+        <a href="http://localhost/owner_pages/owner_add_rem.php"><span><i class='fas fa-handshake'></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Bye/Sell</span></a><br>
         
         <a onclick='logout()' class="bottom_fa" ><span><i class="fas fa-sign-out-alt"></i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Log out</span></a><br>
     </div>
@@ -61,32 +61,36 @@
             <?php
                 //time to make GET-request in the rest API to take cinemas and movies of this cinemaowner!!
                 require '../make_request.php';
-
+                
+                
                 //Returns all movies playing in all of his/her cinemas
                 $owner_data = get_owner_data($_SESSION['user_id']);
                
                 $row = 1;
-                foreach($owner_data as $data){
-                    $table_row= "<tr>"
-                    //id to be recognanized by JQuery
-                    ."<td name='cinema'>".$data['cin_name']."</td>"
-                    ."<td name='title'>".$data['title']."</td>"
-                    ."<td name ='category'>".$data['category']."</td>"
-                    ."<td name ='start_d'>".$data['start_date']."</td>"
-                    ."<td name ='end_d'>".$data['end_date']."</td>"
-                    
-                    //for jquery
-                    ."<td name='cin_id' hidden='true'>".$data['cin_id']."</td>"
-                    ."<td name='mov_id' hidden='true'>".$data["mov_id"]."</td>"
-
-                    //id to be recognanized by JQuery
-                   ."<td class='icon'> <button id='edit_'".intval($row)." class ='icon_edit' ><i class='fa fa-pencil-square-o'></i></button>"."</td>"
-                   ."<td class='icon'> <button id='trash_'".intval($row)." class ='icon_edit'><i class='fa fa-trash' aria-hidden='true'></i></button>"."</td>"
-                   ."</tr>";
-                   $row=$row+1;
-                   
-                   echo $table_row;
+                if (is_array($owner_data) || is_object($owner_data)){
+                    foreach($owner_data as $data){
+                        $table_row= "<tr>"
+                        //id to be recognanized by JQuery
+                        ."<td name='cinema'>".$data['cin_name']."</td>"
+                        ."<td name='title'>".$data['title']."</td>"
+                        ."<td name ='category'>".$data['category']."</td>"
+                        ."<td name ='start_d'>".$data['start_date']."</td>"
+                        ."<td name ='end_d'>".$data['end_date']."</td>"
+                        
+                        //for jquery
+                        ."<td name='cin_id' hidden='true'>".$data['cin_id']."</td>"
+                        ."<td name='mov_id' hidden='true'>".$data["mov_id"]."</td>"
+    
+                        //id to be recognanized by JQuery
+                       ."<td class='icon'> <button id='edit_'".intval($row)." class ='icon_edit' ><i class='fa fa-pencil-square-o'></i></button>"."</td>"
+                       ."<td class='icon'> <button id='trash_'".intval($row)." class ='icon_edit'><i class='fa fa-trash' aria-hidden='true'></i></button>"."</td>"
+                       ."</tr>";
+                       $row=$row+1;
+    
+                       echo $table_row;
+                    }
                 }
+                
             ?>
         </table>
     </div>

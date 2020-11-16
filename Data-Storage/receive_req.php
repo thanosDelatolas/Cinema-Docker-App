@@ -222,5 +222,53 @@
 
     }
 
+    /**
+     * Returns last movie which is inserted in any of a CINEMAOWNER'S cinemas
+    */
+    if (isset($_GET['get_last_movie']) && $_GET['get_last_movie'] == true){
+        $owner_id = $_GET['owner_id'];
+
+        $filter = [
+            'owner_id' => $owner_id
+        ];
+        $options = [
+            'sort' => ['_id' => -1],
+            'limit' => 1,
+            'projection' => ['title' => 1, 'playing_in'=> 1]
+        ];
+        
+        //get name and id of last movie bought!
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $last_movie  = $manager->executeQuery('cinema_db.Movies', $query);
+        $last_movie = $last_movie->toArray();
+
+        $title = $last_movie[0]->title;
+        $mov_id = (string)$last_movie[0]->_id;
+        $playing_in = $last_movie[0]->playing_in;
+
+        //find in which cinema
+        $filter = [
+            '_id' => new MongoDB\BSON\ObjectId( $last_movie[0]->playing_in)
+        ];
+
+        $options = [
+            'projection' => ['name' => 1]
+        ];
+    
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $cinema  = $manager->executeQuery('cinema_db.Cinemas', $query);
+        $cinema = $cinema->toArray();
+        $cin_name = $cinema[0]->name;
+
+        $ret_array = array(
+            'title' => $title,
+            'cinema' => $cin_name
+        );
+        
+        //return to app logic
+        echo json_encode($ret_array,true);
+
+    }
+
     
 ?>

@@ -1,12 +1,24 @@
 body{
     background-color: whitesmoke
 }
-  
+.upper_func{
+    display: inline;
+}
+.modify{
+    width: 20%;
+    font-size: 14px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 2px solid gray; /* Add a grey border */
+    background-color: gray;
+    font-weight: bolder;
+    margin-bottom: 12px; /* Add some space below the input */
+    cursor: pointer;
+}    
  
 .search{
   
     background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 84%;
+    width: 28%;
     font-size: 16px; /* Increase font-size */
     padding: 12px 20px 12px 40px; /* Add some padding */
     border: 2px solid gray; /* Add a grey border */
@@ -16,11 +28,11 @@ body{
 }
   
 #searchable_table {
-    border-collapse: collapse; /* Collapse borders */
-    width: 90%; /* Full-width */
-    cursor: default;
-    font-size: 18px; /* Increase font-size */
-    position: relative;
+border-collapse: collapse; /* Collapse borders */
+width: 30%; 
+cursor: default;
+font-size: 18px; /* Increase font-size */
+position: absolute;
 
 
 }
@@ -93,7 +105,7 @@ background-color: gray;
     padding: 4px;
     width: 300px;
     height: 20px;
-    text-align: center;
+    text-align: left;
     font-size: 16px;
 }
 
@@ -120,7 +132,7 @@ background-color: gray;
     border: darkred;
     cursor: pointer;
 }
-.changes_btn{
+.buy_btn{
 
     text-align: center;
     font-size: 16px;
@@ -160,7 +172,6 @@ background-color: gray;
 .icon_edit:hover{
     background-color: lightgray;
 }
-
 .select_cin{
     border-radius: 10px;
     background: white;
@@ -169,6 +180,19 @@ background-color: gray;
     height: 30px;
     text-align: left;
     font-size: 16px;
+}
+
+.bought_movie{
+    font-size: 16px;
+    color: darkslategray;
+    left: 40%;
+    top: 30%;
+    position: relative;
+    
+    width: 30%;
+    border: 5px solid gray;
+    text-align: center;
+    margin-left: 10px;
 }
 
 .mytitle{
