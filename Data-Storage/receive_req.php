@@ -296,7 +296,7 @@
     }
 
     /**
-     * A cinemaowner wants to buy a cinmea!
+     * A cinemaowner wants to buy a cinema!
     */
     if (isset($_GET['add_cinema']) && $_GET['add_cinema'] == true){
         
@@ -332,6 +332,81 @@
         }
 
        
+    }
+
+    /**
+     * A cinemaowner wants to delete a cinema!
+    */
+    if (isset($_GET['del_cinema']) && $_GET['del_cinema'] == true){
+        $cin_id = trim($_GET['cin_id']);
+
+        //get all Movies playing in this cinema
+        $filter = [
+            'playing_in' => $cin_id
+        ];
+        //fetch only _id column
+        $options = [ 'projection' => ['_id' => 1] ];
+        
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $movies  = $manager->executeQuery('cinema_db.Movies', $query);
+        $movies_array = $movies->toArray();
+
+       
+        $bulk = new MongoDB\Driver\BulkWrite();
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+
+
+        $deleted_favs = 0;
+        $deleted_movies =0;
+        //if there ara any movies in this cinema
+        if(count($movies_array) != 0){
+
+            //Delete all the favorites related to this cinema!
+            foreach($movies_array as $movie){
+                $mov_id = (string)$movie->_id;
+                $filter = [
+                    'movid' => $mov_id
+                ];
+                $bulk->delete($filter);
+            }
+            $result = $manager->executeBulkWrite('cinema_db.Favorites', $bulk, $writeConcern);
+            $deleted_favs = $result->getDeletedCount();
+
+            //delete all the movies playing in this cinema
+            $filter = [
+                'playing_in' => $cin_id
+            ];
+            $bulk = new MongoDB\Driver\BulkWrite();
+            $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+
+            $bulk->delete($filter);
+
+            $result = $manager->executeBulkWrite('cinema_db.Movies', $bulk, $writeConcern);
+            $deleted_movies = $result->getDeletedCount();
+
+        }
+       
+        //delete finally the cinema
+        $filter = [
+            '_id' => new MongoDB\BSON\ObjectId( $cin_id)
+        ];
+        $bulk = new MongoDB\Driver\BulkWrite();
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+
+        $bulk->delete($filter);
+
+        $result = $manager->executeBulkWrite('cinema_db.Cinemas', $bulk, $writeConcern);
+        $deleted_cinemas = $result->getDeletedCount();
+
+        //return
+        $ret_array = array(
+            'deleted_favs' => $deleted_favs,
+            'deleted_movies' => $deleted_movies,
+            'deleted_cinemas' => $deleted_cinemas
+        );
+
+        //return to app logic
+        echo json_encode($ret_array,true);
     }
 
     

@@ -243,7 +243,7 @@
     }
 
     /**
-     * A cinemaowner wants to buy a cinmea!
+     * A cinemaowner wants to buy a cinema!
     */
     if (isset($_POST['add_cinema']) && $_POST['add_cinema'] == true){
 
@@ -252,6 +252,29 @@
             'add_cinema' => true, //a flag to execute the right code in App-Logic! 
             'cin_name' => $_POST['cin_name'],
             'owner_id' => $_POST['owner_id']
+        ]);
+
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        //return response
+        echo $response; 
+
+    }
+
+    /**
+     * A cinemaowner wants to delete a cinema!
+    */
+    if (isset($_POST['del_cinema']) && $_POST['del_cinema'] == true){
+
+        $ch = curl_init();
+        $url = $GLOBALS['Data-Storage']."?" .http_build_query([
+            'del_cinema' => true, //a flag to execute the right code in App-Logic! 
+            'cin_id' => trim($_POST['cin_id'])
         ]);
 
         curl_setopt($ch,CURLOPT_URL, $url);
