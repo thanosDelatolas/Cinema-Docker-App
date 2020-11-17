@@ -215,6 +215,34 @@
     }
 
 
+    /**
+     * A cinemaowner wants to buy a movie!
+    */
+    if (isset($_POST['add_movie']) && $_POST['add_movie'] == true){
+     
+        $ch = curl_init();
+        $url = $GLOBALS['Data-Storage']."?" .http_build_query([
+            'add_movie' => true, //a flag to execute the right code in App-Logic! 
+            'playing_in' => $_POST['playing_in'],
+            'title' => $_POST['title'],
+            'category' => $_POST['category'],
+            'start_date' => $_POST['start_date'],
+            'end_date' => $_POST['end_date'],
+            'owner_id' => trim($_POST['owner_id'])
+        ]);
+
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        //return response
+        echo $response;  
+    }
+
+
 
 
 ?>

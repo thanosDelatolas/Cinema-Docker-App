@@ -1,7 +1,7 @@
 # Cinema-Docker-App
 It's a simple website with several microservices developed with:  
 ```
-docker, php, ajax, jquery.
+docker, php, ajax, jquery, javascript.
 ```
 The architecture is :
 ![GitHub Logo](Architecture.png)

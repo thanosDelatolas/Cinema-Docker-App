@@ -270,5 +270,30 @@
 
     }
 
+    /**
+     * A cinemaowner wants to buy a movie!
+    */
+    if (isset($_GET['add_movie']) && $_GET['add_movie'] == true){
+
+        $start_date = strtotime($_GET['start_date']);
+        $end_date = strtotime($_GET['end_date']);
+
+        $filter = [
+            'playing_in' => $_GET['playing_in'],
+            'title' => $_GET['title'],
+            'category' => $_GET['category'],
+            'start_date' => new MongoDB\BSON\UTCDateTime($start_date*1000),
+            'end_date' => new MongoDB\BSON\UTCDateTime($end_date*1000),   
+            'owner_id' => $_GET['owner_id']
+        ];
+       
+        $bulk = new MongoDB\Driver\BulkWrite();
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+        $bulk->insert($filter);
+        $result = $manager->executeBulkWrite('cinema_db.Movies', $bulk,$writeConcern);
+        echo $result->getInsertedCount();
+
+    }
+
     
 ?>

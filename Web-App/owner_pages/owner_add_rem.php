@@ -28,13 +28,12 @@
 <!--movies_page.js has the 
     -> search_cinemas function 
 -->
-<script src="../app_js/owner_page.js"></script>
-
+<script src="../app_js/owner_add_rem.js"></script>
 <!--movies_jquery.js has the 
     -> REQUESTS TO APP-LOGIC and
     -> the modal functionality
 -->
-<script src="../app_js/owner_add_rem.js"></script>
+<script src="../app_js/owner_add_rem_jqeury.js"></script>
 
 <body>
     <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
@@ -93,6 +92,9 @@
                 previous page!</p>";
             ?>
         </h1>
+
+        <!-- for js -->
+        <h1 id="user_id" hidden='true'> <?php echo $_SESSION['user_id']; ?> </h1>
 
         <!-- Modal forms -->
         <div id="myModal2" class="modal">
@@ -156,7 +158,7 @@
                         <button type="button" id="buy_movie" class="buy_btn" >Buy Movie</button>
                         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <button type="button" id="cancel1" class="cancel_btn" 
-                        onclick="cancelFUNC()">Cancel</button>
+                        onclick="cancelFUNC_modal2()">Cancel</button>
                     </td>
                 </tr>
                 
