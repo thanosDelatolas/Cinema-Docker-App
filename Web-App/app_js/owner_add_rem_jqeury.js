@@ -63,7 +63,6 @@ $(document).ready(function(){
                 
                 //AJAX returns the inserted count!
                 success: function (response) {
-                    console.log("Am i here?");
                    if(response > 0){
                         document.location.reload();//to reload the layout WITHOUT REFRESH
                    }
@@ -76,5 +75,54 @@ $(document).ready(function(){
 
         }
 
+    });
+
+
+     //When buy cinema in the main page is clicked!
+     $("#disp_modal").click(function(){
+        document.getElementById('myModal').style.display='block';
+        document.getElementById("err_msg").textContent ="";
+    });
+
+    //when the buy cinema button is clicked!
+    $("#buy_cinema").click(function(){
+        document.getElementById("err_msg").textContent ="";
+
+        cinema_input = document.getElementById("cinema_input").value;
+        cin_owner = document.getElementById("user_id").textContent;
+
+        if(cinema_input == ""){
+            document.getElementById("err_msg").textContent = "Cinema's name is required!";
+        }
+        else{
+            //make request to rest api
+            var application_logic_url = "http://172.18.1.8/rest_api.php";
+            $.ajax({
+                type: "post",
+                //allow ajax to make the request in application logic
+                //header: {'Access-Control': application_logic_url },
+                url: application_logic_url,
+                dataType:"json",
+                data: {
+                    add_cinema: true, //to know which section of code will be executed!
+                    cin_name : cinema_input,
+                    owner_id : cin_owner
+                },
+    
+                success: function (response) {
+                    //if rows cinema added
+                    if(response>0){
+                        document.location.reload();//to reload the layout WITHOUT REFRESH
+                    }
+                    else if(response == -1){
+                        document.getElementById("err_msg").textContent = "This Cinema already exists!!";
+                    }
+                    else{
+                        document.getElementById("err_msg").textContent = "Something went wrong!";
+                    }
+                   
+                }
+            });
+        }
     });
 });

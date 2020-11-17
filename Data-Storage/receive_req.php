@@ -295,5 +295,44 @@
 
     }
 
+    /**
+     * A cinemaowner wants to buy a cinmea!
+    */
+    if (isset($_GET['add_cinema']) && $_GET['add_cinema'] == true){
+        
+        //first check if name already exists!
+        $filter = [
+            'name' => trim($_GET['cin_name'])
+        ];
+        $options = [];
+
+        
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $cinema  = $manager->executeQuery('cinema_db.Cinemas', $query);
+        $cinema = $cinema->toArray();
+        
+        //cinema does not exist! Hence, the owner can addid
+        if(is_null($cinema[0]->name)){
+            $filter = [
+                'name' => trim($_GET['cin_name']),
+                'owner_id' => trim($_GET['owner_id'])
+            ];
+           
+            $bulk = new MongoDB\Driver\BulkWrite();
+            $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+            $bulk->insert($filter);
+            $result = $manager->executeBulkWrite('cinema_db.Cinemas', $bulk,$writeConcern);
+            
+            //if its 0 something went wrong!
+            echo $result->getInsertedCount();
+        }
+        else{
+            //cinema already exists!
+            echo -1;
+        }
+
+       
+    }
+
     
 ?>

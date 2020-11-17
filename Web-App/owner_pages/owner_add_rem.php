@@ -95,8 +95,43 @@
 
         <!-- for js -->
         <h1 id="user_id" hidden='true'> <?php echo $_SESSION['user_id']; ?> </h1>
-
-        <!-- Modal forms -->
+        <!-- Modal form for buy Cinema-->
+        <div id="myModal" class="modal">
+            <table class="modal_table">
+              
+                <tr>
+                    <td colspan="3" class="details"><h1 class="h_title" id="movid_text">Buy Cinema</h1></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="label">Cinema:</td>
+                    <td><input id="cinema_input" class="in" type="text" name="cinema" placeholder="Cinema"></td>
+                </tr>
+                    <td colspan="1">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td></td>
+                    
+                    <td> 
+                        <button type="button" id="buy_cinema" class="buy_btn" >Buy Cinema</button>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <button type="button" id="cancel" class="cancel_btn" 
+                        onclick="cancelFUNC_modal1()">Cancel</button>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="3" align="center" >
+                        <p id="err_msg" class = "err_msg">
+                            
+                        </p>
+                    </td>
+                </tr>
+               
+            </table>
+        </div>
+        <!-- Modal form for buy movie -->
         <div id="myModal2" class="modal">
             <table class="modal_table">
                 <tr>

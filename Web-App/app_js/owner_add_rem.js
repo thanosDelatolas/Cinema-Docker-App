@@ -1,6 +1,6 @@
 //this function is called when the cancel red button is clicked in modal form!
 function cancelFUNC_modal1(){
-    document.getElementById('myModal1').style.display='none';
+    document.getElementById('myModal').style.display='none';
    
                 
 }
