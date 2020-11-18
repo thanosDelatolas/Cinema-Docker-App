@@ -64,7 +64,7 @@ services:
       default:
         ipv4_address: 172.18.1.7 
 
-  #mongo db section...
+  #mongo db section for data storage
   mongo_db_data_storage:
     build: 
       context: './dockerfiles/mongo_db_data_storage/'
@@ -74,7 +74,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: root_pass
     container_name: mongo_db_data_storage
     ports: 
-      - '27017:27017'
+      - '27018:27017'  #expose in port 27017 to (local)27018
     volumes: 
       - mongo_db_data_storage:/data/db
     networks:
@@ -136,6 +136,21 @@ services:
       default:
         ipv4_address: 172.18.1.14
 
+  #mongo db for orion
+  mongo_db_orion:
+    image: mongo:3.2
+
+    command: --nojournal
+  
+  #orion context broker
+  orion:
+    image: fiware/orion
+    links:
+      - mongo_db_orion
+    command: -dbhost mongo_db_orion
+    ports: 
+      - '1026:1026' 
+
   
 networks:
   default:
@@ -144,5 +159,4 @@ networks:
         - subnet: 172.18.1.0/24
 volumes: 
   mysql_dat:
-  mongo_db_data_storage:
-  
+  mongo_db_data_storage:  
