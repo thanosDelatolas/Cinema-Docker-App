@@ -141,6 +141,8 @@ services:
     image: mongo:3.2
 
     command: --nojournal
+    ports: 
+      - '27017:27017'  #so we can connect with db
   
   #orion context broker
   orion:
@@ -150,6 +152,9 @@ services:
     command: -dbhost mongo_db_orion
     ports: 
       - '1026:1026' 
+    networks:
+      default:
+        ipv4_address: 172.18.1.15 
 
   
 networks:
