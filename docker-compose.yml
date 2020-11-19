@@ -143,6 +143,8 @@ services:
     command: --nojournal
     ports: 
       - '27017:27017'  #so we can connect with db
+    volumes: 
+      - orion_vol:/data/db
   
   #orion context broker
   orion:
@@ -164,4 +166,5 @@ networks:
         - subnet: 172.18.1.0/24
 volumes: 
   mysql_dat:
-  mongo_db_data_storage:  
+  mongo_db_data_storage:
+  orion_vol:
