@@ -3,70 +3,70 @@
 */
 
 $(document).ready(function(){
+    
     //*********** jquery for movies.php **********************
-    var application_logic_url = "http://172.18.1.8/rest_api.php"
-    //for all buttons with id=remove_fav_1,remove_fav_2,...etc
-    $('button[id^="remove_fav_"]').click(function(){
+    var application_logic_url = "http://172.18.1.8/rest_api.php";
 
-        //get mov_id,user_id
+
+    //for all buttons with id=fav_1,fav_2,...etc
+    $('button[id^="fav_"]').on('click',function(){
+        //var rowid = $(this).closest('tr').prop('id');
+        var curr_id =  $(this).attr('id');
+
         var user_id = $(this).closest("tr").find('td:eq(5)').text();
         var mov_id = $(this).closest("tr").find('td:eq(6)').text();
-        console.log("Delete fav: \nUser:"+user_id+"\nmovid: "+mov_id);
-        //make the request!
-        $.ajax({
-            type: "post",
-            //allow ajax to make the request in application logic
-            //header: {'Access-Control': application_logic_url },
-            url: application_logic_url,
-            dataType:"json",
-            data: {
-                remove_fav: true, //to know which section of code will be executed!
-                mov_id : mov_id,
-                user_id : user_id,
-            },
+        //want to add in favorites
+        if($(this).hasClass('ic')){
+            //make the request!
+            $.ajax({
+                type: "post",
+                //allow ajax to make the request in application logic
+                //header: {'Access-Control': application_logic_url },
+                url: application_logic_url,
+                dataType:"json",
+                data: {
+                    add_fav: true, //to know which section of code will be executed!
+                    mov_id : mov_id,
+                    user_id : user_id,
+                },
 
-            success: function (response) {
-                //if rows deleted
-                if(response>0){
-                    document.location.reload();//to reload the layout WITHOUT REFRESH
+                success: function (response) {
+                    //if rows added
+                    if(response>0){
+                        $("#"+curr_id).removeClass('ic');
+                        $("#"+curr_id).addClass('ic_fav');
+                        //$("#searchable_table #"+rowid).find('td:eq(7)').toggleClass('ic')
+                    }
+                    console.log("Favorites inserted: "+response);
                 }
-                console.log("Deleted rows: "+response);
-            }
-        });
-       
-    });
+            });
+        }
+        //remove it from favorites!
+        else{
 
-
-    //for all buttons with id=add_fav_1,add_fav_2,...etc
-    $('button[id^="add_fav_"]').click(function(){
-
-        //get mov_id,user_id
-        var user_id = $(this).closest("tr").find('td:eq(5)').text();
-        var mov_id = $(this).closest("tr").find('td:eq(6)').text();
-        console.log("Delete fav: \nUser:"+user_id+"\nmovid: "+mov_id);
-
-        //make the request!
-        $.ajax({
-            type: "post",
-            //allow ajax to make the request in application logic
-            //header: {'Access-Control': application_logic_url },
-            url: application_logic_url,
-            dataType:"json",
-            data: {
-                add_fav: true, //to know which section of code will be executed!
-                mov_id : mov_id,
-                user_id : user_id,
-            },
-
-            success: function (response) {
-                //if rows added
-                if(response>0){
-                    document.location.reload();//to reload the layout WITHOUT REFRESH
+            $.ajax({
+                type: "post",
+                //allow ajax to make the request in application logic
+                //header: {'Access-Control': application_logic_url },
+                url: application_logic_url,
+                dataType:"json",
+                data: {
+                    remove_fav: true, //to know which section of code will be executed!
+                    mov_id : mov_id,
+                    user_id : user_id,
+                },
+    
+                success: function (response) {
+                    //if rows deleted
+                    if(response>0){
+                        $("#"+curr_id).removeClass('ic_fav');
+                        $("#"+curr_id).addClass('ic');
+                    }
+                    console.log("Favorites Deleted: "+response);
                 }
-                console.log("Inserted rows: "+response);
-            }
-        });
+            });
 
+        }  
        
     });
 

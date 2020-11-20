@@ -77,7 +77,7 @@
                      
                    }
 
-                   $table_row= "<tr>"
+                   $table_row= "<tr id= row_".intval($row_num).">"
                     ."<td name ='title'>".$curr_movie["title"]."</td>".
                     "<td name='cinema'>".$curr_movie["playing_in"]."</td>"
                     ."<td name ='category'>".$curr_movie["category"]."</td>"
@@ -85,20 +85,19 @@
                     ."<td name ='end_d'>".$curr_movie["end_date"]."</td>"
                     //hidden user_id,mov_id for curl requests!
                     ."<td name='user_id' hidden='true'>".$_SESSION['user_id']."</td>"
-                    ."<td name='mov_id' hidden='true'>".$curr_movie["oid"]."</td>".
-                    "</td>";
+                    ."<td name='mov_id' hidden='true'>".$curr_movie["oid"]."</td>";
                     //must add favorites and </td>
 
                     //ids to be recognized from jquery
                     if($is_favorite == true){
                         $table_row = $table_row."<td class='icon'>
-                        <button class='ic_fav' id='remove_fav_'".intval($row_num).">
+                        <button class="."ic_fav"." id="."fav_".intval($row_num).">
                         <i class='fa fa-heart'></i></button>"."</td>"
                         ."</tr>";
                     }
                     else{
                         $table_row = $table_row."<td class='icon'>
-                        <button class='ic'  id='add_fav_'".intval($row_num).">
+                        <button class="."ic"."  id="."fav_".intval($row_num).">
                         <i class='fa fa-heart'></i></button>"."</td>" 
                         ."</tr>";
 
@@ -119,7 +118,7 @@
        
     </div>
 </body>
-
+   
 
     
 </html>

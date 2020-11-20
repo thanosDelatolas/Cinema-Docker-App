@@ -1,20 +1,20 @@
 <?php
     $arr_input =  array(
-    'subject' => array(
-        'entities' => [array(
-            'id' => "5fad031a8ef6a0295698d826",
-            'type' => 'Movie',
-        )],
-        'condition' => array(
+        'subject' => array(
+            'entities' => [array(
+                'id' => "5fad031a8ef6a0295698d826",
+                'type' => 'Movie',
+            )],
+            'condition' => array(
+                'attrs' => [ "start_date", "end_date", "still_playing" ]
+            )
+            
+        ),
+        'notification' => array(
+            'http' => array('url' => 'http://172.18.1.14/catch_sub.php'),
             'attrs' => [ "start_date", "end_date", "still_playing" ]
-        )
-        
-    ),
-    'notification' => array(
-        'http' => array('url' => 'http://172.18.1.14/catch_sub.php'),
-        'attrs' => [ "start_date", "end_date", "still_playing" ]
-    ),
-    'throttling' => 5
+        ),
+        'throttling' => 5
     );
 
     $curl = curl_init();
