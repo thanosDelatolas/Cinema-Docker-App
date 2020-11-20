@@ -9,12 +9,19 @@ $(document).ready(function(){
     var sdate_input;
     var edate_input;
     var mov_id_val;
+
+    //var to make changes!
+    var row_id_global;
    
 
 
     //for all buttons with id=edit_0,edit_1,...etc
     $('button[id^="edit_"]').click(function(){
        
+        var row_id = $(this).closest('tr').attr('id');
+        
+        row_id_global = row_id;
+        
         //get text of each column
         var title = $(this).closest("tr").find('td:eq(1)').text();
         var category = $(this).closest("tr").find('td:eq(2)').text();
@@ -89,11 +96,22 @@ $(document).ready(function(){
                 },
     
                 success: function (response) {
-                    //if rows deleted
-                    if(response>0){
-                        document.location.reload();//to reload the layout WITHOUT REFRESH
+                    //if row updated update table
+                    if(response.count>0){
+                        document.getElementById("myModal").style.display = "none";
+                        $("#searchable_table #"+row_id_global).find('td:eq(0)').html(response.playing_in);
+                        $("#searchable_table #"+row_id_global).find('td:eq(1)').html(response.title);
+                        $("#searchable_table #"+row_id_global).find('td:eq(2)').html(response.category);
+                        $("#searchable_table #"+row_id_global).find('td:eq(3)').html(response.start_date);
+                        $("#searchable_table #"+row_id_global).find('td:eq(4)').html(response.end_date);
+                        $("#searchable_table #"+row_id_global).find('td:eq(5)').html(response.cin_id);
+                       
+                       
                     }
-                    console.log("Modified rows: "+response);
+                    else{
+                        document.getElementById("err_msg").textContent ="Something went wrong!";
+                    }
+                    console.log("Modified rows: "+response.count);
                 }
             });
         }
@@ -105,6 +123,10 @@ $(document).ready(function(){
      * When cinema owner wants to delete a movie!
      */ 
     $('button[id^="trash_"]').click(function(){
+        var row_id = $(this).closest('tr').attr('id');
+        
+        row_id_global = row_id;
+
         //get text of each column
         var movid = $(this).closest("tr").find('td:eq(6)').text();
         var r = confirm("Do you really want to delete movie with id:\n "+movid);
@@ -123,7 +145,9 @@ $(document).ready(function(){
                 success: function (response) {
                     //if a movie is deleted!
                     if(response>0) {
-                        window.document.location.reload();
+                        $("#searchable_table #"+row_id_global).fadeTo("slow",0.7, function(){
+                            $("#searchable_table #"+row_id_global).remove();
+                        })
                     }
                 }
             });

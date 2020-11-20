@@ -187,7 +187,39 @@
         $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
         $bulk->update($filter,$mod_data);
         $result = $manager->executeBulkWrite('cinema_db.Movies', $bulk,$writeConcern);
-        echo $result->getModifiedCount();
+
+        $count = $result->getModifiedCount();
+
+        $cin_name ="";
+        //get cinema name,_id
+        if($count > 0){
+
+            $filter = [
+                '_id' => new MongoDB\BSON\ObjectId( $_GET['playing_in'])
+            ];
+    
+            $options = [
+                'projection' => ['name' => 1]
+            ];
+        
+            $query = new \MongoDB\Driver\Query($filter, $options);
+            $cinema  = $manager->executeQuery('cinema_db.Cinemas', $query);
+            $cinema = $cinema->toArray();
+            $cin_name = $cinema[0]->name;
+            $cin_id = (string)$cinema[0]->_id;
+
+        }
+        //create the repsonse
+        $ret_array = array(
+            'count' => $count,
+            'cin_id' => $cin_id,
+            'playing_in' => $cin_name,
+            'title' => $_GET['title'],
+            'category' => $_GET['category'],
+            'start_date' => $_GET['start_date'],
+            'end_date' => $_GET['end_date']
+        );
+        echo json_encode($ret_array,true);
        
 
     }
@@ -291,7 +323,30 @@
         $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
         $bulk->insert($filter);
         $result = $manager->executeBulkWrite('cinema_db.Movies', $bulk,$writeConcern);
-        echo $result->getInsertedCount();
+
+        $count = $result->getInsertedCount();
+        
+        //get cinema name
+
+        $filter = [
+            '_id' => new MongoDB\BSON\ObjectId( $_GET['playing_in'])
+        ];
+
+        $options = [
+            'projection' => ['name' => 1]
+        ];
+    
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $cinema  = $manager->executeQuery('cinema_db.Cinemas', $query);
+        $cinema = $cinema->toArray();
+        $cin_name = $cinema[0]->name;
+
+        $ret_array = array(
+            'count' => $count,
+            'cin_name' => $cin_name
+        );
+
+        echo json_encode($ret_array,true);
 
     }
 
@@ -323,12 +378,33 @@
             $bulk->insert($filter);
             $result = $manager->executeBulkWrite('cinema_db.Cinemas', $bulk,$writeConcern);
             
-            //if its 0 something went wrong!
-            echo $result->getInsertedCount();
+            //get the cin_id
+            $filter = [
+                'name' => trim($_GET['cin_name'])
+            ];
+            $options = [];
+    
+            
+            $query = new \MongoDB\Driver\Query($filter, $options);
+            $cinema  = $manager->executeQuery('cinema_db.Cinemas', $query);
+            $cinema = $cinema->toArray();
+            
+            $ret_array = array(
+                'count' => $result->getInsertedCount(),
+                'cin_name' => trim($_GET['cin_name']),
+                'cin_id' => (string)$cinema[0]->_id
+            );
+
+            //if count is 0 something went wrong!
+            echo json_encode($ret_array,true);
         }
         else{
+            $ret_array = array(
+                'count' => -1
+                
+            );
             //cinema already exists!
-            echo -1;
+            echo json_encode($ret_array,true);
         }
 
        

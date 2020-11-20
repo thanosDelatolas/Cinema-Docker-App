@@ -9,8 +9,8 @@ $(document).ready(function(){
 
 
     //for all buttons with id=fav_1,fav_2,...etc
-    $('button[id^="fav_"]').on('click',function(){
-        //var rowid = $(this).closest('tr').prop('id');
+    $(document).on('click','button[id^="fav_"]',function(){
+       
         var curr_id =  $(this).attr('id');
 
         var user_id = $(this).closest("tr").find('td:eq(5)').text();

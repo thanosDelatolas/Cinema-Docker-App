@@ -69,7 +69,7 @@
                 $row = 1;
                 if (is_array($owner_data) || is_object($owner_data)){
                     foreach($owner_data as $data){
-                        $table_row= "<tr>"
+                        $table_row= "<tr id=row_".intval($row).">"
                         //id to be recognanized by JQuery
                         ."<td name='cinema'>".$data['cin_name']."</td>"
                         ."<td name='title'>".$data['title']."</td>"
@@ -82,8 +82,8 @@
                         ."<td name='mov_id' hidden='true'>".$data["mov_id"]."</td>"
     
                         //id to be recognanized by JQuery
-                       ."<td class='icon'> <button id='edit_'".intval($row)." class ='icon_edit' ><i class='fa fa-pencil-square-o'></i></button>"."</td>"
-                       ."<td class='icon'> <button id='trash_'".intval($row)." class ='icon_edit'><i class='fa fa-trash' aria-hidden='true'></i></button>"."</td>"
+                       ."<td class='icon'> <button id="."edit_".intval($row)." class ='icon_edit' ><i class='fa fa-pencil-square-o'></i></button>"."</td>"
+                       ."<td class='icon'> <button id="."trash_".intval($row)." class ='icon_edit'><i class='fa fa-trash' aria-hidden='true'></i></button>"."</td>"
                        ."</tr>";
                        $row=$row+1;
     

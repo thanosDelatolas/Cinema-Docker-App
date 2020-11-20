@@ -63,16 +63,16 @@
 
                 $cinemas = get_cinemas($_SESSION['user_id']);
 
-                $row = 1;
+                $row = 2;
                 if (is_array($cinemas) || is_object($cinemas)){
                     foreach($cinemas as $cin){
-                        $table_row= "<tr>"
+                        $table_row= "<tr id=row_".intval($row_num).">"
                         ."<td name='cinema'>".$cin['name']."</td>"
                         //for jquery
                         ."<td name='cin_id' hidden='true'>".$cin['cin_id']."</td>"
 
                         //id to be recognanized by JQuery
-                        ."<td class='icon'> <button id='del_cin_'".intval($row_num)." class ='icon_edit'><i class='fa fa-trash' aria-hidden='true'></i></button>"."</td>"
+                        ."<td class='icon'> <button id="."del_cin_".intval($row_num)." class ='icon_edit'><i class='fa fa-trash' aria-hidden='true'></i></button>"."</td>"
                         ."</tr>";
                         $row_num=$row_num+1;
                         echo $table_row;
@@ -88,8 +88,8 @@
                 
                 $last_movie_bought = get_last_movie($_SESSION['user_id']);
                 echo "Last movie bought: ".$last_movie_bought['title']."<br>"."in cinema: "
-                .$last_movie_bought['cinema'].".<p>You can see all your movies in the 
-                previous page!</p>";
+                .$last_movie_bought['cinema'].".<br>You can see all your movies in the 
+                previous page!";
             ?>
         </h1>
 

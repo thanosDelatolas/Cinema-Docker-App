@@ -63,11 +63,16 @@ $(document).ready(function(){
                 
                 //AJAX returns the inserted count!
                 success: function (response) {
-                   if(response > 0){
-                        document.location.reload();//to reload the layout WITHOUT REFRESH
+                   if(response.count > 0){
+                    console.log("Movie: "+title_input.value+" bought!");
+                    document.getElementById('myModal2').style.display='none';
+                    $('#mov_bought').html("Last movie bought: "+title_input.value+
+                    "<br>in cinema: "+response.cin_name+".<br>You can see all your movies in the previous page!");
+                  
+                        
                    }
                    else{
-                       console.log("Something went wrong!");
+                        console.log("Something went wrong!");
                    }
                 }
 
@@ -111,15 +116,38 @@ $(document).ready(function(){
     
                 success: function (response) {
                     //if rows cinema added
-                    if(response>0){
-                        document.location.reload();//to reload the layout WITHOUT REFRESH
+                    if(response.count>0){
+                        document.getElementById('myModal').style.display='none';
+                        var new_row_id = $('#searchable_table tr').length +1;
+
+                        //create new row
+                        var markup = "<tr id="+"row_"+new_row_id+">"+
+                        "<td name='cinema'>"+response.cin_name+"</td>"+
+                        "<td name='cin_id' hidden='true'>"+response.cin_id+"</td>"+
+                        "<td class='icon'> <button id="+"del_cin_"+new_row_id+" class ='icon_edit'><i class='fa fa-trash' aria-hidden='true'></i></button>"+"</td>"
+                        +"</tr>"
+
+
+                        $("#searchable_table").append(markup);
+
+                        /**
+                        * append cinema in SELECT of modal form for buying a movie
+                        * Option(option text,value)
+                        */
+                       $("#sel_cinema").append($("<option></option>")
+                       .attr("value", response.cin_id)
+                       .text(response.cin_name)); 
+                        
+                       
+
                     }
-                    else if(response == -1){
+                    else if(response.count == -1){
                         document.getElementById("err_msg").textContent = "This Cinema already exists!!";
                     }
                     else{
                         document.getElementById("err_msg").textContent = "Something went wrong!";
                     }
+                    console.log("Bought cinemas: "+response.count);
                    
                 }
             });
@@ -131,7 +159,9 @@ $(document).ready(function(){
      * jquery for the trash button in owner_add_rem_cin.php 
      * When a cinmaowner wants to delete a cinema
      */
-    $('button[id^="del_cin_"]').click(function(){
+    $(document).on('click','button[id^="del_cin_"]',function(){
+        var row_id = $(this).closest('tr').attr('id');
+
         var cin_name = $(this).closest("tr").find('td:eq(0)').text();
         var cin_id = $(this).closest("tr").find('td:eq(1)').text();
 
@@ -156,7 +186,22 @@ $(document).ready(function(){
                     success: function (response) {
                         if(response.deleted_movies >= 0 && response.deleted_favs>=0 
                             && response.deleted_cinemas == 1){
-                                document.location.reload();
+                                console.log(
+                                    "Deleted movies: "+response.deleted_movies+"\n"+
+                                    "Deleted favorites: "+response.deleted_favs+"\n"+
+                                    "Deleted cinemas: "+response.deleted_cinemas
+    
+                                );
+                                $("#searchable_table #"+row_id).fadeTo("slow",0.7, function(){
+                                    $("#searchable_table #"+row_id).remove();
+                                })
+
+                                //remove cinema from select in modal form for buying Movies!
+                                var selectobject = document.getElementById("sel_cinema");
+                                for (var i=0; i<selectobject.length; i++) {
+                                    if (selectobject.options[i].value == cin_id)
+                                        selectobject.remove(i);
+                                }
                         }
                         else{
                             //something went wrong
