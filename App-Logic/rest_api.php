@@ -1,5 +1,6 @@
 <?php
     header("Access-Control-Allow-Origin: *");
+    
    
     /**
      * 
@@ -8,7 +9,7 @@
     */
     require 'global_vars.php';
 
-
+    
     /**
      * 
      * In this file is implmented are made function to communicate wit orion
@@ -66,6 +67,8 @@
 
     /**
      * Request from Web-App to remove from favorites (when a heart button is clicked!)
+     *      => removes favorite from Data Storage
+     *      => removes the subscription!
      */
     if (isset($_POST['remove_fav']) && $_POST['remove_fav'] == true){
      
@@ -90,16 +93,18 @@
     /**
      * Request from Web-App to add to favorites (when a heart button is clicked!)
      * This routine does:
-     *      => add favorites to data storage 
      *      => subscribe for this movie!
+     *      => add favorites to data storage 
      */
     if (isset($_POST['add_fav']) && $_POST['add_fav'] == true){
-     
+               
+       
         $ch = curl_init();
         $url = $GLOBALS['Data-Storage']."?" .http_build_query([
             'add_fav' => true, //a flag to execute the right code in App-Logic! 
             'user_id' => $_POST['user_id'],
-            'mov_id' => $_POST['mov_id']
+            'mov_id' => $_POST['mov_id'],
+            'subID' => $subID
         ]);
 
         curl_setopt($ch,CURLOPT_URL, $url);
@@ -108,17 +113,13 @@
         
         $response = curl_exec($ch);
         curl_close($ch);
-        
-        /**
-         * 
-         * if added succesfuly to data storage => subscribe
-         */
-        if($response>0){
-            subscribe($_POST['user_id'],$_POST['mov_id']);
-        }
 
-        //return response
-        echo $response;  
+        if($response > 0){
+            subscribe($_POST['mov_id']);
+        }
+        
+        echo $response;
+
     }
 
     /**

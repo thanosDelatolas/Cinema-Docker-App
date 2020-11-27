@@ -5,13 +5,12 @@
 
     /**
      * subscribe to a movie!
-     * In the description of the subscription I have the user_id. 
+     *
      */
-    function subscribe($user_id,$mov_id){
+    function subscribe($mov_id){
 
         $sub_array =  array(
-            //description has the user id for my convenience :)
-            'description' => trim($user_id),
+          
             'subject' => array(
                 'entities' => [array(
                     //subscribe to movie with id mov_id
