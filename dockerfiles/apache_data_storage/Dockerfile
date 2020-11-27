@@ -6,10 +6,5 @@ RUN apt-get update && apt-get install --yes \
 RUN pecl install mongodb \
     && docker-php-ext-enable mongodb
 
-RUN mkdir /Data-Storage
 
-COPY ././Data-Storage/ /Data-Storage/
-
-
-RUN cp -r /Data-Storage/* /var/www/html/.
 

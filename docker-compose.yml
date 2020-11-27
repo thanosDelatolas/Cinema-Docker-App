@@ -1,6 +1,7 @@
 version: '3.7'
 
 services:
+
   #Application logic...
   app_logic_apache:
     build: 
@@ -8,6 +9,9 @@ services:
       dockerfile:  './dockerfiles/apache_app_logic/Dockerfile'
     container_name: app_logic_apache
     restart: always
+
+    volumes:
+      - ./App-Logic:/var/www/html/
     #dont expose this container!! no ports!
     networks:
       default:
@@ -21,7 +25,9 @@ services:
     container_name: web_app_apache
     restart: always
     ports:
-      - '80:80' #expose to localhost
+      - '80:80' #expose to localhost 
+    volumes:
+      - ./Web-App:/var/www/html/
     
     networks:
       default:
@@ -77,6 +83,7 @@ services:
       - '27018:27017'  #expose in port 27017 to (local)27018
     volumes: 
       - mongo_db_data_storage:/data/db
+
     networks:
       default:
         ipv4_address: 172.18.1.10
@@ -106,7 +113,7 @@ services:
       - mysql_db
     ports:
       - "3005:3000" #expose to 3005 for signup!
-      - "443:443" #for rest api
+      - "443:443" 
     environment:
       - DEBUG=idm:*
       - IDM_DB_HOST=mysql_db
@@ -127,10 +134,14 @@ services:
     build: 
       context: .
       dockerfile:  './dockerfiles/apache_data_storage/Dockerfile'
-    container_name: data_storage_apache
+    container_name: dataStorage
+    hostname: dataStorage
     restart: always
     ports:
       - '4000:80' #expose for now
+
+    volumes:
+      - ./Data-Storage:/var/www/html/
     
     networks:
       default:
@@ -151,9 +162,8 @@ services:
     image: fiware/orion
     links:
       - mongo_db_orion
-    command: -dbhost mongo_db_orion
-    ports: 
-      - '1026:1026' 
+    command: -dbhost mongo_db_orion -logLevel DEBUG -noCache
+   
     networks:
       default:
         ipv4_address: 172.18.1.15 
