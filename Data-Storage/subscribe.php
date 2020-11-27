@@ -1,6 +1,7 @@
 <?php
     $arr_input =  array(
-        'description' => 'subscription for movie',
+        #add in description user id!
+        'description' => '0b10e960-70d4-4318-b6d0-e9132430ab09',
         'subject' => array(
             'entities' => [array(
                 'id' => "5fad031a8ef6a0295698d826",

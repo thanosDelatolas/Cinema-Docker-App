@@ -1,11 +1,20 @@
 <?php
     header("Access-Control-Allow-Origin: *");
+   
     /**
      * 
      * In this file is implmented the rest api between App-Logic and Data storage!  
      * 
     */
     require 'global_vars.php';
+
+
+    /**
+     * 
+     * In this file is implmented are made function to communicate wit orion
+     * 
+    */
+    require 'orion_request.php';
 
     /**
      * Web-App wants the movies!
@@ -80,6 +89,9 @@
 
     /**
      * Request from Web-App to add to favorites (when a heart button is clicked!)
+     * This routine does:
+     *      => add favorites to data storage 
+     *      => subscribe for this movie!
      */
     if (isset($_POST['add_fav']) && $_POST['add_fav'] == true){
      
@@ -96,6 +108,14 @@
         
         $response = curl_exec($ch);
         curl_close($ch);
+        
+        /**
+         * 
+         * if added succesfuly to data storage => subscribe
+         */
+        if($response>0){
+            subscribe($_POST['user_id'],$_POST['mov_id']);
+        }
 
         //return response
         echo $response;  
