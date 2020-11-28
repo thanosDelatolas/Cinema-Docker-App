@@ -1,0 +1,61 @@
+#news_feed_table {
+    border-collapse: collapse; /* Collapse borders */
+    width: 90%; /* Full-width */
+    cursor: default;
+    font-size: 18px; /* Increase font-size */
+    position: relative;
+
+
+}
+/**
+* Make header remains on the top of the page!
+*/
+#news_feed_table th{
+position: sticky;
+top: 0;
+background-color: gray;
+cursor: default;
+}
+#news_feed_table th, #searchable_table td {
+text-align: left; /* Left-align text */
+padding: 10px; /* Add padding */
+cursor: default;
+}
+
+#news_feed_table tr {
+/* Add a bottom border to all table rows */
+border-bottom: 1px solid gray;
+
+}
+
+#news_feed_table tr.header {
+/* Add a grey background color to the table header and on hover */
+background-color: gray;
+
+}
+
+.left_header{
+    background-color: whitesmoke !important;
+}
+.left{
+    max-width: 90px !important;
+}
+
+.search{
+  
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 84%;
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 2px solid gray; /* Add a grey border */
+    
+    margin-bottom: 12px; /* Add some space below the input */
+  
+}
+
+.mytitle{
+    font-size: 24px;
+    color:  #00154F;
+    font-weight: bolder;
+    margin-left: 30%;
+}

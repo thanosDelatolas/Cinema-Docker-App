@@ -604,6 +604,47 @@
        
     }
 
+    /**
+     * This request is called from a user only when the page is loaded
+     * after that another request is called!
+    */
+    if (isset($_GET['get_feed']) && $_GET['get_feed'] == true){
+        $user_id = $_GET['user_id'];
+
+        $filter = ['user_id' => $user_id ];
+        $options = [];
+
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $feed  = $manager->executeQuery('cinema_db.Feed', $query);
+
+        $feed = $feed->toArray();
+
+        /**
+         * set all in all the fetched data read = true!!!
+         */
+        foreach ($feed as $f) {
+
+            $filter = [
+                '_id' => $f->_id
+                
+            ];
+           
+            $mod_data = [
+                '$set' => [
+                    'read' => true    
+                ]
+            ];
+            $bulk = new MongoDB\Driver\BulkWrite();
+            $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+            $bulk->update($filter,$mod_data);
+            $result = $manager->executeBulkWrite('cinema_db.Feed', $bulk,$writeConcern);
+     
+        }
+
+        //return to app logic
+        echo json_encode($feed,true);
+    }
+
 
 
     

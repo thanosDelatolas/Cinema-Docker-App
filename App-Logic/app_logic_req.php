@@ -6,6 +6,9 @@
      * 
      * In this file is implmented the rest api between App-Logic and Data storage!  
      * 
+     * This file forward the requests from Web-App to Data-Storage but also,
+     * makes request to orion in order to keep everything up to date!!
+     * 
     */
     require 'global_vars.php';
 
@@ -373,6 +376,29 @@
         //return response
         echo $response; 
 
+    }
+
+    /**
+     * This request is called from a user only when the page is loaded
+     * after that another request is called!
+     */
+    if (isset($_GET['get_feed']) && $_GET['get_feed'] == true){
+
+        $ch = curl_init();
+        $url = $GLOBALS['Data-Storage']."?" .http_build_query([
+            'get_feed' => true, 
+            'user_id' => trim($_GET['user_id'])
+        ]);
+
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        //return response
+        echo $response; 
     }
 
 
