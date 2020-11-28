@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "5fc2a39d2199ac76d571ca05"
+  },
+  "subID": "5fc2a39dff0629c215775fa6",
+  "mov_id": "5fc299df6d5ae441987501e7",
+  "user_id": "0b10e960-70d4-4318-b6d0-e9132430ab09"
+},{
+  "_id": {
+    "$oid": "5fc2a39e7079aa10ee44d6e9"
+  },
+  "subID": "5fc2a39eff0629c215775fa7",
+  "mov_id": "5fc2a36124c4bc120b53dc3a",
+  "user_id": "0b10e960-70d4-4318-b6d0-e9132430ab09"
+},{
+  "_id": {
+    "$oid": "5fc2a3a06472876939034599"
+  },
+  "subID": "5fc2a3a0ff0629c215775fa8",
+  "mov_id": "5fc296716d5ae441987501e6",
+  "user_id": "0b10e960-70d4-4318-b6d0-e9132430ab09"
+},{
+  "_id": {
+    "$oid": "5fc2a3b17079aa10ee44d6ea"
+  },
+  "subID": "5fc2a3b1ff0629c215775fa9",
+  "mov_id": "5fc2a36124c4bc120b53dc3a",
+  "user_id": "ce057e40-c344-4da4-9d4d-8c58c412c827"
+},{
+  "_id": {
+    "$oid": "5fc2a3b2647287693903459a"
+  },
+  "subID": "5fc2a3b2ff0629c215775faa",
+  "mov_id": "5fc299df6d5ae441987501e7",
+  "user_id": "ce057e40-c344-4da4-9d4d-8c58c412c827"
+},{
+  "_id": {
+    "$oid": "5fc2a3b42199ac76d571ca06"
+  },
+  "subID": "5fc2a3b4ff0629c215775fab",
+  "mov_id": "5fc29a5f24c4bc120b53dc39",
+  "user_id": "ce057e40-c344-4da4-9d4d-8c58c412c827"
+}]

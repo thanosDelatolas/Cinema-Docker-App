@@ -40,4 +40,10 @@
   },
   "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9",
   "name": "The Senator"
+},{
+  "_id": {
+    "$oid": "5fb7df248c08d53fc909f5a3"
+  },
+  "name": "Cinema Paradiso",
+  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9"
 }]

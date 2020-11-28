@@ -1,0 +1,289 @@
+[{
+  "_id": {
+    "$oid": "5fc2a39dff0629c215775fa6"
+  },
+  "expiration": 2524658400,
+  "reference": "http://172.18.1.8/orion_notification.php",
+  "custom": false,
+  "throttling": 0,
+  "servicePath": "/#",
+  "description": "0b10e960-70d4-4318-b6d0-e9132430ab09",
+  "status": "active",
+  "entities": [
+    {
+      "id": "5fc299df6d5ae441987501e7",
+      "isPattern": "false",
+      "type": "Movie",
+      "isTypePattern": false
+    }
+  ],
+  "attrs": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "metadata": [],
+  "blacklist": false,
+  "onlyChanged": false,
+  "conditions": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "lastNotification": 1606591752,
+  "count": 2,
+  "expression": {
+    "q": "",
+    "mq": "",
+    "geometry": "",
+    "coords": "",
+    "georel": ""
+  },
+  "format": "normalized",
+  "lastSuccess": 1606591752,
+  "lastSuccessCode": 200
+},{
+  "_id": {
+    "$oid": "5fc2a39eff0629c215775fa7"
+  },
+  "expiration": 2524658400,
+  "reference": "http://172.18.1.8/orion_notification.php",
+  "custom": false,
+  "throttling": 0,
+  "servicePath": "/#",
+  "description": "0b10e960-70d4-4318-b6d0-e9132430ab09",
+  "status": "active",
+  "entities": [
+    {
+      "id": "5fc2a36124c4bc120b53dc3a",
+      "isPattern": "false",
+      "type": "Movie",
+      "isTypePattern": false
+    }
+  ],
+  "attrs": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "metadata": [],
+  "blacklist": false,
+  "onlyChanged": false,
+  "conditions": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "lastNotification": 1606591390,
+  "count": 1,
+  "expression": {
+    "q": "",
+    "mq": "",
+    "geometry": "",
+    "coords": "",
+    "georel": ""
+  },
+  "format": "normalized",
+  "lastSuccess": 1606591390,
+  "lastSuccessCode": 200
+},{
+  "_id": {
+    "$oid": "5fc2a3a0ff0629c215775fa8"
+  },
+  "expiration": 2524658400,
+  "reference": "http://172.18.1.8/orion_notification.php",
+  "custom": false,
+  "throttling": 0,
+  "servicePath": "/#",
+  "description": "0b10e960-70d4-4318-b6d0-e9132430ab09",
+  "status": "active",
+  "entities": [
+    {
+      "id": "5fc296716d5ae441987501e6",
+      "isPattern": "false",
+      "type": "Movie",
+      "isTypePattern": false
+    }
+  ],
+  "attrs": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "metadata": [],
+  "blacklist": false,
+  "onlyChanged": false,
+  "conditions": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "lastNotification": 1606591392,
+  "count": 1,
+  "expression": {
+    "q": "",
+    "mq": "",
+    "geometry": "",
+    "coords": "",
+    "georel": ""
+  },
+  "format": "normalized",
+  "lastSuccess": 1606591392,
+  "lastSuccessCode": 200
+},{
+  "_id": {
+    "$oid": "5fc2a3b1ff0629c215775fa9"
+  },
+  "expiration": 2524658400,
+  "reference": "http://172.18.1.8/orion_notification.php",
+  "custom": false,
+  "throttling": 0,
+  "servicePath": "/#",
+  "description": "ce057e40-c344-4da4-9d4d-8c58c412c827",
+  "status": "active",
+  "entities": [
+    {
+      "id": "5fc2a36124c4bc120b53dc3a",
+      "isPattern": "false",
+      "type": "Movie",
+      "isTypePattern": false
+    }
+  ],
+  "attrs": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "metadata": [],
+  "blacklist": false,
+  "onlyChanged": false,
+  "conditions": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "lastNotification": 1606591409,
+  "count": 1,
+  "expression": {
+    "q": "",
+    "mq": "",
+    "geometry": "",
+    "coords": "",
+    "georel": ""
+  },
+  "format": "normalized",
+  "lastSuccess": 1606591409,
+  "lastSuccessCode": 200
+},{
+  "_id": {
+    "$oid": "5fc2a3b2ff0629c215775faa"
+  },
+  "expiration": 2524658400,
+  "reference": "http://172.18.1.8/orion_notification.php",
+  "custom": false,
+  "throttling": 0,
+  "servicePath": "/#",
+  "description": "ce057e40-c344-4da4-9d4d-8c58c412c827",
+  "status": "active",
+  "entities": [
+    {
+      "id": "5fc299df6d5ae441987501e7",
+      "isPattern": "false",
+      "type": "Movie",
+      "isTypePattern": false
+    }
+  ],
+  "attrs": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "metadata": [],
+  "blacklist": false,
+  "onlyChanged": false,
+  "conditions": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "lastNotification": 1606591752,
+  "count": 2,
+  "expression": {
+    "q": "",
+    "mq": "",
+    "geometry": "",
+    "coords": "",
+    "georel": ""
+  },
+  "format": "normalized",
+  "lastSuccess": 1606591752,
+  "lastSuccessCode": 200
+},{
+  "_id": {
+    "$oid": "5fc2a3b4ff0629c215775fab"
+  },
+  "expiration": 2524658400,
+  "reference": "http://172.18.1.8/orion_notification.php",
+  "custom": false,
+  "throttling": 0,
+  "servicePath": "/#",
+  "description": "ce057e40-c344-4da4-9d4d-8c58c412c827",
+  "status": "active",
+  "entities": [
+    {
+      "id": "5fc29a5f24c4bc120b53dc39",
+      "isPattern": "false",
+      "type": "Movie",
+      "isTypePattern": false
+    }
+  ],
+  "attrs": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "metadata": [],
+  "blacklist": false,
+  "onlyChanged": false,
+  "conditions": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "category"
+  ],
+  "lastNotification": 1606591412,
+  "count": 1,
+  "expression": {
+    "q": "",
+    "mq": "",
+    "geometry": "",
+    "coords": "",
+    "georel": ""
+  },
+  "format": "normalized",
+  "lastSuccess": 1606591412,
+  "lastSuccessCode": 200
+}]
