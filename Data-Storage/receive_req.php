@@ -365,7 +365,6 @@
         $count = $result->getInsertedCount();
         
         //get cinema name
-
         $filter = [
             '_id' => new MongoDB\BSON\ObjectId( $_GET['playing_in'])
         ];
@@ -379,8 +378,26 @@
         $cinema = $cinema->toArray();
         $cin_name = $cinema[0]->name;
 
+        //get movie id inorder to create an entity in orion!
+        $filter = [
+            'owner_id' => $_GET['owner_id']
+        ];
+        $options = [
+            'sort' => ['_id' => -1],
+            'limit' => 1,
+            'projection' => ['title' => 1, 'playing_in'=> 1]
+        ];
+        
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $last_movie  = $manager->executeQuery('cinema_db.Movies', $query);
+        $last_movie = $last_movie->toArray();
+
+        $mov_id = (string)$last_movie[0]->_id;
+
+        //return to app logic!
         $ret_array = array(
             'count' => $count,
+            'mov_id' =>$mov_id,
             'cin_name' => $cin_name
         );
 

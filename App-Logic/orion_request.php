@@ -61,4 +61,71 @@
         curl_exec($curl);
         curl_close($curl);
     }
+    /**
+     * function to make request to orion to UPDATE an entity!
+     */
+    function update_entity($mov_id,$cin_name,$start_date,$end_date,$title,$category){
+
+        $arr = array(
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+            'cin_name' => $cin_name,
+            'category' => $category,
+            'title' => $title
+         );
+        
+         
+         $curl = curl_init();
+      
+         curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://172.18.1.15:1026/v2/entities/".$mov_id."/attrs?options=keyValues",
+            CURLOPT_HEADER => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CUSTOMREQUEST => "PATCH",
+            CURLOPT_POSTFIELDS => json_encode($arr),
+            CURLOPT_HTTPHEADER => array(
+               "Content-Type: application/json"
+            ),
+         ));
+      
+         $response = curl_exec($curl);
+      
+         curl_close($curl);
+
+    }
+
+    /**
+     * function to make request to orion to CREATE AN ENTITY
+    */
+    function create_entity($mov_id,$cin_name,$start_date,$end_date,$title,$category){
+
+        $arr_input =  array(
+            'id' => $mov_id,
+            'type' => "Movie", 
+            'start_date' => $start_date,    
+            'end_date' => $end_date,   
+            'cin_name' => $cin_name,
+            'title' => $title,
+            'category' => $category
+        );
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "http://172.18.1.15:1026/v2/entities?options=keyValues",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_POSTFIELDS => json_encode($arr_input,true),
+            CURLOPT_HTTPHEADER => array(
+                "Content-Type: application/json",
+            ),
+        ));
+    
+        $response = curl_exec($curl);
+        
+    
+        curl_close($curl);
+    }
+
 ?>

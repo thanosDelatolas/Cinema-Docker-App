@@ -102,14 +102,14 @@
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => 'http://172.18.1.15:1026/v2/subscriptions/'.$response->subID,
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => '',
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 0,
-          CURLOPT_FOLLOWLOCATION => true,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => 'DELETE',
+            CURLOPT_URL => 'http://172.18.1.15:1026/v2/subscriptions/'.$response->subID,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'DELETE',
         ));
         
         curl_exec($curl);
@@ -200,6 +200,7 @@
 
     /**
      * Request from Web-App to modify movie
+     * updates orion also!!
     */
     if (isset($_POST['modify_movie']) && $_POST['modify_movie'] == true){
      
@@ -221,10 +222,25 @@
         $response = curl_exec($ch);
         curl_close($ch);
 
+        /**
+         * if Data storage successfuly modified this movie 
+         * update entity in orion also!!
+         */ 
+        $res = json_decode($response);
+        if($res->count > 0){
+            /**
+             * send request to orion to update this entity
+             */
+            update_entity(trim($_POST['mov_id']),$res->playing_in,$res->start_date,
+                $res->end_date,$res->title,$res->category
+            );
+
+        }
+
         //return response
         echo $response;  
     }
-    // a cinema owner wants to delte a movie
+    // a cinema owner wants to delete a movie
     if (isset($_POST['del_movie']) && $_POST['del_movie'] == true){
         $ch = curl_init();
         $url = $GLOBALS['Data-Storage']."?" .http_build_query([
@@ -269,6 +285,7 @@
 
     /**
      * A cinemaowner wants to buy a movie!
+     * create a new entity in orion also!
     */
     if (isset($_POST['add_movie']) && $_POST['add_movie'] == true){
      
@@ -289,6 +306,23 @@
         
         $response = curl_exec($ch);
         curl_close($ch);
+
+        $res = json_decode($response);
+        
+        file_put_contents('php://stdout', print_r("\n", TRUE));
+        file_put_contents('php://stdout', print_r("************************ MOV: *************************\n", TRUE));
+        file_put_contents('php://stdout', print_r($res, TRUE));
+        file_put_contents('php://stdout', print_r("*******************************************************\n", TRUE));
+        
+        /**
+         * if data storage succesfully added this movie
+         * create an entity in orion with curl request!
+         */
+        if($res->count > 0){
+            create_entity($res->mov_id,$res->cin_name,
+                $_POST['start_date'],$_POST['end_date'],$_POST['title'],$_POST['category']
+            );
+        }
 
         //return response
         echo $response;  
