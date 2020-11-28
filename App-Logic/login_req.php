@@ -35,7 +35,8 @@
         $result = curl_exec($curl);
         curl_close($curl);
         $result= json_decode($result);
-
+        
+       
         $access_token = $result->access_token;
         $refresh_token = $result->refresh_token;
         

@@ -2,7 +2,8 @@
   
    $request_body=file_get_contents('php://input');
 
-  
+   require 'global_vars.php';
+
    file_put_contents('php://stdout', print_r($request_body, TRUE));
    
    $notification = json_decode($request_body);
@@ -29,8 +30,57 @@
    file_put_contents('php://stdout', print_r("\n", TRUE));
    file_put_contents('php://stdout', print_r("*********************************************\n", TRUE));
    
-   
+   //get description of the subscription which is the user ir
+   $curl = curl_init();
+
+   curl_setopt_array($curl, array(
+      CURLOPT_URL => 'http://172.18.1.15:1026/v2/subscriptions/'.$subID,
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '',
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => 'GET',
+   ));
+
+   $response = curl_exec($curl);
+
+   curl_close($curl);
+   $response= json_decode($response);
+   $user_id = $response->description;
+
+   file_put_contents('php://stdout', print_r("\n", TRUE));
+   file_put_contents('php://stdout', print_r("**************** USER ID: *******************\n", TRUE));
+   file_put_contents('php://stdout', print_r($user_id, TRUE));
+   file_put_contents('php://stdout', print_r("\n", TRUE));
+   file_put_contents('php://stdout', print_r("*********************************************\n", TRUE));
+
+
+   /**
+    * if this is an initial notification save it to collection Subscriptions
+    * else save it to collection feed
+   */
+  $ch = curl_init();
+  $url = $GLOBALS['Data-Storage']."?" .http_build_query([
+     'notify' => true, //a flag to execute. 
+     'subID' => $subID,
+     'mov_id' => $notification->data[0]->id,
+     'start_date' => $notification->data[0]->start_date->value,
+     'end_date' => $notification->data[0]->end_date->value,
+     'cin_name' => $notification->data[0]->cin_name->value,
+     'category' => $notification->data[0]->category->value,
+     'title' => $notification->data[0]->title->value,
+     'user_id' => $user_id //which user to notify! :)
+  ]);
+
+
+  curl_setopt($ch,CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_HTTPGET, true);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
   
-   
+  $response = curl_exec($ch);
+  curl_close($ch);
+      
    
 ?>

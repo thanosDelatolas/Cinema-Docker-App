@@ -93,20 +93,34 @@
     /**
      * Request from Web-App to add to favorites (when a heart button is clicked!)
      * This routine does:
-     *      => subscribe for this movie!
      *      => add favorites to data storage 
+     *      => subscribe for this movie!
      */
     if (isset($_POST['add_fav']) && $_POST['add_fav'] == true){
-               
-       
+
+        
+        $ch = curl_init();
+        $url = $GLOBALS['Data-Storage']."?" .http_build_query([
+            'remove_temp_data' => true,  
+            'user_id' => $_POST['user_id']
+        ]);
+
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        
+        $response1 = curl_exec($ch);
+        curl_close($ch);
+
+        
         $ch = curl_init();
         $url = $GLOBALS['Data-Storage']."?" .http_build_query([
             'add_fav' => true, //a flag to execute the right code in App-Logic! 
             'user_id' => $_POST['user_id'],
-            'mov_id' => $_POST['mov_id'],
-            'subID' => $subID
+            'mov_id' => $_POST['mov_id']
         ]);
-
+        
+        
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
@@ -114,9 +128,14 @@
         $response = curl_exec($ch);
         curl_close($ch);
 
-        if($response > 0){
-            subscribe($_POST['mov_id']);
+        if($response >0){
+            /**
+             * function in orion_request
+             * if something goes wron with subscription the user just will not be notified!
+             */ 
+            subscribe($_POST['user_id'],$_POST['mov_id']);
         }
+
         
         echo $response;
 

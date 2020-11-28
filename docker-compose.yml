@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
 
+
   #Application logic...
   app_logic_apache:
     build: 
@@ -104,7 +105,7 @@ services:
     networks:
       default:
         ipv4_address: 172.18.1.11
-
+        
   keyrock:
     image: fiware/idm:latest
     container_name: fiware-keyrock

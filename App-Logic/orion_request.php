@@ -5,12 +5,12 @@
 
     /**
      * subscribe to a movie!
-     *
+     * In description I have user id for my convenience!
      */
-    function subscribe($mov_id){
+    function subscribe($user_id,$mov_id){
 
         $sub_array =  array(
-          
+            'description' => trim($user_id),
             'subject' => array(
                 'entities' => [array(
                     //subscribe to movie with id mov_id
@@ -39,7 +39,6 @@
                     "category"
                 ]
             ),
-            'throttling' => 5,
             //expires in 2050
             'expires' => '2050-01-01T14:00:00.00Z'
         );

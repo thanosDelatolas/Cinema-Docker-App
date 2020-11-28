@@ -81,8 +81,7 @@
     if (isset($_GET['add_fav']) && $_GET['add_fav'] == true){
         $filter = [
             'userid' => $_GET['user_id'],
-            'movid' => $_GET['mov_id']
-            
+            'movid' => $_GET['mov_id']            
         ];
        
         $bulk = new MongoDB\Driver\BulkWrite();
@@ -483,7 +482,67 @@
 
         //return to app logic
         echo json_encode($ret_array,true);
+    }    
+
+    /**
+     * check if already exist subscription based on subID
+     * if there is =>
+     *      the request is for notification!
+     * if there isn't =>
+     *      the request is athe initial notification!
+     * 
+     */
+    if (isset($_GET['notify']) && $_GET['notify'] == true){
+        //first check if this subscription already exists!
+        $filter = [
+            'subID' => trim($_GET['subID'])
+        ];
+        $options = [];
+
+        
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $subscriptions  = $manager->executeQuery('cinema_db.Subscriptions', $query);
+        $subscriptions = $subscriptions->toArray();
+        file_put_contents('php://stdout', print_r( "\n", TRUE));
+        file_put_contents('php://stdout', print_r( "TEESSSSSSSSSST\n", TRUE));
+        file_put_contents('php://stdout', print_r( $subscriptions, TRUE));
+        file_put_contents('php://stdout', print_r( "\n", TRUE));
+        
+        //subscription does not exist! Hence, it's an intial notification
+        if(is_null($subscriptions[0]->subID)){   
+            $filter = [
+                'subID' => trim($_GET['subID']),
+                'mov_id' => trim($_GET['mov_id']),
+                'start_date' => trim($_GET['start_date']),
+                'end_date' => trim($_GET['end_date']),
+                'cin_name' => trim($_GET['cin_name']),
+                'category' => trim($_GET['category']),
+                'title' => trim($_GET['title']),
+                'user_id' => trim($_GET['user_id'])
+            ];
+           
+            
+            //add new data
+            $bulk = new MongoDB\Driver\BulkWrite();
+            $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+            $bulk->insert($filter);
+            $result = $manager->executeBulkWrite('cinema_db.Subscriptions', $bulk,$writeConcern);
+    
+           
+        }
+        else{
+            /**
+             * TODO: its notification!! added to the feed!
+             */
+            
+        }
+        echo 1;
+       
     }
+
+
+
+    
 
     
 ?>
