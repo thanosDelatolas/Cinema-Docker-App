@@ -86,8 +86,35 @@
         $response = curl_exec($ch);
         curl_close($ch);
 
-        //return response
-        echo $response;   
+        $response = json_decode($response);
+        
+        $favs_removed = $response->deletedCount;
+        file_put_contents('php://stdout', print_r("\n", TRUE));
+        file_put_contents('php://stdout', print_r("**************** SUB TO BE DELETED: *******************\n", TRUE));
+        file_put_contents('php://stdout', print_r($response->subID, TRUE));
+        file_put_contents('php://stdout', print_r("*******************************************************\n", TRUE));
+      
+        
+        /**
+         *  curl request to orion!
+         *  to delete this subscription!
+         */
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => 'http://172.18.1.15:1026/v2/subscriptions/'.$response->subID,
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => '',
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => 'DELETE',
+        ));
+        
+        curl_exec($curl);
+        curl_close($curl);
+        echo $favs_removed;   
     }
 
     /**
@@ -97,22 +124,7 @@
      *      => subscribe for this movie!
      */
     if (isset($_POST['add_fav']) && $_POST['add_fav'] == true){
-
-        
-        $ch = curl_init();
-        $url = $GLOBALS['Data-Storage']."?" .http_build_query([
-            'remove_temp_data' => true,  
-            'user_id' => $_POST['user_id']
-        ]);
-
-        curl_setopt($ch,CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_HTTPGET, true);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-        
-        $response1 = curl_exec($ch);
-        curl_close($ch);
-
-        
+                
         $ch = curl_init();
         $url = $GLOBALS['Data-Storage']."?" .http_build_query([
             'add_fav' => true, //a flag to execute the right code in App-Logic! 

@@ -61,8 +61,27 @@
         
     }
 
-    /** Remove favoirets! */
+    /**  
+     * delete from favorites collection 
+     * and sends back the deleted count and the subscription ID
+     * the subscription will be then be deleted with curl request to orion from app logic
+    */
     if (isset($_GET['remove_fav']) && $_GET['remove_fav'] == true){
+        
+        //first get subID
+        $filter = [
+            'user_id' =>  $_GET['user_id'],
+            'mov_id' => $_GET['mov_id']
+        ];
+        $options = [];
+    
+        
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $subscriptions  = $manager->executeQuery('cinema_db.Subscriptions', $query);
+        $subscriptions = $subscriptions->toArray();
+        
+        $subID = $subscriptions[0]->subID;
+        
         $filter = [
             'userid' => $_GET['user_id'],
             'movid' => $_GET['mov_id']
@@ -73,7 +92,27 @@
         $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
         $bulk->delete($filter);
         $result = $manager->executeBulkWrite('cinema_db.Favorites', $bulk,$writeConcern);
-        echo $result->getDeletedCount();
+        $deleted_rows = $result->getDeletedCount();
+
+
+        //delete Subscription from local collection!
+        $filter = [
+            'user_id' => $_GET['user_id'],
+            'mov_id' => $_GET['mov_id'] 
+            //could have been with only subID
+            
+        ];
+        $bulk = new MongoDB\Driver\BulkWrite();
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+        $bulk->delete($filter);
+        $res = $manager->executeBulkWrite('cinema_db.Subscriptions', $bulk,$writeConcern);
+
+        //return to app logic
+        $arr = array(
+            'subID' => $subID, //this to delete subscription from orion with curl
+            'deletedCount' => $deleted_rows //this for Web-App
+        );
+        echo json_encode($arr,true);
 
     }
 
@@ -503,21 +542,13 @@
         $query = new \MongoDB\Driver\Query($filter, $options);
         $subscriptions  = $manager->executeQuery('cinema_db.Subscriptions', $query);
         $subscriptions = $subscriptions->toArray();
-        file_put_contents('php://stdout', print_r( "\n", TRUE));
-        file_put_contents('php://stdout', print_r( "TEESSSSSSSSSST\n", TRUE));
-        file_put_contents('php://stdout', print_r( $subscriptions, TRUE));
-        file_put_contents('php://stdout', print_r( "\n", TRUE));
+        
         
         //subscription does not exist! Hence, it's an intial notification
         if(is_null($subscriptions[0]->subID)){   
             $filter = [
                 'subID' => trim($_GET['subID']),
                 'mov_id' => trim($_GET['mov_id']),
-                'start_date' => trim($_GET['start_date']),
-                'end_date' => trim($_GET['end_date']),
-                'cin_name' => trim($_GET['cin_name']),
-                'category' => trim($_GET['category']),
-                'title' => trim($_GET['title']),
                 'user_id' => trim($_GET['user_id'])
             ];
            
@@ -526,14 +557,30 @@
             $bulk = new MongoDB\Driver\BulkWrite();
             $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
             $bulk->insert($filter);
-            $result = $manager->executeBulkWrite('cinema_db.Subscriptions', $bulk,$writeConcern);
-    
-           
+            $result = $manager->executeBulkWrite('cinema_db.Subscriptions', $bulk,$writeConcern);           
         }
+
+        //new notification!
         else{
-            /**
-             * TODO: its notification!! added to the feed!
-             */
+            $filter = [
+                'subID' => trim($_GET['subID']),
+                'mov_id' => trim($_GET['mov_id']),
+                'start_date' => trim($_GET['start_date']),
+                'end_date' => trim($_GET['end_date']),
+                'cin_name' => trim($_GET['cin_name']),
+                'category' => trim($_GET['category']),
+                'title' => trim($_GET['title']),
+                'user_id' => trim($_GET['user_id']),
+                //this flag indicates whether the user has seen this notification before
+                'read' => false     
+            ];
+           
+            
+            //add new data
+            $bulk = new MongoDB\Driver\BulkWrite();
+            $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+            $bulk->insert($filter);
+            $result = $manager->executeBulkWrite('cinema_db.Feed', $bulk,$writeConcern);
             
         }
         echo 1;

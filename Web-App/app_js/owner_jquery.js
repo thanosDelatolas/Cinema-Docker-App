@@ -77,7 +77,7 @@ $(document).ready(function(){
         }
         
         else{
-            var application_logic_url = "http://172.18.1.8/rest_api.php";
+            var application_logic_url = "http://172.18.1.8/app_logic_req.php";
 
             $.ajax({
                 type: "post",
@@ -131,7 +131,7 @@ $(document).ready(function(){
         var movid = $(this).closest("tr").find('td:eq(6)').text();
         var r = confirm("Do you really want to delete movie with id:\n "+movid);
         if(r){
-            var application_logic_url = "http://172.18.1.8/rest_api.php";
+            var application_logic_url = "http://172.18.1.8/app_logic_req.php";
 
             $.ajax({
                 type: "post",

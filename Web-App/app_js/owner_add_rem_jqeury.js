@@ -44,7 +44,7 @@ $(document).ready(function(){
         //send requests to application logic!
         else{
            
-            var application_logic_url = "http://172.18.1.8/rest_api.php";
+            var application_logic_url = "http://172.18.1.8/app_logic_req.php";
             $.ajax({
                 type: "post",
                 //allow ajax to make the request in application logic
@@ -100,8 +100,8 @@ $(document).ready(function(){
             document.getElementById("err_msg").textContent = "Cinema's name is required!";
         }
         else{
-            //make request to rest api
-            var application_logic_url = "http://172.18.1.8/rest_api.php";
+            //make request to app logic
+            var application_logic_url = "http://172.18.1.8/app_logic_req.php";
             $.ajax({
                 type: "post",
                 //allow ajax to make the request in application logic
@@ -171,7 +171,7 @@ $(document).ready(function(){
             r = confirm("***** THINK AGAIN! *****\n Want to delete "+cin_name+" and lose ALL movies in "+cin_name+" ?");
 
             if(r){
-                var application_logic_url = "http://172.18.1.8/rest_api.php";
+                var application_logic_url = "http://172.18.1.8/app_logic_req.php";
 
                 //make the request to delete the Cinema
                 $.ajax({
