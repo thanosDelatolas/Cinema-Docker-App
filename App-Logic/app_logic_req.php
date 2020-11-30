@@ -102,21 +102,7 @@
          *  curl request to orion!
          *  to delete this subscription!
          */
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://172.18.1.15:1026/v2/subscriptions/'.$response->subID,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'DELETE',
-        ));
-        
-        curl_exec($curl);
-        curl_close($curl);
+        unsubscribe($response->subID);
         echo $favs_removed;   
     }
 
@@ -258,8 +244,41 @@
         $response = curl_exec($ch);
         curl_close($ch);
 
-        //return response
-        echo $response;  
+        $res = json_decode($response);
+        $arr = $res->subs;
+        file_put_contents('php://stdout', print_r("***************** RES to be removed: ******************\n", TRUE));
+        file_put_contents('php://stdout', print_r($arr, TRUE));
+        file_put_contents('php://stdout', print_r("\n", TRUE));
+        file_put_contents('php://stdout', print_r("******************** MOVIES removed: ******************\n", TRUE));
+        file_put_contents('php://stdout', print_r($res->deleted_movie_count, TRUE));
+        file_put_contents('php://stdout', print_r("\n", TRUE));
+        file_put_contents('php://stdout', print_r("*******************************************************\n", TRUE));
+
+        
+        /**
+         * send request to orion to delete the subscriptions 
+         */
+        if(is_array($arr)){
+            
+
+            foreach($arr as $s){
+                file_put_contents('php://stdout', print_r("***************** SUB to be removed: ******************\n", TRUE));
+                file_put_contents('php://stdout', print_r($s, TRUE));
+                file_put_contents('php://stdout', print_r("\n", TRUE));
+                file_put_contents('php://stdout', print_r("*******************************************************\n", TRUE));
+                unsubscribe($s);
+                file_put_contents('php://stdout', print_r("\n", TRUE));
+            }
+
+        }
+        if($res->deleted_movie_count > 0){
+            // now send request to orion to delete the movie!!!
+            remove_entity($_POST['movid']);
+        }
+
+        //return deleted movies count
+        echo $res->deleted_movie_count;
+  
     }
 
 
@@ -280,8 +299,7 @@
         
         $response = curl_exec($ch);
         curl_close($ch);
-
-        //return response
+        
         echo $response;  
     }
 
@@ -357,7 +375,10 @@
 
     /**
      * A cinemaowner wants to delete a cinema!
+     * this method isn't implemented because of orion
+     * the cinema owner cannot delete a cinema
     */
+    
     if (isset($_POST['del_cinema']) && $_POST['del_cinema'] == true){
 
         $ch = curl_init();
@@ -377,6 +398,7 @@
         echo $response; 
 
     }
+    
 
     /**
      * This request is called from a user only when the page is loaded

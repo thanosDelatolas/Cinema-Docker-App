@@ -160,6 +160,8 @@ $(document).ready(function(){
      * When a cinmaowner wants to delete a cinema
      */
     $(document).on('click','button[id^="del_cin_"]',function(){
+        alert('Sorry this method is not implemented because of orion.\nBut movies can be deleted :) from the previous page!');
+        /*
         var row_id = $(this).closest('tr').attr('id');
 
         var cin_name = $(this).closest("tr").find('td:eq(0)').text();
@@ -219,6 +221,7 @@ $(document).ready(function(){
             }
 
         }
+        */
 
     });
 });

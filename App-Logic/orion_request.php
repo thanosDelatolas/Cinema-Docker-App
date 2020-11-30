@@ -61,6 +61,30 @@
         curl_exec($curl);
         curl_close($curl);
     }
+
+    /**
+     *  curl request to orion!
+     *  to delete this subscription!
+     */
+    function unsubscribe($subID){
+       
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'http://172.18.1.15:1026/v2/subscriptions/'.$subID,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'DELETE',
+        ));
+        
+        curl_exec($curl);
+        curl_close($curl);
+    }
+    
     /**
      * function to make request to orion to UPDATE an entity!
      */
@@ -72,12 +96,12 @@
             'cin_name' => $cin_name,
             'category' => $category,
             'title' => $title
-         );
+        );
         
-         
-         $curl = curl_init();
-      
-         curl_setopt_array($curl, array(
+        
+        $curl = curl_init();
+    
+        curl_setopt_array($curl, array(
             CURLOPT_URL => "http://172.18.1.15:1026/v2/entities/".$mov_id."/attrs?options=keyValues",
             CURLOPT_HEADER => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -85,13 +109,13 @@
             CURLOPT_CUSTOMREQUEST => "PATCH",
             CURLOPT_POSTFIELDS => json_encode($arr),
             CURLOPT_HTTPHEADER => array(
-               "Content-Type: application/json"
+                "Content-Type: application/json"
             ),
-         ));
-      
-         $response = curl_exec($curl);
-      
-         curl_close($curl);
+        ));
+    
+        $response = curl_exec($curl);
+    
+        curl_close($curl);
 
     }
 
@@ -125,6 +149,28 @@
         $response = curl_exec($curl);
         
     
+        curl_close($curl);
+    }
+
+    /**
+     * this function sends request to orion to remove a Movie(an entity)
+     */
+    function remove_entity($mov_id){
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'http://172.18.1.15:1026/v2/entities/'. trim($mov_id) .'?type=Movie',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'DELETE',
+        ));
+
+        $response = curl_exec($curl);
+
         curl_close($curl);
     }
 

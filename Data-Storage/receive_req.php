@@ -287,8 +287,58 @@
         ];
         $bulk->delete($filter);
         $result = $manager->executeBulkWrite('cinema_db.Favorites', $bulk,$writeConcern);
-        
-        echo $deleted_movie_count;
+
+        /**
+         * must get all the subscriptions ids for this movie in order
+         * to delete subscriptions for orion and
+         * after that delete subscriptions from my collection Subscriptions 
+         * but not delete from Feed!
+         */
+      
+
+        $filter = ['mov_id' => $_GET['mov_id'] ];
+        $options = ['projection' => ['subID' => 1] ];
+
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $subs  = $manager->executeQuery('cinema_db.Subscriptions', $query);
+
+        //to delete subscriptions from orion!
+        $subs = $subs->toArray();
+
+        /**
+         * now delete all Subscriptions for this movie!!
+         */
+        $bulk = new MongoDB\Driver\BulkWrite();
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+        $filter = [
+            'mov_id' =>  $_GET['mov_id']
+            
+        ];
+
+        $bulk->delete($filter);
+        $result = $manager->executeBulkWrite('cinema_db.Subscriptions', $bulk,$writeConcern);
+
+        if(count ($subs) != 0){
+
+            foreach($subs as $s){
+                $subs_array[] =$s->subID;
+            }
+
+            $final_array = array(
+                'deleted_movie_count' => $deleted_movie_count,
+                'subs' => $subs_array,
+            );
+
+        }
+        else{
+            $final_array = array(
+                'deleted_movie_count' => $deleted_movie_count,
+                'subs' => NULL,
+            );
+        }
+
+
+        echo json_encode($final_array,true);
 
     }
 
@@ -467,7 +517,9 @@
 
     /**
      * A cinemaowner wants to delete a cinema!
+     *
     */
+    
     if (isset($_GET['del_cinema']) && $_GET['del_cinema'] == true){
         $cin_id = trim($_GET['cin_id']);
 
@@ -538,7 +590,8 @@
 
         //return to app logic
         echo json_encode($ret_array,true);
-    }    
+    }
+        
 
     /**
      * check if already exist subscription based on subID
