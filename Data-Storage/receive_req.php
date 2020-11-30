@@ -665,37 +665,87 @@
         $user_id = $_GET['user_id'];
 
         $filter = ['user_id' => $user_id ];
-        $options = [];
+        $options = ['sort' => ['_id' => -1]];
 
         $query = new \MongoDB\Driver\Query($filter, $options);
         $feed  = $manager->executeQuery('cinema_db.Feed', $query);
 
         $feed = $feed->toArray();
+        if(count($feed) != 0){
+            /**
+             * set all in all the fetched data read = true!!!
+             */
+            foreach ($feed as $f) {
 
-        /**
-         * set all in all the fetched data read = true!!!
-         */
-        foreach ($feed as $f) {
-
-            $filter = [
-                '_id' => $f->_id
-                
-            ];
-           
-            $mod_data = [
-                '$set' => [
-                    'read' => true    
-                ]
-            ];
-            $bulk = new MongoDB\Driver\BulkWrite();
-            $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
-            $bulk->update($filter,$mod_data);
-            $result = $manager->executeBulkWrite('cinema_db.Feed', $bulk,$writeConcern);
-     
+                $filter = [
+                    '_id' => $f->_id
+                    
+                ];
+            
+                $mod_data = [
+                    '$set' => [
+                        'read' => true    
+                    ]
+                ];
+                $bulk = new MongoDB\Driver\BulkWrite();
+                $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+                $bulk->update($filter,$mod_data);
+                $result = $manager->executeBulkWrite('cinema_db.Feed', $bulk,$writeConcern);
+        
+            }
         }
-
+        
         //return to app logic
         echo json_encode($feed,true);
+    }
+
+
+    if (isset($_GET['get_new_notifications']) && $_GET['get_new_notifications'] == true){
+        $user_id = $_GET['user_id'];
+
+        $filter = ['user_id' => $user_id, 'read' => false];
+        $options = ['sort' => ['_id' => -1]];
+
+        $query = new \MongoDB\Driver\Query($filter, $options);
+        $new_notifications  = $manager->executeQuery('cinema_db.Feed', $query);
+
+        $new_notifications = $new_notifications->toArray();
+        
+        if( count($new_notifications) != 0){
+            /**
+             * set all in all the fetched data read = true!!!
+             */
+            foreach ($new_notifications as $f) {
+
+                $filter = [
+                    '_id' => $f->_id
+                    
+                ];
+            
+                $mod_data = [
+                    '$set' => [
+                        'read' => true    
+                    ]
+                ];
+                $bulk = new MongoDB\Driver\BulkWrite();
+                $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+                $bulk->update($filter,$mod_data);
+                $result = $manager->executeBulkWrite('cinema_db.Feed', $bulk,$writeConcern);
+        
+            }
+        }
+
+        $ret_array = array(
+            'count' => count($new_notifications),
+            'new_notifications' => $new_notifications,
+        );
+
+        //if count is 0 something went wrong!
+        echo json_encode($ret_array,true);
+
+        
+        
+
     }
 
 

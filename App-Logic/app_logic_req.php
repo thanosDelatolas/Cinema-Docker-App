@@ -423,6 +423,27 @@
         echo $response; 
     }
 
+    /**
+     * request to update user feed every 5 seconds!
+     */
+    if (isset($_POST['get_new_notifications']) && $_POST['get_new_notifications'] == true){
+        $ch = curl_init();
+        $url = $GLOBALS['Data-Storage']."?" .http_build_query([
+            'get_new_notifications' => true, 
+            'user_id' => trim($_POST['user_id'])
+        ]);
+
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPGET, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        //return response
+        echo $response; 
+    }
+
 
 
 
