@@ -11,7 +11,8 @@ $(document).ready(function(){
      * new notifications has read=false in Mongo DB!
      */
     var user_id = $("#user_id").text(); 
-    
+    var today = new Date();
+    console.log(today.getDay());
     setInterval(function(){ 
         
         $.ajax({
@@ -82,8 +83,8 @@ $(document).ready(function(){
                     var today = new Date();
                    
                     cell_time.className = "received_notif";
-                    cell_time.innerHTML = "Received on: " +(today.getDay()+29)+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+
-                    " at: " +today.getHours()+":"+(today.getMinutes()<10?'0':'') + today.getMinutes();
+                    cell_time.innerHTML = "Received on: " +(today.getDay()-1)+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+
+                    " at: " +(today.getHours()<10?'0':'') + today.getHours()+":"+(today.getMinutes()<10?'0':'') + today.getMinutes();
 
                     
                     row_time.insertCell(4);

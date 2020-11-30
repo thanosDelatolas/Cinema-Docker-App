@@ -47,14 +47,15 @@
 
         curl_setopt_array($curl, array(
             //orion is in this url
-            CURLOPT_URL => "http://orion:1026/v2/subscriptions",
+            CURLOPT_URL => "http://orion_proxy:1027/v2/subscriptions",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HEADER => true, //to get response header!
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS =>json_encode($sub_array,JSON_UNESCAPED_SLASHES),
             CURLOPT_HTTPHEADER => array(
-            "Content-Type: application/json"
+            "Content-Type: application/json",
+            "X-Auth-Token: magic_key"
             ),
         ));
    
@@ -71,7 +72,7 @@
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://172.18.1.15:1026/v2/subscriptions/'.$subID,
+            CURLOPT_URL => 'http://orion_proxy:1027/v2/subscriptions/'.$subID,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -79,6 +80,9 @@
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'DELETE',
+            CURLOPT_HTTPHEADER => array(
+                "X-Auth-Token: magic_key"
+            ),
         ));
         
         curl_exec($curl);
@@ -102,14 +106,15 @@
         $curl = curl_init();
     
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "http://172.18.1.15:1026/v2/entities/".$mov_id."/attrs?options=keyValues",
+            CURLOPT_URL => "http://orion_proxy:1027/v2/entities/".$mov_id."/attrs?options=keyValues",
             CURLOPT_HEADER => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_CUSTOMREQUEST => "PATCH",
             CURLOPT_POSTFIELDS => json_encode($arr),
             CURLOPT_HTTPHEADER => array(
-                "Content-Type: application/json"
+                "Content-Type: application/json",
+                "X-Auth-Token: magic_key"
             ),
         ));
     
@@ -136,13 +141,15 @@
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "http://172.18.1.15:1026/v2/entities?options=keyValues",
+            CURLOPT_URL => "http://orion_proxy:1027/v2/entities?options=keyValues",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => json_encode($arr_input,true),
             CURLOPT_HTTPHEADER => array(
                 "Content-Type: application/json",
+                "X-Auth-Token: magic_key"
+            
             ),
         ));
     
@@ -159,7 +166,7 @@
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'http://172.18.1.15:1026/v2/entities/'. trim($mov_id) .'?type=Movie',
+            CURLOPT_URL => 'http://orion_proxy:1027/v2/entities/'. trim($mov_id) .'?type=Movie',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -167,6 +174,9 @@
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'DELETE',
+            CURLOPT_HTTPHEADER => array(
+                "X-Auth-Token: magic_key"
+            ),
         ));
 
         $response = curl_exec($curl);

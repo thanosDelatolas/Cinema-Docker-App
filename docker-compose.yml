@@ -108,20 +108,20 @@ services:
         
   keyrock:
     image: fiware/idm:latest
-    container_name: fiware-keyrock
+    container_name: keyrock
     hostname: keyrock
     depends_on:
       - mysql_db
     ports:
-      - "3005:3000" #expose to 3005 for signup!
+      - "3005:3005" #expose to 3005 for admin!
       - "443:443" 
     environment:
       - DEBUG=idm:*
       - IDM_DB_HOST=mysql_db
       - IDM_DB_USER=root
       - IDM_DB_PASS=root_pass #password of root mysql!
-      - IDM_HOST=http://localhost:3000
-      - IDM_PORT=3000
+      - IDM_HOST=http://localhost:3005
+      - IDM_PORT=3005
       - IDM_ADMIN_USER=tdel
       - IDM_ADMIN_EMAIL=tdel@test.com
       - IDM_ADMIN_PASS=1234
@@ -147,11 +147,12 @@ services:
     networks:
       default:
         ipv4_address: 172.18.1.14
-
+  
   #mongo db for orion
   mongo_db_orion:
     image: mongo:3.2
 
+    container_name: mongo_db_orion
     command: --nojournal
     ports: 
       - '27017:27017'  #so we can connect with db
@@ -164,12 +165,46 @@ services:
     links:
       - mongo_db_orion
     command: -dbhost mongo_db_orion -logLevel DEBUG -noCache
-   
+    container_name: orion
+    hostname: orion
+    expose:
+        - "1026"
+    ports:
+        - "1026:1026"
     networks:
       default:
         ipv4_address: 172.18.1.15 
-
   
+  #wilma for orion!
+  orion_proxy:
+    image: fiware/pep-proxy 
+    container_name: wilma_orion
+    depends_on:
+      - keyrock
+    ports:
+      - "1027:1027"
+    expose:
+      - "1027"
+    environment: 
+      - PEP_PROXY_APP_HOST=orion
+      - PEP_PROXY_APP_PORT=1026
+      - PEP_PROXY_PORT=1027
+      - PEP_PROXY_IDM_HOST=keyrock
+      - PEP_PROXY_HTTPS_ENABLED=false
+      - PEP_PROXY_AUTH_ENABLED=false
+      - PEP_PROXY_IDM_SSL_ENABLED=false
+      - PEP_PROXY_IDM_PORT=3005
+      - PEP_PROXY_APP_ID=7ffbed02-ac0c-4784-8c52-2cf8d77f85fd
+      - PEP_PROXY_USERNAME=pep_proxy_9c742db6-63d6-455e-ac2b-d6395fc8b514
+      - PEP_PASSWORD=pep_proxy_f77c28ad-5ff8-4213-a500-340557670cd1
+      - PEP_PROXY_PDP=idm
+      - PEP_PROXY_MAGIC_KEY=magic_key     
+    networks:
+      default:
+        ipv4_address: 172.18.1.20
+   
+    
+        
 networks:
   default:
     ipam:
