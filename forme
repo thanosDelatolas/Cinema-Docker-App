@@ -37,3 +37,4 @@ login to phpmyadmin and import the idm.sql from backups folder
 
 sudo docker container logs app_logic_apache -f
 
+cloc Cinema-Docker-App --exclude-lang=SQL,JSON,Markdown

@@ -44,16 +44,18 @@ services:
     ports:
       - '3306:3306' 
     environment:
+    
       - MYSQL_ROOT_PASSWORD=root_pass
-      - MYSQL_ROOT_HOST=172.18.1.5 # allows root connections from 172.18.1.5 which is keyrock
-      
+      - MYSQL_ROOT_HOST=172.18.1.5 # allows root connections from 172.18.1.5 which is keyrock 
+      - MYSQL_DATABASE=idm
     networks:
       default:
         ipv4_address: 172.18.1.6
 
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - mysql_dat:/var/lib/mysql  #all the contents of /var/lib/mysql will be permently saved to mysql_dat volume
-      #- docker-entrypoint-initdb.d #to init the db
+        - ./mysql_data:/docker-entrypoint-initdb.d
+        #- mysql_dat:/var/lib/mysql  #all the contents of /var/lib/mysql will be permently saved to mysql_dat volume
     
   #phpmyadmin for mysql keyrock!!
   phpmyadmin_keyrock:
@@ -89,22 +91,6 @@ services:
       default:
         ipv4_address: 172.18.1.10
 
-  #mongo-express for MONGO DB 
-  mongo_express_data_storage:
-    image: mongo-express
-    depends_on: 
-      - mongo_db_data_storage
-    restart: always
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: root_pass
-      ME_CONFIG_MONGODB_SERVER: mongo_db_data_storage
-    container_name: mongo_express_data_storage
-    networks:
-      default:
-        ipv4_address: 172.18.1.11
         
   keyrock:
     image: fiware/idm:latest
