@@ -85,7 +85,7 @@
                     <td colspan="1">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td colspan="3" align="center" ><a href=<?php echo $GLOBALS['keyrock_official_signup']?> class="reg">Don't have an account?</p> </td>
+                    <td colspan="3" align="center" ><a href="http://localhost/register.php" class="reg">Don't have an account?</p> </td>
                 </tr>
                 <tr>
                     <td colspan="3" align="center" >
