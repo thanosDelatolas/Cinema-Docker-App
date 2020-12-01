@@ -34,6 +34,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -59,6 +64,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -85,6 +95,10 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -125,6 +139,10 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -156,6 +174,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -179,6 +202,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -207,6 +235,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -240,6 +273,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -296,6 +334,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -324,6 +367,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -364,6 +412,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -390,6 +443,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -415,6 +473,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);
@@ -436,6 +499,11 @@
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_HTTPGET, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+
+        //set header for wilma
+        curl_setopt($ch, CURLOPT_HTTPHEADER,array(
+            "X-Auth-Token: magic_key"
+        ));
         
         $response = curl_exec($ch);
         curl_close($ch);

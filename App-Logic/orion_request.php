@@ -55,7 +55,7 @@
             CURLOPT_POSTFIELDS =>json_encode($sub_array,JSON_UNESCAPED_SLASHES),
             CURLOPT_HTTPHEADER => array(
             "Content-Type: application/json",
-            "X-Auth-Token: magic_key"
+            "X-Auth-Token: magic_key",
             ),
         ));
    
@@ -81,7 +81,7 @@
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'DELETE',
             CURLOPT_HTTPHEADER => array(
-                "X-Auth-Token: magic_key"
+                'X-Auth-Token: magic_key',
             ),
         ));
         
@@ -114,7 +114,7 @@
             CURLOPT_POSTFIELDS => json_encode($arr),
             CURLOPT_HTTPHEADER => array(
                 "Content-Type: application/json",
-                "X-Auth-Token: magic_key"
+                "X-Auth-Token: magic_key",
             ),
         ));
     
@@ -148,7 +148,7 @@
             CURLOPT_POSTFIELDS => json_encode($arr_input,true),
             CURLOPT_HTTPHEADER => array(
                 "Content-Type: application/json",
-                "X-Auth-Token: magic_key"
+                "X-Auth-Token: magic_key",
             
             ),
         ));

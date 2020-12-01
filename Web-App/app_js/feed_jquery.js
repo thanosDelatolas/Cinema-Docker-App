@@ -10,9 +10,7 @@ $(document).ready(function(){
      * this function is executed every 5 seconds!
      * new notifications has read=false in Mongo DB!
      */
-    var user_id = $("#user_id").text(); 
-    var today = new Date();
-    console.log(today.getDay());
+    
     setInterval(function(){ 
         
         $.ajax({

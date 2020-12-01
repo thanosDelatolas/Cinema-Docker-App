@@ -138,8 +138,9 @@ services:
     container_name: dataStorage
     hostname: dataStorage
     restart: always
-    ports:
-      - '4000:80' #expose for now
+  
+    expose: 
+      - "80"  #for wilma!
 
     volumes:
       - ./Data-Storage:/var/www/html/
@@ -147,6 +148,7 @@ services:
     networks:
       default:
         ipv4_address: 172.18.1.14
+  
   
   #mongo db for orion
   mongo_db_orion:
@@ -178,7 +180,7 @@ services:
   #wilma for orion!
   orion_proxy:
     image: fiware/pep-proxy 
-    container_name: wilma_orion
+    container_name: orion_proxy
     depends_on:
       - keyrock
     ports:
@@ -202,6 +204,36 @@ services:
     networks:
       default:
         ipv4_address: 172.18.1.20
+
+
+   #wilma for orion!
+  data_storage_proxy:
+    image: fiware/pep-proxy 
+    container_name: data_storage_proxy
+    depends_on:
+      - keyrock
+    ports:
+      - "1028:1027"  #expose the default 1027 into 1028
+    expose: 
+      - "1028"
+    environment: 
+      - PEP_PROXY_APP_HOST=dataStorage
+      - PEP_PROXY_APP_PORT=80
+      - PEP_PROXY_PORT=1028
+      - PEP_PROXY_IDM_HOST=keyrock
+      - PEP_PROXY_HTTPS_ENABLED=false
+      - PEP_PROXY_AUTH_ENABLED=false
+      - PEP_PROXY_IDM_SSL_ENABLED=false
+      - PEP_PROXY_IDM_PORT=3005
+      - PEP_PROXY_APP_ID=7ffbed02-ac0c-4784-8c52-2cf8d77f85fd
+      - PEP_PROXY_USERNAME=pep_proxy_9c742db6-63d6-455e-ac2b-d6395fc8b514
+      - PEP_PASSWORD=pep_proxy_f77c28ad-5ff8-4213-a500-340557670cd1
+      - PEP_PROXY_PDP=idm
+      - PEP_PROXY_MAGIC_KEY=magic_key     
+    networks:
+      default:
+        ipv4_address: 172.18.1.21
+   
    
     
         
