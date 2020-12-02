@@ -55,6 +55,8 @@
     <head>
         <title>TD Cinemas</title>
         <link rel="stylesheet" type="text/css" href="app_style/login.css"> 
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon.ico">
+
     </head>
     <body>
         <form method="POST" action="index.php">

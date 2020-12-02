@@ -9,6 +9,7 @@
 <head>
     <title>Error page </title>
     <link rel="stylesheet" type="text/css" href="app_style/err_style.css"> 
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon.ico">
 </head>
 <body>
 <div class="site">
