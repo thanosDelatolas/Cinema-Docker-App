@@ -4,7 +4,7 @@ It's a simple website with several microservices developed with:
 docker, php, ajax, jquery, javascript.
 ```
 The architecture is :
-![GitHub Logo](Architecture.png)
+![](Architecture.png)
 
 
 I developed from scratch:  
@@ -14,8 +14,8 @@ I developed from scratch:
 
 ## Compilation
 You need to have already installed only docker and docker-compose.\
-Go to the downloaded folder:
-`sudo docker compose up -d`  
+Go to the downloaded folder:  
+* `sudo docker compose up -d`  
 If you want to stop the containers:  
-`sudo docker compose down`    
+* `sudo docker compose down`    
 
