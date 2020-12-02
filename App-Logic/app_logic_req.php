@@ -254,8 +254,7 @@
              * send request to orion to update this entity
              */
             update_entity(trim($_POST['mov_id']),$res->playing_in,$res->start_date,
-                $res->end_date,$res->title,$res->category
-            );
+                $res->end_date,$res->title);
 
         }
 
@@ -388,9 +387,7 @@
          * create an entity in orion with curl request!
          */
         if($res->count > 0){
-            create_entity($res->mov_id,$res->cin_name,
-                $_POST['start_date'],$_POST['end_date'],$_POST['title'],$_POST['category']
-            );
+            create_entity($res->mov_id,$res->cin_name,$_POST['start_date'],$_POST['end_date'],$_POST['title']);
         }
 
         //return response

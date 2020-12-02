@@ -2,7 +2,7 @@ sudo docker image prune -a
 
 
 sudo docker-compose up -d
-VOLUME: test_docker_mysql_dat
+
 sudo docker exec -it mongo_db_data_storage mongo --username "root" --password 
 
 phpmyadmin: http://localhost:4040/  => keyrock db!

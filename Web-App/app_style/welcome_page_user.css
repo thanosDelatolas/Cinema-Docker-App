@@ -1,12 +1,33 @@
+.float-container{
+    padding: 10px;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+  
+}  
+#container{
+    width: 600px;
+    height: 400px;
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+    padding-right: 100px;
+    padding-left: 20px;
+    
+}
+
 #news_feed_table {
     border-collapse: collapse; /* Collapse borders */
-    width: 90%; /* Full-width */
+    width: 100%;
     cursor: default;
     font-size: 18px; /* Increase font-size */
     position: relative;
 
-
+      
 }
+
 /**
 * Make header remains on the top of the page!
 */
@@ -15,6 +36,7 @@ position: sticky;
 top: 0;
 background-color: gray;
 cursor: default;
+
 }
 #news_feed_table th, #news_feed_table td {
 text-align: left; /* Left-align text */
@@ -79,7 +101,14 @@ padding: 5px;
     font-size: 24px;
     color:  #00154F;
     font-weight: bolder;
-    margin-left: 30%;
+    margin-left: 35%;
+}
+
+.playing_now_tilte{
+    font-size: 24px;
+    color:  #00154F;
+    font-weight: bolder;
+  
 }
 
 .received_notif{
@@ -96,3 +125,68 @@ padding: 5px;
     font-weight: bolder;
     font-size: 18px;
 }
+
+#cont_soon_container{
+    width: 600px;
+    height: 400px;
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+    position: absolute;
+    padding-left: 700px;
+    
+  
+    
+}
+
+.comming_soon_title{
+    font-size: 24px;
+    color:  #00154F;
+    font-weight: bolder;
+    padding-left: 20px;
+    top: 0;
+}
+
+
+
+
+#coming_soon_table {
+    border-collapse: collapse; /* Collapse borders */
+    width: 600px;
+    cursor: default;
+    font-size: 18px; /* Increase font-size */
+    position: relative;
+
+    
+   
+}
+
+/**
+* Make header remains on the top of the page!
+*/
+#coming_soon_table th{
+width: 600px;
+position: sticky;
+top: 0;
+background-color: gray;
+cursor: default;
+
+}
+#coming_soon_table th, #coming_soon_table td {
+text-align: left; /* Left-align text */
+padding: 10px; /* Add padding */
+cursor: default;
+}
+
+#coming_soon_table tr {
+/* Add a bottom border to all table rows */
+border-bottom: 1px solid gray;
+
+}
+
+#coming_soon_table tr.header {
+/* Add a grey background color to the table header and on hover */
+background-color: gray;
+padding: 5px;
+
+}
+

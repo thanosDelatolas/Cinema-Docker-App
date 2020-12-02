@@ -20,9 +20,11 @@
    file_put_contents('php://stdout', print_r("\n", TRUE));
    file_put_contents('php://stdout', print_r($notification->data[0]->cin_name->value, TRUE));
    file_put_contents('php://stdout', print_r("\n", TRUE));
-   file_put_contents('php://stdout', print_r($notification->data[0]->category->value, TRUE));
-   file_put_contents('php://stdout', print_r("\n", TRUE));
    file_put_contents('php://stdout', print_r($notification->data[0]->title->value, TRUE));
+   file_put_contents('php://stdout', print_r("\n", TRUE));
+   file_put_contents('php://stdout', print_r($notification->data[0]->soon->value, TRUE));
+   file_put_contents('php://stdout', print_r("\n", TRUE));
+   file_put_contents('php://stdout', print_r($notification->data[0]->playing_now->value, TRUE));
    file_put_contents('php://stdout', print_r("\n", TRUE));
    file_put_contents('php://stdout', print_r("*********************************************\n", TRUE));
 
@@ -37,7 +39,7 @@
    $curl = curl_init();
 
    curl_setopt_array($curl, array(
-      CURLOPT_URL => 'http://172.18.1.15:1026/v2/subscriptions/'.$subID,
+      CURLOPT_URL => 'http://orion_proxy:1027/v2/subscriptions/'.$subID,
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_ENCODING => '',
       CURLOPT_MAXREDIRS => 10,
@@ -45,6 +47,9 @@
       CURLOPT_FOLLOWLOCATION => true,
       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
       CURLOPT_CUSTOMREQUEST => 'GET',
+      CURLOPT_HTTPHEADER => array(
+         "X-Auth-Token: magic_key"
+     ),
    ));
 
    $response = curl_exec($curl);
@@ -73,7 +78,8 @@
       'start_date' => $notification->data[0]->start_date->value,
       'end_date' => $notification->data[0]->end_date->value,
       'cin_name' => $notification->data[0]->cin_name->value,
-      'category' => $notification->data[0]->category->value,
+      'soon' => $notification->data[0]->soon->value,
+      'playing_now' => $notification->data[0]->playing_now->value,
       'title' => $notification->data[0]->title->value,
       'user_id' => $user_id //which user to notify! :)
   ]);
@@ -82,6 +88,9 @@
   curl_setopt($ch,CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_HTTPGET, true);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+  curl_setopt($ch, CURLOPT_HTTPHEADER , array(
+      "X-Auth-Token: magic_key"
+   ));
   
   $response = curl_exec($ch);
   curl_close($ch);

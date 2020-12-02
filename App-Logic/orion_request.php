@@ -19,11 +19,9 @@
                 )],
                 'condition' => array(
                     'attrs' => [ 
-                        "start_date",
-                        "end_date",
-                        "cin_name",
-                        "title",
-                        "category"
+                        //notify only on these changes!
+                        "soon",
+                        "playing_now"
                     ]
                 )
                 
@@ -32,11 +30,14 @@
                 //always catch notification in this url!
                 'http' => array('url' => 'http://172.18.1.8/orion_notification.php'),
                 'attrs' => [ 
+                    //bring all attributes back to be displayed
                     "start_date",
                     "end_date",
                     "cin_name",
                     "title",
-                    "category"
+                
+                    "soon",
+                    "playing_now"
                 ]
             ),
             //expires in 2050
@@ -92,17 +93,21 @@
     /**
      * function to make request to orion to UPDATE an entity!
      */
-    function update_entity($mov_id,$cin_name,$start_date,$end_date,$title,$category){
+    function update_entity($mov_id,$cin_name,$start_date,$end_date,$title){
 
+        /**
+         * get entity attrs
+         */
+        $arr_input = get_entity_attrs($mov_id,$cin_name,$start_date,$end_date,$title);
+        
         $arr = array(
             'start_date' => $start_date,
             'end_date' => $end_date,
             'cin_name' => $cin_name,
-            'category' => $category,
+            'soon' => $arr_input['soon'],
+            'playing_now' => $arr_input['playing_now'],
             'title' => $title
         );
-        
-        
         $curl = curl_init();
     
         curl_setopt_array($curl, array(
@@ -127,17 +132,13 @@
     /**
      * function to make request to orion to CREATE AN ENTITY
     */
-    function create_entity($mov_id,$cin_name,$start_date,$end_date,$title,$category){
-
-        $arr_input =  array(
-            'id' => $mov_id,
-            'type' => "Movie", 
-            'start_date' => $start_date,    
-            'end_date' => $end_date,   
-            'cin_name' => $cin_name,
-            'title' => $title,
-            'category' => $category
-        );
+    function create_entity($mov_id,$cin_name,$start_date,$end_date,$title){
+        
+        /**
+         * get get entity attrs
+         */ 
+        $arr_input = get_entity_attrs($mov_id,$cin_name,$start_date,$end_date,$title);
+       
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -182,6 +183,61 @@
         $response = curl_exec($curl);
 
         curl_close($curl);
+    }
+
+    /**
+     * returns an array with attrs of the new orion entity
+     */
+    function get_entity_attrs($mov_id,$cin_name,$start_date,$end_date,$title){
+        $start_date_time = new DateTime($start_date);
+        $end_date_time = new DateTime($end_date);
+
+        /**
+         * check if movie is played now!
+         */
+
+        $now = new DateTime();
+
+        $now_interval_end_date = $now->diff($end_date_time);
+
+        $now_interval_start_date = $now->diff($start_date_time);
+        
+        $diff = $now_interval_end_date->format('%R%a');
+
+        $diff_1 = $now_interval_start_date->format('%R%a');
+        
+        /**
+         * to be played now we want start_date <= now!
+         */
+        if($diff >=0 && $diff_1 <=0 ){
+            $playing_now = true;
+        }
+        else{
+            $playing_now = false;
+        }
+
+        
+        /**
+         * movies to be played soon
+         */
+        if( ($diff_1>=0 && $diff_1<=30) && ($playing_now == false)){
+            $soon = true;
+        }
+        else {
+            $soon = false;
+        }
+        $arr_input =  array(
+            'id' => $mov_id,
+            'type' => "Movie", 
+            'soon' => $soon,  
+            'playing_now' => $playing_now,  
+            'title' => $title,
+            'cin_name' => $cin_name,
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+            
+        );
+        return $arr_input;
     }
 
 ?>

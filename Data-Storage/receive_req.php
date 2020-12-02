@@ -613,9 +613,11 @@
         $subscriptions  = $manager->executeQuery('cinema_db.Subscriptions', $query);
         $subscriptions = $subscriptions->toArray();
         
-        
+        $write_feed = true;
         //subscription does not exist! Hence, it's an intial notification
-        if(is_null($subscriptions[0]->subID)){   
+        if(is_null($subscriptions[0]->subID)){ 
+            $write_feed = false;  
+
             $filter = [
                 'subID' => trim($_GET['subID']),
                 'mov_id' => trim($_GET['mov_id']),
@@ -627,18 +629,28 @@
             $bulk = new MongoDB\Driver\BulkWrite();
             $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
             $bulk->insert($filter);
-            $result = $manager->executeBulkWrite('cinema_db.Subscriptions', $bulk,$writeConcern);           
+            $result = $manager->executeBulkWrite('cinema_db.Subscriptions', $bulk,$writeConcern);
+            
+            //check if this movie is played now or soon
+
+            $soon= trim($_GET['soon']);
+            $playing_now =trim($_GET['playing_now']);
+
+            if($soon|| $playing_now){
+                $write_feed = true;
+            }
         }
 
         //new notification!
-        else{
+        if($write_feed ){
             $filter = [
                 'subID' => trim($_GET['subID']),
                 'mov_id' => trim($_GET['mov_id']),
                 'start_date' => trim($_GET['start_date']),
                 'end_date' => trim($_GET['end_date']),
                 'cin_name' => trim($_GET['cin_name']),
-                'category' => trim($_GET['category']),
+                'soon' => trim($_GET['soon']),
+                'playing_now' => trim($_GET['playing_now']),
                 'title' => trim($_GET['title']),
                 'user_id' => trim($_GET['user_id']),
                 //this flag indicates whether the user has seen this notification before

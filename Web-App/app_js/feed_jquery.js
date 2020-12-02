@@ -10,9 +10,10 @@ $(document).ready(function(){
      * this function is executed every 5 seconds!
      * new notifications has read=false in Mongo DB!
      */
-    
+    var user_id = $("#user_id").text();
+    console.log(user_id);
     setInterval(function(){ 
-        
+       
         $.ajax({
             type: "post",
             //allow ajax to make the request in application logic
@@ -31,62 +32,116 @@ $(document).ready(function(){
                 }
                 else{
                     new_notifs = response.new_notifications;
-
-                    //add all new notifications to the table!
-                    var table = document.getElementById("news_feed_table");
-                    
+                    var playing_now_notifications = false, soon_notifications = false;
                     var i =0;
+                    var row_playing_now=0;
+                    var row_comming_soon=0;
                     for (i = 0; i < new_notifs.length; i++) {
+        
                         const element = new_notifs[i];
-
-                        var row = table.insertRow(i+1);
-
-                        var cel0 =row.insertCell(0);
-                        var cel1 =row.insertCell(1);
-                        var cel2 =row.insertCell(2);
-                        var cel3 =row.insertCell(3);
-                        var cel4 =row.insertCell(4);
-
-                        cel0.innerHTML = "News for: "+element.title;
-                        cel0.className = 'inserted_online';
-                        cel0.scope = 'row';
                         
-                        cel1.innerHTML = element.cin_name;
+                        if(element.playing_now == "1"){
+                            //add all new notifications to the table!
+                            var table = document.getElementById("news_feed_table");
+                            var row = table.insertRow(i+1);
+
+                            var cel0 =row.insertCell(0);
+                            var cel1 =row.insertCell(1);
+                            var cel2 =row.insertCell(2);
+                            
+
+                            cel0.innerHTML = "News for: "+element.title;
+                            cel0.className = 'inserted_online';
+                            cel0.scope = 'row';
+                            
+                            cel1.innerHTML = element.cin_name;
+                            
+                            cel2.innerHTML = element.end_date;
+
+                            playing_now_notifications = true;
+                            row_playing_now++;
+                        }
+                        //soon and playing_now never both 1
+                        if(element.soon == "1"){
+                            //add all new notifications to the table!
+                            var table = document.getElementById("coming_soon_table");
+                            var row = table.insertRow(i+1);
+
+                            var cel0 =row.insertCell(0);
+                            var cel1 =row.insertCell(1);
+                            var cel2 =row.insertCell(2);
+                            var cel3 =row.insertCell(3);
+                            
+
+                            cel0.innerHTML = "News for: "+element.title;
+                            cel0.className = 'inserted_online';
+                            cel0.scope = 'row';
+                            
+                            cel1.innerHTML = element.cin_name;
+                            cel2.innerHTML = element.start_date;
+                            cel3.innerHTML = element.end_date;
+
+
+                            soon_notifications = true;
+                            row_comming_soon++;
+                        }
+
                         
-
-                        cel2.innerHTML = element.category;
-                        
-
-                        cel3.innerHTML = element.start_date;
-                       
-
-                        cel4.innerHTML = element.start_date;
                         
                     }
-                    var row_time = table.insertRow(i+1);
+                    if(playing_now_notifications){
+                        var table = document.getElementById("news_feed_table");
+                        var row_time = table.insertRow(row_playing_now+1);
 
-                    row_time.insertCell(0);
+                        
+                        var icon_cell = row_time.insertCell(0);
+
+                        icon_cell.innerHTML = '<i class="fa fa-bell" style="font-size:24px; text-align:"center"; valign:"middle";"></i>';
+                        icon_cell.className = "received_notif";
+                        
+                       
+
+                        var cell_time =row_time.insertCell(1);
+
+                        var today = new Date();
                     
-                    var icon_cell = row_time.insertCell(1);
+                        cell_time.className = "received_notif";
+                        cell_time.innerHTML = "Received on: " +(today.getDay()-1)+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+
+                        " at: " +(today.getHours()<10?'0':'') + today.getHours()+":"+(today.getMinutes()<10?'0':'') + today.getMinutes();
 
-                    icon_cell.innerHTML = '<i class="fa fa-bell" style="font-size:24px; text-align:"center"; valign:"middle";"></i>';
-                    icon_cell.className = "received_notif";
+                        
+                        row_time.insertCell(2);
+ 
+                    }
+
+                    if(soon_notifications){
+                        var table = document.getElementById("coming_soon_table");
+                        var row_time = table.insertRow(row_comming_soon+1);
+
+                        
+                        var icon_cell = row_time.insertCell(0);
+
+                        icon_cell.innerHTML = '<i class="fa fa-bell" style="font-size:24px; text-align:"center"; valign:"middle";"></i>';
+                        icon_cell.className = "received_notif";
+                        
+                       
+
+                        var cell_time =row_time.insertCell(1);
+
+                        var today = new Date();
                     
-                    icon_cell = row_time.insertCell(2);
-                    icon_cell.innerHTML = '<i class="fa fa-caret-up" style="font-size:36px; text-align:"center"; valign:"middle";"></i>'
-                    icon_cell.className = "received_notif";
+                        cell_time.className = "received_notif";
+                        cell_time.innerHTML = "Received on: " +(today.getDay()-1)+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+
+                        " at: " +(today.getHours()<10?'0':'') + today.getHours()+":"+(today.getMinutes()<10?'0':'') + today.getMinutes();
 
-                    var cell_time =row_time.insertCell(3);
+                        
+                        row_time.insertCell(2);
+                        row_time.insertCell(3);
+ 
+ 
 
-                    var today = new Date();
-                   
-                    cell_time.className = "received_notif";
-                    cell_time.innerHTML = "Received on: " +(today.getDay()-1)+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+
-                    " at: " +(today.getHours()<10?'0':'') + today.getHours()+":"+(today.getMinutes()<10?'0':'') + today.getMinutes();
-
-                    
-                    row_time.insertCell(4);
-                    
+                    }
+                                       
                     
                 }
                 
