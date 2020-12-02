@@ -643,6 +643,9 @@
 
         //new notification!
         if($write_feed ){
+            //dont have greece :(
+            date_default_timezone_set("Europe/Sofia");
+            
             $filter = [
                 'subID' => trim($_GET['subID']),
                 'mov_id' => trim($_GET['mov_id']),
@@ -653,6 +656,7 @@
                 'playing_now' => trim($_GET['playing_now']),
                 'title' => trim($_GET['title']),
                 'user_id' => trim($_GET['user_id']),
+                'received' => date("Y-m-d h:i:sa"), //get now time to know when the notification is received!
                 //this flag indicates whether the user has seen this notification before
                 'read' => false     
             ];

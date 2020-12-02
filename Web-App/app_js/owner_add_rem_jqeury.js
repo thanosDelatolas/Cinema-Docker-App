@@ -5,6 +5,11 @@ $(document).ready(function(){
     $("#disp_modal_mov").click(function(){
         document.getElementById('myModal2').style.display='block';
         document.getElementById("err_msg2").textContent ="";
+        
+        document.getElementById("title").textContent="";
+        document.getElementById("category").textContent="";
+        document.getElementById("start_date").textContent="";
+        document.getElementById("end_date").textContent="";
 
         
     });
@@ -87,6 +92,7 @@ $(document).ready(function(){
      $("#disp_modal").click(function(){
         document.getElementById('myModal').style.display='block';
         document.getElementById("err_msg").textContent ="";
+        document.getElementById("cinema_input").textContent="";
     });
 
     //when the buy cinema button is clicked!

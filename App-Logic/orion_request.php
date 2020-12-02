@@ -189,6 +189,9 @@
      * returns an array with attrs of the new orion entity
      */
     function get_entity_attrs($mov_id,$cin_name,$start_date,$end_date,$title){
+        //dont have greece :(
+        date_default_timezone_set("Europe/Sofia");
+        
         $start_date_time = new DateTime($start_date);
         $end_date_time = new DateTime($end_date);
 

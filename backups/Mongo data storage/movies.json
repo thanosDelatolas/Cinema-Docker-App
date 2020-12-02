@@ -1,183 +1,211 @@
 [{
   "_id": {
-    "$oid": "5fc296716d5ae441987501e6"
+    "$oid": "5fc7efb7886f6d399009ef72"
   },
   "playing_in": "5fac44e1b711b9d9961da7b1",
   "title": "The Dark Knight",
   "category": "Action,Crime,Drama",
   "start_date": {
-    "$date": "2020-11-30T00:00:00Z"
+    "$date": "2021-04-02T00:00:00Z"
   },
   "end_date": {
-    "$date": "2021-02-27T00:00:00Z"
+    "$date": "2021-10-12T00:00:00Z"
   },
   "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be"
 },{
   "_id": {
-    "$oid": "5fc297056472876939034596"
-  },
-  "playing_in": "5fac4537b711b9d9961da7b2",
-  "title": "Dead Poets Society",
-  "category": "Drama",
-  "start_date": {
-    "$date": "2020-11-25T00:00:00Z"
-  },
-  "end_date": {
-    "$date": "2021-07-23T00:00:00Z"
-  },
-  "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be"
-},{
-  "_id": {
-    "$oid": "5fc2976c24c4bc120b53dc35"
-  },
-  "playing_in": "5fac4580b711b9d9961da7b3",
-  "title": "The Shawshank Redemption",
-  "category": "Drama",
-  "start_date": {
-    "$date": "2020-12-07T00:00:00Z"
-  },
-  "end_date": {
-    "$date": "2022-06-23T00:00:00Z"
-  },
-  "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be"
-},{
-  "_id": {
-    "$oid": "5fc297b724c4bc120b53dc36"
+    "$oid": "5fc7efecd38b3546c26bfe64"
   },
   "playing_in": "5fac44e1b711b9d9961da7b1",
-  "title": "The Godfather",
-  "category": "Crime",
+  "title": "Life Is Beautiful",
+  "category": "Comedy, Drama, Romance",
   "start_date": {
-    "$date": "2021-01-23T00:00:00Z"
+    "$date": "2021-04-30T00:00:00Z"
   },
   "end_date": {
-    "$date": "2021-12-02T00:00:00Z"
+    "$date": "2021-10-31T00:00:00Z"
   },
   "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be"
 },{
   "_id": {
-    "$oid": "5fc2981524c4bc120b53dc37"
+    "$oid": "5fc7f0efff51f20ac272d1c2"
   },
-  "playing_in": "5fac4537b711b9d9961da7b2",
-  "title": "Inception",
-  "category": "Adventure, Fantasy",
-  "start_date": {
-    "$date": "2020-11-30T00:00:00Z"
-  },
-  "end_date": {
-    "$date": "2022-06-29T00:00:00Z"
-  },
-  "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be"
-},{
-  "_id": {
-    "$oid": "5fc29987aa04b33ac261ae49"
-  },
-  "playing_in": "5fac4ec6873768b6e7f38070",
-  "title": "The Hobbit",
-  "category": "Adventure, Fantasy",
-  "start_date": {
-    "$date": "2020-12-01T00:00:00Z"
-  },
-  "end_date": {
-    "$date": "2022-07-28T00:00:00Z"
-  },
-  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9"
-},{
-  "_id": {
-    "$oid": "5fc299c87079aa10ee44d6e7"
-  },
-  "playing_in": "5fac4ec6873768b6e7f38070",
-  "title": "Life Is Beautiful",
-  "category": "Comedy, Drama, Romance",
-  "start_date": {
-    "$date": "2021-02-27T00:00:00Z"
-  },
-  "end_date": {
-    "$date": "2022-12-10T00:00:00Z"
-  },
-  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9"
-},{
-  "_id": {
-    "$oid": "5fc299df6d5ae441987501e7"
-  },
-  "playing_in": "5fb7df248c08d53fc909f5a3",
-  "title": "Life Is Beautiful",
-  "category": "Comedy, Drama, Romance",
-  "start_date": {
-    "$date": "2021-02-25T00:00:00Z"
-  },
-  "end_date": {
-    "$date": "2022-11-25T00:00:00Z"
-  },
-  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9"
-},{
-  "_id": {
-    "$oid": "5fc29a206472876939034597"
-  },
-  "playing_in": "5fac4ed7873768b6e7f38071",
-  "title": "Interstellar",
-  "category": "Adventure, Drama, Sci-fi",
-  "start_date": {
-    "$date": "2021-03-15T00:00:00Z"
-  },
-  "end_date": {
-    "$date": "2022-03-29T00:00:00Z"
-  },
-  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9"
-},{
-  "_id": {
-    "$oid": "5fc29a5f24c4bc120b53dc39"
-  },
-  "playing_in": "5fb7df248c08d53fc909f5a3",
-  "title": "American History X",
-  "category": "Drama",
-  "start_date": {
-    "$date": "2021-03-20T00:00:00Z"
-  },
-  "end_date": {
-    "$date": "2022-05-27T00:00:00Z"
-  },
-  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9"
-},{
-  "_id": {
-    "$oid": "5fc2a21d6472876939034598"
-  },
-  "playing_in": "5fac4dda873768b6e7f3806f",
-  "title": "The Intouchables",
-  "category": "Biography",
-  "start_date": {
-    "$date": "2021-01-30T00:00:00Z"
-  },
-  "end_date": {
-    "$date": "2021-12-30T00:00:00Z"
-  },
-  "owner_id": "849dd351-3239-4318-b07d-18347e51cae6"
-},{
-  "_id": {
-    "$oid": "5fc2a36124c4bc120b53dc3a"
-  },
-  "playing_in": "5fac4d45717cc5b3fb0b5bec",
+  "playing_in": "5fac44e1b711b9d9961da7b1",
   "title": "The Prestige",
   "category": "Drama, Mystery, Sci-fi",
   "start_date": {
     "$date": "2021-03-25T00:00:00Z"
   },
   "end_date": {
-    "$date": "2022-02-18T00:00:00Z"
+    "$date": "2021-12-24T00:00:00Z"
+  },
+  "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be"
+},{
+  "_id": {
+    "$oid": "5fc7f115f51b16599566ff12"
+  },
+  "playing_in": "5fac4537b711b9d9961da7b2",
+  "title": "The Hobbit",
+  "category": "Adventure, Fantasy",
+  "start_date": {
+    "$date": "2021-01-20T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-08-23T00:00:00Z"
+  },
+  "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be"
+},{
+  "_id": {
+    "$oid": "5fc7f149f51b16599566ff13"
+  },
+  "playing_in": "5fac4580b711b9d9961da7b3",
+  "title": "Dead Poets Society",
+  "category": "Drama",
+  "start_date": {
+    "$date": "2021-04-20T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-10-25T00:00:00Z"
+  },
+  "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be"
+},{
+  "_id": {
+    "$oid": "5fc7f168f51b16599566ff14"
+  },
+  "playing_in": "5fac4580b711b9d9961da7b3",
+  "title": "The Dark Knight",
+  "category": "Action,Crime,Drama",
+  "start_date": {
+    "$date": "2021-03-30T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-10-11T00:00:00Z"
+  },
+  "owner_id": "5565f5dd-02ea-4bd7-ba31-bb76a82657be"
+},{
+  "_id": {
+    "$oid": "5fc7f9c913700250d10bbd24"
+  },
+  "playing_in": "5fac4ec6873768b6e7f38070",
+  "title": "The Shawshank Redemption",
+  "category": "Drama",
+  "start_date": {
+    "$date": "2021-02-27T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-07-01T00:00:00Z"
+  },
+  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9"
+},{
+  "_id": {
+    "$oid": "5fc7f9f7ba65b72be171e332"
+  },
+  "playing_in": "5fac4ec6873768b6e7f38070",
+  "title": "The Godfather",
+  "category": "Crime",
+  "start_date": {
+    "$date": "2021-03-09T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-08-27T00:00:00Z"
+  },
+  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9"
+},{
+  "_id": {
+    "$oid": "5fc7fa30d38b3546c26bfe65"
+  },
+  "playing_in": "5fac4ed7873768b6e7f38071",
+  "title": "Inception",
+  "category": " Action, Adventure, Sci-Fi ",
+  "start_date": {
+    "$date": "2021-04-02T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-07-10T00:00:00Z"
+  },
+  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9"
+},{
+  "_id": {
+    "$oid": "5fc7fa73d38b3546c26bfe66"
+  },
+  "playing_in": "5fb7df248c08d53fc909f5a3",
+  "title": "The Matrix",
+  "category": "Action, Sci-fi",
+  "start_date": {
+    "$date": "2021-03-12T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-07-04T00:00:00Z"
+  },
+  "owner_id": "b73be024-d4ec-414a-9f49-d386f4f9e2c9"
+},{
+  "_id": {
+    "$oid": "5fc7fae4f51b16599566ff16"
+  },
+  "playing_in": "5fac4d45717cc5b3fb0b5bec",
+  "title": "The Lives of Others",
+  "category": "Drama, Thriller",
+  "start_date": {
+    "$date": "2021-04-08T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-10-26T00:00:00Z"
   },
   "owner_id": "849dd351-3239-4318-b07d-18347e51cae6"
 },{
   "_id": {
-    "$oid": "5fc2a3802199ac76d571ca04"
+    "$oid": "5fc7fb12886f6d399009ef73"
   },
-  "playing_in": "5fac4dda873768b6e7f3806f",
-  "title": "The Prestige",
-  "category": "Drama, Mystery, Sci-fi",
+  "playing_in": "5fac4d45717cc5b3fb0b5bec",
+  "title": "Parasite",
+  "category": " Comedy, Drama, Thriller ",
   "start_date": {
-    "$date": "2021-03-20T00:00:00Z"
+    "$date": "2021-04-28T00:00:00Z"
   },
   "end_date": {
-    "$date": "2022-03-27T00:00:00Z"
+    "$date": "2021-12-31T00:00:00Z"
+  },
+  "owner_id": "849dd351-3239-4318-b07d-18347e51cae6"
+},{
+  "_id": {
+    "$oid": "5fc7fb8c886f6d399009ef74"
+  },
+  "playing_in": "5fac4dda873768b6e7f3806f",
+  "title": "Whiplash",
+  "category": " Drama, Music",
+  "start_date": {
+    "$date": "2021-01-14T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-05-22T00:00:00Z"
+  },
+  "owner_id": "849dd351-3239-4318-b07d-18347e51cae6"
+},{
+  "_id": {
+    "$oid": "5fc7fbc513700250d10bbd25"
+  },
+  "playing_in": "5fac4dda873768b6e7f3806f",
+  "title": "Django Unchained",
+  "category": " Drama, Western",
+  "start_date": {
+    "$date": "2021-03-27T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-07-31T00:00:00Z"
+  },
+  "owner_id": "849dd351-3239-4318-b07d-18347e51cae6"
+},{
+  "_id": {
+    "$oid": "5fc7fc96f51b16599566ff17"
+  },
+  "playing_in": "5fac4d45717cc5b3fb0b5bec",
+  "title": "Braveheart",
+  "category": "Biography, History",
+  "start_date": {
+    "$date": "2021-04-26T00:00:00Z"
+  },
+  "end_date": {
+    "$date": "2021-09-19T00:00:00Z"
   },
   "owner_id": "849dd351-3239-4318-b07d-18347e51cae6"
 }]

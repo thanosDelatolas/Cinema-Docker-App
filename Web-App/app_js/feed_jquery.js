@@ -48,6 +48,7 @@ $(document).ready(function(){
                             var cel0 =row.insertCell(0);
                             var cel1 =row.insertCell(1);
                             var cel2 =row.insertCell(2);
+                            var cel3 =row.insertCell(3);
                             
 
                             cel0.innerHTML = "News for: "+element.title;
@@ -57,6 +58,7 @@ $(document).ready(function(){
                             cel1.innerHTML = element.cin_name;
                             
                             cel2.innerHTML = element.end_date;
+                            cel3.innerHTML = element.received;
 
                             playing_now_notifications = true;
                             row_playing_now++;
@@ -71,6 +73,7 @@ $(document).ready(function(){
                             var cel1 =row.insertCell(1);
                             var cel2 =row.insertCell(2);
                             var cel3 =row.insertCell(3);
+                            var cel4 =row.insertCell(4);
                             
 
                             cel0.innerHTML = "News for: "+element.title;
@@ -80,6 +83,7 @@ $(document).ready(function(){
                             cel1.innerHTML = element.cin_name;
                             cel2.innerHTML = element.start_date;
                             cel3.innerHTML = element.end_date;
+                            cel4.innerHTML = element.received;
 
 
                             soon_notifications = true;
@@ -93,15 +97,15 @@ $(document).ready(function(){
                         var table = document.getElementById("news_feed_table");
                         var row_time = table.insertRow(row_playing_now+1);
 
-                        
-                        var icon_cell = row_time.insertCell(0);
+                        row_time.insertCell(0);
+                        var icon_cell = row_time.insertCell(1);
 
                         icon_cell.innerHTML = '<i class="fa fa-bell" style="font-size:24px; text-align:"center"; valign:"middle";"></i>';
                         icon_cell.className = "received_notif";
                         
                        
 
-                        var cell_time =row_time.insertCell(1);
+                        var cell_time =row_time.insertCell(2);
 
                         var today = new Date();
                     
@@ -110,7 +114,8 @@ $(document).ready(function(){
                         " at: " +(today.getHours()<10?'0':'') + today.getHours()+":"+(today.getMinutes()<10?'0':'') + today.getMinutes();
 
                         
-                        row_time.insertCell(2);
+                        row_time.insertCell(3);
+                        
  
                     }
 
@@ -118,25 +123,30 @@ $(document).ready(function(){
                         var table = document.getElementById("coming_soon_table");
                         var row_time = table.insertRow(row_comming_soon+1);
 
-                        
-                        var icon_cell = row_time.insertCell(0);
+                        row_time.insertCell(0);
+                        var icon_cell = row_time.insertCell(1);
 
                         icon_cell.innerHTML = '<i class="fa fa-bell" style="font-size:24px; text-align:"center"; valign:"middle";"></i>';
                         icon_cell.className = "received_notif";
                         
                        
 
-                        var cell_time =row_time.insertCell(1);
+                        var cell_time =row_time.insertCell(2);
 
                         var today = new Date();
                     
                         cell_time.className = "received_notif";
-                        cell_time.innerHTML = "Received on: " +(today.getDay()-1)+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+
-                        " at: " +(today.getHours()<10?'0':'') + today.getHours()+":"+(today.getMinutes()<10?'0':'') + today.getMinutes();
+                        cell_time.innerHTML = "Received on:";
 
                         
-                        row_time.insertCell(2);
-                        row_time.insertCell(3);
+                        cell_time=row_time.insertCell(3);
+                        cell_time.className="received_notif";
+                        cell_time.innerHTML=(today.getDay()-1)+"/"+(today.getMonth()+1)+"/"+today.getFullYear();
+                        
+                        cell_time=row_time.insertCell(4);
+                        cell_time.className="received_notif";
+                        cell_time.innerHTML= " at: " +(today.getHours()<10?'0':'') + today.getHours()+":"+(today.getMinutes()<10?'0':'') + today.getMinutes();
+                       
  
  
 

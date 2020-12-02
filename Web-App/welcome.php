@@ -78,14 +78,14 @@
             
                 <div class="float-container">
                
-                    <div id="container"  class="float-child">
+                    <div id="container" >
                         <table id="news_feed_table">
                             <caption> <h1 class="playing_now_tilte"><i class="material-icons">local_movies</i>&nbsp;&nbsp;Playing now! </h1> </caption>
                             <tr class="header">
                                 <th scope="col" class = 'left_header'></th>
                                 <th scope="col">Where?</th>
-                            
-                                <th scope="col">Unitl</th>
+                                <th scope="col">Unitl:</th>
+                                <th scope="col">Received:</th>
                             </tr>
                         
                             <?php 
@@ -99,6 +99,7 @@
                                                 ."<th class='left' scope='row'> News for: ".$n['title']."</th>"
                                                 ."<td name='cin_name'>".$n['cin_name']."</td>"
                                                 ."<td name='end_date'>".$n['end_date']."</td>"
+                                                ."<td name='received'>".$n['received']."</td>"
                                                 ."<td name='mov_id' hidden = 'true'>".$n['mov_id']."</td>"
                                                 ."</tr>";
                                             echo $table_row;
@@ -111,7 +112,7 @@
                             
                         </table>
                     </div>
-                    <div id="cont_soon_container" class="float-child">
+                    <div id="cont_soon_container" >
                  
                         <!-- Div for coming soon table!-->
                         <table id="coming_soon_table">
@@ -121,7 +122,8 @@
                                 <th scope="col" class = 'left_header'></th>
                                 <th scope="col">Where?</th>
                                 <th scope="col">When?</th>
-                                <th scope="col">Unitl</th>
+                                <th scope="col">Unitl:</th>
+                                <th scope="col">Received:</th>
                             </tr>
                         
                             <?php 
@@ -135,6 +137,7 @@
                                                 ."<td name='cin_name'>".$n['cin_name']."</td>"
                                                 ."<td name='end_date'>".$n['start_date']."</td>"
                                                 ."<td name='end_date'>".$n['end_date']."</td>"
+                                                ."<td name='received'>".$n['received']."</td>"
                                                 ."<td name='mov_id' hidden = 'true'>".$n['mov_id']."</td>"
                                                 ."</tr>";
                                             echo $table_row;

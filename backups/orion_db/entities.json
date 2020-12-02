@@ -1,690 +1,916 @@
 [{
   "_id": {
-    "id": "5fc296716d5ae441987501e6",
+    "id": "5fc7efb7886f6d399009ef72",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
+    "soon",
+    "playing_now",
     "title",
-    "category"
+    "cin_name",
+    "start_date",
+    "end_date"
   ],
   "attrs": {
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606588017.1325133,
-      "modDate": 1606588017.1325133,
-      "value": "2020-11-30",
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606938551.093475,
+      "modDate": 1606938551.093475,
+      "value": false,
       "mdNames": []
     },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606588017.1325133,
-      "modDate": 1606588017.1325133,
-      "value": "2021-02-27",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606588017.1325133,
-      "modDate": 1606588017.1325133,
-      "value": "Cine Thisio in Athens",
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606938551.093475,
+      "modDate": 1606938551.093475,
+      "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606588017.1325133,
-      "modDate": 1606588017.1325133,
+      "creDate": 1606938551.093475,
+      "modDate": 1606938551.093475,
       "value": "The Dark Knight",
       "mdNames": []
     },
-    "category": {
-      "type": "Text",
-      "creDate": 1606588017.1325133,
-      "modDate": 1606588017.1325133,
-      "value": "Action,Crime,Drama",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606588017.1325133,
-  "modDate": 1606588017.1325133,
-  "lastCorrelator": "4c1e32ca-31a7-11eb-9478-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc297056472876939034596",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "category"
-  ],
-  "attrs": {
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606588165.205657,
-      "modDate": 1606588165.205657,
-      "value": "2020-11-25",
-      "mdNames": []
-    },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606588165.205657,
-      "modDate": 1606588165.205657,
-      "value": "2021-07-23",
-      "mdNames": []
-    },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606588165.205657,
-      "modDate": 1606588165.205657,
-      "value": "Village Cinemas",
-      "mdNames": []
-    },
-    "title": {
-      "type": "Text",
-      "creDate": 1606588165.205657,
-      "modDate": 1606588165.205657,
-      "value": "Dead Poets Society",
-      "mdNames": []
-    },
-    "category": {
-      "type": "Text",
-      "creDate": 1606588165.205657,
-      "modDate": 1606588165.205657,
-      "value": "Drama",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606588165.205657,
-  "modDate": 1606588165.205657,
-  "lastCorrelator": "a460e2c0-31a7-11eb-bf20-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc2976c24c4bc120b53dc35",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "category"
-  ],
-  "attrs": {
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606588268.412983,
-      "modDate": 1606588268.412983,
-      "value": "2020-12-07",
-      "mdNames": []
-    },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606588268.412983,
-      "modDate": 1606588268.412983,
-      "value": "2022-06-23",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606588268.412983,
-      "modDate": 1606588268.412983,
-      "value": "Colosseum Kino",
-      "mdNames": []
-    },
-    "title": {
-      "type": "Text",
-      "creDate": 1606588268.412983,
-      "modDate": 1606588268.412983,
-      "value": "The Shawshank Redemption",
-      "mdNames": []
-    },
-    "category": {
-      "type": "Text",
-      "creDate": 1606588268.412983,
-      "modDate": 1606588268.412983,
-      "value": "Drama",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606588268.412983,
-  "modDate": 1606588268.412983,
-  "lastCorrelator": "e1e51292-31a7-11eb-89f0-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc297b724c4bc120b53dc36",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "category"
-  ],
-  "attrs": {
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606588343.2109704,
-      "modDate": 1606588343.2109704,
-      "value": "2021-01-23",
-      "mdNames": []
-    },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606588343.2109704,
-      "modDate": 1606588343.2109704,
-      "value": "2021-12-02",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606588343.2109704,
-      "modDate": 1606588343.2109704,
+      "creDate": 1606938551.093475,
+      "modDate": 1606938551.093475,
       "value": "Cine Thisio in Athens",
       "mdNames": []
     },
-    "title": {
-      "type": "Text",
-      "creDate": 1606588343.2109704,
-      "modDate": 1606588343.2109704,
-      "value": "The Godfather",
-      "mdNames": []
-    },
-    "category": {
-      "type": "Text",
-      "creDate": 1606588343.2109704,
-      "modDate": 1606588343.2109704,
-      "value": "Crime",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606588343.2109704,
-  "modDate": 1606588343.2109704,
-  "lastCorrelator": "0e7a57e0-31a8-11eb-8c47-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc2981524c4bc120b53dc37",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "category"
-  ],
-  "attrs": {
     "start_date": {
       "type": "Text",
-      "creDate": 1606588437.8640368,
-      "modDate": 1606588437.8640368,
-      "value": "2020-11-30",
+      "creDate": 1606938551.093475,
+      "modDate": 1606938551.093475,
+      "value": "2021-04-02",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606588437.8640368,
-      "modDate": 1606588437.8640368,
-      "value": "2022-06-29",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606588437.8640368,
-      "modDate": 1606588437.8640368,
-      "value": "Village Cinemas",
-      "mdNames": []
-    },
-    "title": {
-      "type": "Text",
-      "creDate": 1606588437.8640368,
-      "modDate": 1606588437.8640368,
-      "value": "Inception",
-      "mdNames": []
-    },
-    "category": {
-      "type": "Text",
-      "creDate": 1606588437.8640368,
-      "modDate": 1606588437.8640368,
-      "value": "Adventure, Fantasy",
+      "creDate": 1606938551.093475,
+      "modDate": 1606938551.093475,
+      "value": "2021-10-12",
       "mdNames": []
     }
   },
-  "creDate": 1606588437.8640368,
-  "modDate": 1606588437.8640368,
-  "lastCorrelator": "46e542e8-31a8-11eb-a458-0242ac12010f"
+  "creDate": 1606938551.093475,
+  "modDate": 1606938551.093475,
+  "lastCorrelator": "72a466c0-34d7-11eb-abc6-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc29987aa04b33ac261ae49",
+    "id": "5fc7efecd38b3546c26bfe64",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
+    "soon",
+    "playing_now",
     "title",
-    "category"
+    "cin_name",
+    "start_date",
+    "end_date"
   ],
   "attrs": {
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606588807.681081,
-      "modDate": 1606588807.681081,
-      "value": "2020-12-01",
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606938604.5604994,
+      "modDate": 1606938604.5604994,
+      "value": false,
       "mdNames": []
     },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606588807.681081,
-      "modDate": 1606588807.681081,
-      "value": "2022-07-28",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606588807.681081,
-      "modDate": 1606588807.681081,
-      "value": "Grauman’s Chinese Theatre",
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606938604.5604994,
+      "modDate": 1606938604.5604994,
+      "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606588807.681081,
-      "modDate": 1606588807.681081,
-      "value": "The Hobbit",
-      "mdNames": []
-    },
-    "category": {
-      "type": "Text",
-      "creDate": 1606588807.681081,
-      "modDate": 1606588807.681081,
-      "value": "Adventure, Fantasy",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606588807.681081,
-  "modDate": 1606588807.681081,
-  "lastCorrelator": "2352d66e-31a9-11eb-a71d-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc299c87079aa10ee44d6e7",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "category"
-  ],
-  "attrs": {
-    "start_date": {
-      "value": "2021-02-27",
-      "type": "Text",
-      "mdNames": [],
-      "creDate": 1606588872.9819996,
-      "modDate": 1606591526.8733041
-    },
-    "end_date": {
-      "value": "2022-12-10",
-      "type": "Text",
-      "mdNames": [],
-      "creDate": 1606588872.9819996,
-      "modDate": 1606591526.8733323
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606588872.9819996,
-      "modDate": 1606588872.9819996,
-      "value": "Grauman’s Chinese Theatre",
-      "mdNames": []
-    },
-    "title": {
-      "type": "Text",
-      "creDate": 1606588872.9819996,
-      "modDate": 1606588872.9819996,
+      "creDate": 1606938604.5604994,
+      "modDate": 1606938604.5604994,
       "value": "Life Is Beautiful",
       "mdNames": []
     },
-    "category": {
+    "cin_name": {
       "type": "Text",
-      "creDate": 1606588872.9819996,
-      "modDate": 1606588872.9819996,
-      "value": "Comedy, Drama, Romance",
+      "creDate": 1606938604.5604994,
+      "modDate": 1606938604.5604994,
+      "value": "Cine Thisio in Athens",
       "mdNames": []
-    }
-  },
-  "creDate": 1606588872.9819996,
-  "modDate": 1606591526.8812504,
-  "lastCorrelator": "78169b80-31af-11eb-9983-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc299df6d5ae441987501e7",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "category"
-  ],
-  "attrs": {
+    },
     "start_date": {
       "type": "Text",
-      "creDate": 1606588895.2418225,
-      "modDate": 1606588895.2418225,
-      "value": "2021-02-25",
+      "creDate": 1606938604.5604994,
+      "modDate": 1606938604.5604994,
+      "value": "2021-04-30",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606588895.2418225,
-      "modDate": 1606588895.2418225,
-      "value": "2022-11-25",
-      "mdNames": []
-    },
-    "cin_name": {
-      "value": "Cinema Paradiso",
-      "type": "Text",
-      "mdNames": [],
-      "creDate": 1606588895.2418225,
-      "modDate": 1606591752.917279
-    },
-    "title": {
-      "type": "Text",
-      "creDate": 1606588895.2418225,
-      "modDate": 1606588895.2418225,
-      "value": "Life Is Beautiful",
-      "mdNames": []
-    },
-    "category": {
-      "type": "Text",
-      "creDate": 1606588895.2418225,
-      "modDate": 1606588895.2418225,
-      "value": "Comedy, Drama, Romance",
+      "creDate": 1606938604.5604994,
+      "modDate": 1606938604.5604994,
+      "value": "2021-10-31",
       "mdNames": []
     }
   },
-  "creDate": 1606588895.2418225,
-  "modDate": 1606591752.9246798,
-  "lastCorrelator": "fed2308a-31af-11eb-b5c0-0242ac12010f"
+  "creDate": 1606938604.5604994,
+  "modDate": 1606938604.5604994,
+  "lastCorrelator": "9282dd5a-34d7-11eb-a2c9-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc29a206472876939034597",
+    "id": "5fc7f0efff51f20ac272d1c2",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
+    "soon",
+    "playing_now",
     "title",
-    "category"
+    "cin_name",
+    "start_date",
+    "end_date"
   ],
   "attrs": {
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606588960.1666586,
-      "modDate": 1606588960.1666586,
-      "value": "2021-03-15",
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606938863.4290378,
+      "modDate": 1606938863.4290378,
+      "value": false,
       "mdNames": []
     },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606588960.1666586,
-      "modDate": 1606588960.1666586,
-      "value": "2022-03-29",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606588960.1666586,
-      "modDate": 1606588960.1666586,
-      "value": "The Senator",
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606938863.4290378,
+      "modDate": 1606938863.4290378,
+      "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606588960.1666586,
-      "modDate": 1606588960.1666586,
-      "value": "Interstellar",
-      "mdNames": []
-    },
-    "category": {
-      "type": "Text",
-      "creDate": 1606588960.1666586,
-      "modDate": 1606588960.1666586,
-      "value": "Adventure, Drama, Sci-fi",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606588960.1666586,
-  "modDate": 1606588960.1666586,
-  "lastCorrelator": "7e364ad4-31a9-11eb-8174-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc29a5f24c4bc120b53dc39",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "category"
-  ],
-  "attrs": {
-    "start_date": {
-      "value": "2021-03-20",
-      "type": "Text",
-      "mdNames": [],
-      "creDate": 1606589023.4405448,
-      "modDate": 1606589055.5829175
-    },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606589023.4405448,
-      "modDate": 1606589023.4405448,
-      "value": "2022-05-27",
+      "creDate": 1606938863.4290378,
+      "modDate": 1606938863.4290378,
+      "value": "The Prestige",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606589023.4405448,
-      "modDate": 1606589023.4405448,
-      "value": "Cinema Paradiso",
+      "creDate": 1606938863.4290378,
+      "modDate": 1606938863.4290378,
+      "value": "Cine Thisio in Athens",
       "mdNames": []
     },
-    "title": {
-      "type": "Text",
-      "creDate": 1606589023.4405448,
-      "modDate": 1606589023.4405448,
-      "value": "American History X",
-      "mdNames": []
-    },
-    "category": {
-      "type": "Text",
-      "creDate": 1606589023.4405448,
-      "modDate": 1606589023.4405448,
-      "value": "Drama",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606589023.4405448,
-  "modDate": 1606589055.5869813,
-  "lastCorrelator": "b7159f62-31a9-11eb-8043-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc2a21d6472876939034598",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "category"
-  ],
-  "attrs": {
     "start_date": {
       "type": "Text",
-      "creDate": 1606591005.7454536,
-      "modDate": 1606591005.7454536,
-      "value": "2021-01-30",
-      "mdNames": []
-    },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606591005.7454536,
-      "modDate": 1606591005.7454536,
-      "value": "2021-12-30",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606591005.7454536,
-      "modDate": 1606591005.7454536,
-      "value": "The Castro Theatre",
-      "mdNames": []
-    },
-    "title": {
-      "type": "Text",
-      "creDate": 1606591005.7454536,
-      "modDate": 1606591005.7454536,
-      "value": "The Intouchables",
-      "mdNames": []
-    },
-    "category": {
-      "type": "Text",
-      "creDate": 1606591005.7454536,
-      "modDate": 1606591005.7454536,
-      "value": "Biography",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606591005.7454536,
-  "modDate": 1606591005.7454536,
-  "lastCorrelator": "4178407a-31ae-11eb-82f0-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc2a36124c4bc120b53dc3a",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "category"
-  ],
-  "attrs": {
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606591329.617049,
-      "modDate": 1606591329.617049,
+      "creDate": 1606938863.4290378,
+      "modDate": 1606938863.4290378,
       "value": "2021-03-25",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606591329.617049,
-      "modDate": 1606591329.617049,
-      "value": "2022-02-18",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606591329.617049,
-      "modDate": 1606591329.617049,
-      "value": "Matadero Cineteca",
-      "mdNames": []
-    },
-    "title": {
-      "type": "Text",
-      "creDate": 1606591329.617049,
-      "modDate": 1606591329.617049,
-      "value": "The Prestige",
-      "mdNames": []
-    },
-    "category": {
-      "type": "Text",
-      "creDate": 1606591329.617049,
-      "modDate": 1606591329.617049,
-      "value": "Drama, Mystery, Sci-fi",
+      "creDate": 1606938863.4290378,
+      "modDate": 1606938863.4290378,
+      "value": "2021-12-24",
       "mdNames": []
     }
   },
-  "creDate": 1606591329.617049,
-  "modDate": 1606591329.617049,
-  "lastCorrelator": "0283bfec-31af-11eb-ba91-0242ac12010f"
+  "creDate": 1606938863.4290378,
+  "modDate": 1606938863.4290378,
+  "lastCorrelator": "2ccefac4-34d8-11eb-ad49-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc2a3802199ac76d571ca04",
+    "id": "5fc7f115f51b16599566ff12",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
-    "start_date",
-    "end_date",
-    "cin_name",
+    "soon",
+    "playing_now",
     "title",
-    "category"
+    "cin_name",
+    "start_date",
+    "end_date"
   ],
   "attrs": {
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606591360.9778266,
-      "modDate": 1606591360.9778266,
-      "value": "2021-03-20",
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606938901.7227566,
+      "modDate": 1606938901.7227566,
+      "value": false,
       "mdNames": []
     },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606591360.9778266,
-      "modDate": 1606591360.9778266,
-      "value": "2022-03-27",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606591360.9778266,
-      "modDate": 1606591360.9778266,
-      "value": "The Castro Theatre",
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606938901.7227566,
+      "modDate": 1606938901.7227566,
+      "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606591360.9778266,
-      "modDate": 1606591360.9778266,
-      "value": "The Prestige",
+      "creDate": 1606938901.7227566,
+      "modDate": 1606938901.7227566,
+      "value": "The Hobbit",
       "mdNames": []
     },
-    "category": {
+    "cin_name": {
       "type": "Text",
-      "creDate": 1606591360.9778266,
-      "modDate": 1606591360.9778266,
-      "value": "Drama, Mystery, Sci-fi",
+      "creDate": 1606938901.7227566,
+      "modDate": 1606938901.7227566,
+      "value": "Village Cinemas",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606938901.7227566,
+      "modDate": 1606938901.7227566,
+      "value": "2021-01-20",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606938901.7227566,
+      "modDate": 1606938901.7227566,
+      "value": "2021-08-23",
       "mdNames": []
     }
   },
-  "creDate": 1606591360.9778266,
-  "modDate": 1606591360.9778266,
-  "lastCorrelator": "1534fad4-31af-11eb-84d7-0242ac12010f"
+  "creDate": 1606938901.7227566,
+  "modDate": 1606938901.7227566,
+  "lastCorrelator": "43a24df0-34d8-11eb-821b-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7f149f51b16599566ff13",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606938953.3851209,
+      "modDate": 1606938953.3851209,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606938953.3851209,
+      "modDate": 1606938953.3851209,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606938953.3851209,
+      "modDate": 1606938953.3851209,
+      "value": "Dead Poets Society",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606938953.3851209,
+      "modDate": 1606938953.3851209,
+      "value": "Colosseum Kino",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606938953.3851209,
+      "modDate": 1606938953.3851209,
+      "value": "2021-04-20",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606938953.3851209,
+      "modDate": 1606938953.3851209,
+      "value": "2021-10-25",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606938953.3851209,
+  "modDate": 1606938953.3851209,
+  "lastCorrelator": "626d5cfc-34d8-11eb-9e11-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7f168f51b16599566ff14",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606938984.628654,
+      "modDate": 1606938984.628654,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606938984.628654,
+      "modDate": 1606938984.628654,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606938984.628654,
+      "modDate": 1606938984.628654,
+      "value": "The Dark Knight",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606938984.628654,
+      "modDate": 1606938984.628654,
+      "value": "Colosseum Kino",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606938984.628654,
+      "modDate": 1606938984.628654,
+      "value": "2021-03-30",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606938984.628654,
+      "modDate": 1606938984.628654,
+      "value": "2021-10-11",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606938984.628654,
+  "modDate": 1606938984.628654,
+  "lastCorrelator": "750c9616-34d8-11eb-9884-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7f9c913700250d10bbd24",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606941129.759299,
+      "modDate": 1606941129.759299,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606941129.759299,
+      "modDate": 1606941129.759299,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606941129.759299,
+      "modDate": 1606941129.759299,
+      "value": "The Shawshank Redemption",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606941129.759299,
+      "modDate": 1606941129.759299,
+      "value": "Grauman’s Chinese Theatre",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606941129.759299,
+      "modDate": 1606941129.759299,
+      "value": "2021-02-27",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606941129.759299,
+      "modDate": 1606941129.759299,
+      "value": "2021-07-01",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606941129.759299,
+  "modDate": 1606941129.759299,
+  "lastCorrelator": "73a42bfe-34dd-11eb-8988-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7f9f7ba65b72be171e332",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606941175.1780646,
+      "modDate": 1606941175.1780646,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606941175.1780646,
+      "modDate": 1606941175.1780646,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606941175.1780646,
+      "modDate": 1606941175.1780646,
+      "value": "The Godfather",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606941175.1780646,
+      "modDate": 1606941175.1780646,
+      "value": "Grauman’s Chinese Theatre",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606941175.1780646,
+      "modDate": 1606941175.1780646,
+      "value": "2021-03-09",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606941175.1780646,
+      "modDate": 1606941175.1780646,
+      "value": "2021-08-27",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606941175.1780646,
+  "modDate": 1606941175.1780646,
+  "lastCorrelator": "8eb7f24a-34dd-11eb-9161-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7fa30d38b3546c26bfe65",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606941232.2376363,
+      "modDate": 1606941232.2376363,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606941232.2376363,
+      "modDate": 1606941232.2376363,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606941232.2376363,
+      "modDate": 1606941232.2376363,
+      "value": "Inception",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606941232.2376363,
+      "modDate": 1606941232.2376363,
+      "value": "The Senator",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606941232.2376363,
+      "modDate": 1606941232.2376363,
+      "value": "2021-04-02",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606941232.2376363,
+      "modDate": 1606941232.2376363,
+      "value": "2021-07-10",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606941232.2376363,
+  "modDate": 1606941232.2376363,
+  "lastCorrelator": "b0ba8754-34dd-11eb-8b55-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7fa73d38b3546c26bfe66",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606941299.1891634,
+      "modDate": 1606941299.1891634,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606941299.1891634,
+      "modDate": 1606941299.1891634,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606941299.1891634,
+      "modDate": 1606941299.1891634,
+      "value": "The Matrix",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606941299.1891634,
+      "modDate": 1606941299.1891634,
+      "value": "Cinema Paradiso",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606941299.1891634,
+      "modDate": 1606941299.1891634,
+      "value": "2021-03-12",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606941299.1891634,
+      "modDate": 1606941299.1891634,
+      "value": "2021-07-04",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606941299.1891634,
+  "modDate": 1606941299.1891634,
+  "lastCorrelator": "d8a280b4-34dd-11eb-b1c3-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7fae4f51b16599566ff16",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606941412.6951985,
+      "modDate": 1606941412.6951985,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606941412.6951985,
+      "modDate": 1606941412.6951985,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606941412.6951985,
+      "modDate": 1606941412.6951985,
+      "value": "The Lives of Others",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606941412.6951985,
+      "modDate": 1606941412.6951985,
+      "value": "Matadero Cineteca",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606941412.6951985,
+      "modDate": 1606941412.6951985,
+      "value": "2021-04-08",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606941412.6951985,
+      "modDate": 1606941412.6951985,
+      "value": "2021-10-26",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606941412.6951985,
+  "modDate": 1606941412.6951985,
+  "lastCorrelator": "1c4a2e48-34de-11eb-96a0-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7fb12886f6d399009ef73",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606941458.6515028,
+      "modDate": 1606941458.6515028,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606941458.6515028,
+      "modDate": 1606941458.6515028,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606941458.6515028,
+      "modDate": 1606941458.6515028,
+      "value": "Parasite",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606941458.6515028,
+      "modDate": 1606941458.6515028,
+      "value": "Matadero Cineteca",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606941458.6515028,
+      "modDate": 1606941458.6515028,
+      "value": "2021-04-28",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606941458.6515028,
+      "modDate": 1606941458.6515028,
+      "value": "2021-12-31",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606941458.6515028,
+  "modDate": 1606941458.6515028,
+  "lastCorrelator": "37ae8580-34de-11eb-8a55-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7fb8c886f6d399009ef74",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606941580.2260964,
+      "modDate": 1606941580.2260964,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606941580.2260964,
+      "modDate": 1606941580.2260964,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606941580.2260964,
+      "modDate": 1606941580.2260964,
+      "value": "Whiplash",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606941580.2260964,
+      "modDate": 1606941580.2260964,
+      "value": "The Castro Theatre",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606941580.2260964,
+      "modDate": 1606941580.2260964,
+      "value": "2021-01-14",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606941580.2260964,
+      "modDate": 1606941580.2260964,
+      "value": "2021-05-22",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606941580.2260964,
+  "modDate": 1606941580.2260964,
+  "lastCorrelator": "80255de8-34de-11eb-b6dc-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7fbc513700250d10bbd25",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606941637.523219,
+      "modDate": 1606941637.523219,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606941637.523219,
+      "modDate": 1606941637.523219,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606941637.523219,
+      "modDate": 1606941637.523219,
+      "value": "Django Unchained",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606941637.523219,
+      "modDate": 1606941637.523219,
+      "value": "The Castro Theatre",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606941637.523219,
+      "modDate": 1606941637.523219,
+      "value": "2021-03-27",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606941637.523219,
+      "modDate": 1606941637.523219,
+      "value": "2021-07-31",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606941637.523219,
+  "modDate": 1606941637.523219,
+  "lastCorrelator": "a24c2fd2-34de-11eb-8f4e-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc7fc96f51b16599566ff17",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "playing_now",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606941846.3461924,
+      "modDate": 1606941846.3461924,
+      "value": false,
+      "mdNames": []
+    },
+    "playing_now": {
+      "type": "Boolean",
+      "creDate": 1606941846.3461924,
+      "modDate": 1606941846.3461924,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606941846.3461924,
+      "modDate": 1606941846.3461924,
+      "value": "Braveheart",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606941846.3461924,
+      "modDate": 1606941846.3461924,
+      "value": "Matadero Cineteca",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606941846.3461924,
+      "modDate": 1606941846.3461924,
+      "value": "2021-04-26",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606941846.3461924,
+      "modDate": 1606941846.3461924,
+      "value": "2021-09-19",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606941846.3461924,
+  "modDate": 1606941846.3461924,
+  "lastCorrelator": "1ec407e2-34df-11eb-b6a3-0242ac12010f"
 }]
