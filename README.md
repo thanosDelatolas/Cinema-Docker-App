@@ -15,9 +15,9 @@ I developed from scratch:
 ## Compilation
 You need to have already installed only docker and docker-compose.\
 Go to the downloaded folder:  
-* `sudo docker compose up -d`  
+* `sudo docker-compose up -d`  
 
 
 If you want to stop the containers:  
-* `sudo docker compose down`    
+* `sudo docker-compose down`    
 
