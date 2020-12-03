@@ -107,6 +107,18 @@
         $bulk->delete($filter);
         $res = $manager->executeBulkWrite('cinema_db.Subscriptions', $bulk,$writeConcern);
 
+        //remove also from feed table!
+        $filter = [
+            'user_id' => $_GET['user_id'],
+            'mov_id' => $_GET['mov_id']
+            
+        ];
+       
+        $bulk = new MongoDB\Driver\BulkWrite();
+        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 100);
+        $bulk->delete($filter);
+        $result = $manager->executeBulkWrite('cinema_db.Feed', $bulk,$writeConcern);
+
         //return to app logic
         $arr = array(
             'subID' => $subID, //this to delete subscription from orion with curl
@@ -594,6 +606,10 @@
         
 
     /**
+     * request from file orion_notification.php 
+     * in app-logic
+     * 
+     * 
      * check if already exist subscription based on subID
      * if there is =>
      *      the request is for notification!
@@ -634,9 +650,9 @@
             //check if this movie is played now or soon
 
             $soon= trim($_GET['soon']);
-            $playing_now =trim($_GET['playing_now']);
+            $stop_playing =trim($_GET['stop_playing']);
 
-            if($soon|| $playing_now){
+            if($soon|| $stop_playing){
                 $write_feed = true;
             }
         }
@@ -653,7 +669,7 @@
                 'end_date' => trim($_GET['end_date']),
                 'cin_name' => trim($_GET['cin_name']),
                 'soon' => trim($_GET['soon']),
-                'playing_now' => trim($_GET['playing_now']),
+                'stop_playing' => trim($_GET['stop_playing']),
                 'title' => trim($_GET['title']),
                 'user_id' => trim($_GET['user_id']),
                 'received' => date("Y-m-d h:i:sa"), //get now time to know when the notification is received!

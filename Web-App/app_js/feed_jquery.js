@@ -32,17 +32,17 @@ $(document).ready(function(){
                 }
                 else{
                     new_notifs = response.new_notifications;
-                    var playing_now_notifications = false, soon_notifications = false;
+                    var stop_playing_notifications = false, soon_notifications = false;
                     var i =0;
-                    var row_playing_now=0;
+                    var row_stop_playing=0;
                     var row_comming_soon=0;
                     for (i = 0; i < new_notifs.length; i++) {
         
                         const element = new_notifs[i];
                         
-                        if(element.playing_now == "1"){
+                        if(element.stop_playing == "1"){
                             //add all new notifications to the table!
-                            var table = document.getElementById("news_feed_table");
+                            var table = document.getElementById("stop_playing_table");
                             var row = table.insertRow(i+1);
 
                             var cel0 =row.insertCell(0);
@@ -60,10 +60,10 @@ $(document).ready(function(){
                             cel2.innerHTML = element.end_date;
                             cel3.innerHTML = element.received;
 
-                            playing_now_notifications = true;
-                            row_playing_now++;
+                            stop_playing_notifications = true;
+                            row_stop_playing++;
                         }
-                        //soon and playing_now never both 1
+                        //soon and stop_playing never both 1
                         if(element.soon == "1"){
                             //add all new notifications to the table!
                             var table = document.getElementById("coming_soon_table");
@@ -93,9 +93,9 @@ $(document).ready(function(){
                         
                         
                     }
-                    if(playing_now_notifications){
-                        var table = document.getElementById("news_feed_table");
-                        var row_time = table.insertRow(row_playing_now+1);
+                    if(stop_playing_notifications){
+                        var table = document.getElementById("stop_playing_table");
+                        var row_time = table.insertRow(row_stop_playing+1);
 
                         row_time.insertCell(0);
                         var icon_cell = row_time.insertCell(1);

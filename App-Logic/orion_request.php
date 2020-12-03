@@ -21,7 +21,7 @@
                     'attrs' => [ 
                         //notify only on these changes!
                         "soon",
-                        "playing_now"
+                        "stop_playing"
                     ]
                 )
                 
@@ -37,7 +37,7 @@
                     "title",
                 
                     "soon",
-                    "playing_now"
+                    "stop_playing"
                 ]
             ),
             //expires in 2050
@@ -105,7 +105,7 @@
             'end_date' => $end_date,
             'cin_name' => $cin_name,
             'soon' => $arr_input['soon'],
-            'playing_now' => $arr_input['playing_now'],
+            'stop_playing' => $arr_input['stop_playing'],
             'title' => $title
         );
         $curl = curl_init();
@@ -210,20 +210,21 @@
         $diff_1 = $now_interval_start_date->format('%R%a');
         
         /**
-         * to be played now we want start_date <= now!
+         * A movie is doesn't be played anymotre when :
+         *  both start_date <= now and end_date<=now!
          */
-        if($diff >=0 && $diff_1 <=0 ){
-            $playing_now = true;
+        if($diff <=0 && $diff_1 <=0 ){
+            $stop_playing = true;
         }
         else{
-            $playing_now = false;
+            $stop_playing = false;
         }
 
         
         /**
          * movies to be played soon
          */
-        if( ($diff_1>=0 && $diff_1<=30) && ($playing_now == false)){
+        if( $diff_1>=0 && $diff_1<=30){
             $soon = true;
         }
         else {
@@ -233,7 +234,7 @@
             'id' => $mov_id,
             'type' => "Movie", 
             'soon' => $soon,  
-            'playing_now' => $playing_now,  
+            'stop_playing' => $stop_playing,  
             'title' => $title,
             'cin_name' => $cin_name,
             'start_date' => $start_date,

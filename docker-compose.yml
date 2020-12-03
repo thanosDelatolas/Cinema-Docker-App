@@ -122,7 +122,8 @@ services:
     container_name: dataStorage
     hostname: dataStorage
     restart: always
-  
+    ports: 
+      - "4000:80"
     expose: 
       - "80"  #for wilma!
 

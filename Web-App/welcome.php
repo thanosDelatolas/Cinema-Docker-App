@@ -80,12 +80,12 @@
                 <div class="float-container">
                
                     <div id="container" >
-                        <table id="news_feed_table">
-                            <caption> <h1 class="playing_now_tilte"><i class="material-icons">local_movies</i>&nbsp;&nbsp;Playing now! </h1> </caption>
+                        <table id="stop_playing_table">
+                            <caption> <h1 class="stop_playing_tilte">Stop playing... &nbsp;&nbsp; <i class='far fa-sad-tear' style="font-size:29px"></i>  </h1> </caption>
                             <tr class="header">
                                 <th scope="col" class = 'left_header'></th>
                                 <th scope="col">Where?</th>
-                                <th scope="col">Unitl:</th>
+                                <th scope="col">When?</th>
                                 <th scope="col">Received:</th>
                             </tr>
                         
@@ -95,7 +95,7 @@
                             
                                 if(is_array($news) || is_object($news)){
                                     foreach ($news as $n) {
-                                        if($n['playing_now']=="1"){
+                                        if($n['stop_playing']=="1"){
                                             $table_row = "<tr>"
                                                 ."<th class='left' scope='row'> News for: ".$n['title']."</th>"
                                                 ."<td name='cin_name'>".$n['cin_name']."</td>"
@@ -118,7 +118,7 @@
                         <!-- Div for coming soon table!-->
                         <table id="coming_soon_table">
                     
-                            <caption><h1 class="comming_soon_title"><i class="material-icons">movie_filter</i>&nbsp;&nbsp;Coming Soon! </h1> </caption>
+                            <caption><h1 class="comming_soon_title">Coming Soon!&nbsp;&nbsp;<i class="far fa-grin-hearts" style="font-size:29px"></i></h1> </caption>
                             <tr class="header">
                                 <th scope="col" class = 'left_header'></th>
                                 <th scope="col">Where?</th>

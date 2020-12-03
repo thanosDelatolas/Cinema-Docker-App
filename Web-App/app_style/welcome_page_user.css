@@ -17,7 +17,7 @@
         
 }
 
-#news_feed_table {
+#stop_playing_table {
     border-collapse: collapse; /* Collapse borders */
     width: 650px;
     cursor: default;
@@ -28,26 +28,26 @@
 /**
 * Make header remains on the top of the page!
 */
-#news_feed_table th{
+#stop_playing_table th{
 position: sticky;
 top: 0;
 background-color: gray;
 cursor: default;
 
 }
-#news_feed_table th, #news_feed_table td {
+#stop_playing_table th, #stop_playing_table td {
 text-align: left; /* Left-align text */
 padding: 10px; /* Add padding */
 cursor: default;
 }
 
-#news_feed_table tr {
+#stop_playing_table tr {
 /* Add a bottom border to all table rows */
 border-bottom: 1px solid gray;
 
 }
 
-#news_feed_table tr.header {
+#stop_playing_table tr.header {
 /* Add a grey background color to the table header and on hover */
 background-color: gray;
 padding: 5px;
@@ -101,7 +101,7 @@ padding: 5px;
     margin-left: 35%;
 }
 
-.playing_now_tilte{
+.stop_playing_tilte{
     font-size: 24px;
     color:  #00154F;
     font-weight: bolder;

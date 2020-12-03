@@ -55,7 +55,9 @@ body{
 }
 /* for td*/
 .icon{
-    text-align: center !important;
+    text-align: left !important;
+    vertical-align: middle !important;
+    padding-left: 30px !important;
 }
 
 /* for icons*/

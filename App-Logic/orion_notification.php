@@ -22,10 +22,6 @@
    file_put_contents('php://stdout', print_r("\n", TRUE));
    file_put_contents('php://stdout', print_r($notification->data[0]->title->value, TRUE));
    file_put_contents('php://stdout', print_r("\n", TRUE));
-   file_put_contents('php://stdout', print_r($notification->data[0]->soon->value, TRUE));
-   file_put_contents('php://stdout', print_r("\n", TRUE));
-   file_put_contents('php://stdout', print_r($notification->data[0]->playing_now->value, TRUE));
-   file_put_contents('php://stdout', print_r("\n", TRUE));
    file_put_contents('php://stdout', print_r("*********************************************\n", TRUE));
 
    $subID = $notification->subscriptionId;
@@ -79,7 +75,7 @@
       'end_date' => $notification->data[0]->end_date->value,
       'cin_name' => $notification->data[0]->cin_name->value,
       'soon' => $notification->data[0]->soon->value,
-      'playing_now' => $notification->data[0]->playing_now->value,
+      'stop_playing' => $notification->data[0]->stop_playing->value,
       'title' => $notification->data[0]->title->value,
       'user_id' => $user_id //which user to notify! :)
   ]);
