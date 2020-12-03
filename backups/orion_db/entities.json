@@ -1,12 +1,12 @@
 [{
   "_id": {
-    "id": "5fc7efb7886f6d399009ef72",
+    "id": "5fc8ce441ea182027155ab82",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -15,59 +15,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606938551.093475,
-      "modDate": 1606938551.093475,
+      "creDate": 1606995524.5120318,
+      "modDate": 1606995524.5120318,
       "value": false,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606938551.093475,
-      "modDate": 1606938551.093475,
+      "creDate": 1606995524.5120318,
+      "modDate": 1606995524.5120318,
       "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606938551.093475,
-      "modDate": 1606938551.093475,
+      "creDate": 1606995524.5120318,
+      "modDate": 1606995524.5120318,
       "value": "The Dark Knight",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606938551.093475,
-      "modDate": 1606938551.093475,
+      "creDate": 1606995524.5120318,
+      "modDate": 1606995524.5120318,
       "value": "Cine Thisio in Athens",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606938551.093475,
-      "modDate": 1606938551.093475,
-      "value": "2021-04-02",
+      "creDate": 1606995524.5120318,
+      "modDate": 1606995524.5120318,
+      "value": "2020-04-26",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606938551.093475,
-      "modDate": 1606938551.093475,
-      "value": "2021-10-12",
+      "creDate": 1606995524.5120318,
+      "modDate": 1606995524.5120318,
+      "value": "2021-06-25",
       "mdNames": []
     }
   },
-  "creDate": 1606938551.093475,
-  "modDate": 1606938551.093475,
-  "lastCorrelator": "72a466c0-34d7-11eb-abc6-0242ac12010f"
+  "creDate": 1606995524.5120318,
+  "modDate": 1606995524.5120318,
+  "lastCorrelator": "19722652-355c-11eb-b5f7-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7efecd38b3546c26bfe64",
+    "id": "5fc8ce911f6b3e63884bcb66",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -76,59 +76,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606938604.5604994,
-      "modDate": 1606938604.5604994,
+      "creDate": 1606995601.8833663,
+      "modDate": 1606995601.8833663,
       "value": false,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606938604.5604994,
-      "modDate": 1606938604.5604994,
+      "creDate": 1606995601.8833663,
+      "modDate": 1606995601.8833663,
       "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606938604.5604994,
-      "modDate": 1606938604.5604994,
+      "creDate": 1606995601.8833663,
+      "modDate": 1606995601.8833663,
       "value": "Life Is Beautiful",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606938604.5604994,
-      "modDate": 1606938604.5604994,
+      "creDate": 1606995601.8833663,
+      "modDate": 1606995601.8833663,
       "value": "Cine Thisio in Athens",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606938604.5604994,
-      "modDate": 1606938604.5604994,
-      "value": "2021-04-30",
+      "creDate": 1606995601.8833663,
+      "modDate": 1606995601.8833663,
+      "value": "2020-11-30",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606938604.5604994,
-      "modDate": 1606938604.5604994,
-      "value": "2021-10-31",
+      "creDate": 1606995601.8833663,
+      "modDate": 1606995601.8833663,
+      "value": "2021-03-22",
       "mdNames": []
     }
   },
-  "creDate": 1606938604.5604994,
-  "modDate": 1606938604.5604994,
-  "lastCorrelator": "9282dd5a-34d7-11eb-a2c9-0242ac12010f"
+  "creDate": 1606995601.8833663,
+  "modDate": 1606995601.8833663,
+  "lastCorrelator": "4790108a-355c-11eb-8c41-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7f0efff51f20ac272d1c2",
+    "id": "5fc8cf0a4332c9010344c565",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -137,120 +137,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606938863.4290378,
-      "modDate": 1606938863.4290378,
+      "creDate": 1606995722.9136393,
+      "modDate": 1606995722.9136393,
       "value": false,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606938863.4290378,
-      "modDate": 1606938863.4290378,
+      "creDate": 1606995722.9136393,
+      "modDate": 1606995722.9136393,
       "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606938863.4290378,
-      "modDate": 1606938863.4290378,
+      "creDate": 1606995722.9136393,
+      "modDate": 1606995722.9136393,
       "value": "The Prestige",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606938863.4290378,
-      "modDate": 1606938863.4290378,
-      "value": "Cine Thisio in Athens",
-      "mdNames": []
-    },
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606938863.4290378,
-      "modDate": 1606938863.4290378,
-      "value": "2021-03-25",
-      "mdNames": []
-    },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606938863.4290378,
-      "modDate": 1606938863.4290378,
-      "value": "2021-12-24",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606938863.4290378,
-  "modDate": 1606938863.4290378,
-  "lastCorrelator": "2ccefac4-34d8-11eb-ad49-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc7f115f51b16599566ff12",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "soon",
-    "playing_now",
-    "title",
-    "cin_name",
-    "start_date",
-    "end_date"
-  ],
-  "attrs": {
-    "soon": {
-      "type": "Boolean",
-      "creDate": 1606938901.7227566,
-      "modDate": 1606938901.7227566,
-      "value": false,
-      "mdNames": []
-    },
-    "playing_now": {
-      "type": "Boolean",
-      "creDate": 1606938901.7227566,
-      "modDate": 1606938901.7227566,
-      "value": false,
-      "mdNames": []
-    },
-    "title": {
-      "type": "Text",
-      "creDate": 1606938901.7227566,
-      "modDate": 1606938901.7227566,
-      "value": "The Hobbit",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606938901.7227566,
-      "modDate": 1606938901.7227566,
+      "creDate": 1606995722.9136393,
+      "modDate": 1606995722.9136393,
       "value": "Village Cinemas",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606938901.7227566,
-      "modDate": 1606938901.7227566,
-      "value": "2021-01-20",
+      "creDate": 1606995722.9136393,
+      "modDate": 1606995722.9136393,
+      "value": "2020-11-08",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606938901.7227566,
-      "modDate": 1606938901.7227566,
-      "value": "2021-08-23",
+      "creDate": 1606995722.9136393,
+      "modDate": 1606995722.9136393,
+      "value": "2021-05-29",
       "mdNames": []
     }
   },
-  "creDate": 1606938901.7227566,
-  "modDate": 1606938901.7227566,
-  "lastCorrelator": "43a24df0-34d8-11eb-821b-0242ac12010f"
+  "creDate": 1606995722.9136393,
+  "modDate": 1606995722.9136393,
+  "lastCorrelator": "8fb3d400-355c-11eb-bd75-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7f149f51b16599566ff13",
+    "id": "5fc8d326e8d89934a1128116",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -259,59 +198,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606938953.3851209,
-      "modDate": 1606938953.3851209,
+      "creDate": 1606996774.9426594,
+      "modDate": 1606996774.9426594,
       "value": false,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606938953.3851209,
-      "modDate": 1606938953.3851209,
+      "creDate": 1606996774.9426594,
+      "modDate": 1606996774.9426594,
       "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606938953.3851209,
-      "modDate": 1606938953.3851209,
+      "creDate": 1606996774.9426594,
+      "modDate": 1606996774.9426594,
       "value": "Dead Poets Society",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606938953.3851209,
-      "modDate": 1606938953.3851209,
+      "creDate": 1606996774.9426594,
+      "modDate": 1606996774.9426594,
       "value": "Colosseum Kino",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606938953.3851209,
-      "modDate": 1606938953.3851209,
-      "value": "2021-04-20",
+      "creDate": 1606996774.9426594,
+      "modDate": 1606996774.9426594,
+      "value": "2021-03-01",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606938953.3851209,
-      "modDate": 1606938953.3851209,
-      "value": "2021-10-25",
+      "creDate": 1606996774.9426594,
+      "modDate": 1606996774.9426594,
+      "value": "2021-08-16",
       "mdNames": []
     }
   },
-  "creDate": 1606938953.3851209,
-  "modDate": 1606938953.3851209,
-  "lastCorrelator": "626d5cfc-34d8-11eb-9e11-0242ac12010f"
+  "creDate": 1606996774.9426594,
+  "modDate": 1606996774.9426594,
+  "lastCorrelator": "02c2b43c-355f-11eb-b9c9-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7f168f51b16599566ff14",
+    "id": "5fc8d367e8d89934a1128117",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -320,120 +259,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606938984.628654,
-      "modDate": 1606938984.628654,
-      "value": false,
+      "creDate": 1606996839.7618816,
+      "modDate": 1606996839.7618816,
+      "value": true,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606938984.628654,
-      "modDate": 1606938984.628654,
+      "creDate": 1606996839.7618816,
+      "modDate": 1606996839.7618816,
       "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606938984.628654,
-      "modDate": 1606938984.628654,
-      "value": "The Dark Knight",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606938984.628654,
-      "modDate": 1606938984.628654,
-      "value": "Colosseum Kino",
-      "mdNames": []
-    },
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606938984.628654,
-      "modDate": 1606938984.628654,
-      "value": "2021-03-30",
-      "mdNames": []
-    },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606938984.628654,
-      "modDate": 1606938984.628654,
-      "value": "2021-10-11",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606938984.628654,
-  "modDate": 1606938984.628654,
-  "lastCorrelator": "750c9616-34d8-11eb-9884-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc7f9c913700250d10bbd24",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "soon",
-    "playing_now",
-    "title",
-    "cin_name",
-    "start_date",
-    "end_date"
-  ],
-  "attrs": {
-    "soon": {
-      "type": "Boolean",
-      "creDate": 1606941129.759299,
-      "modDate": 1606941129.759299,
-      "value": false,
-      "mdNames": []
-    },
-    "playing_now": {
-      "type": "Boolean",
-      "creDate": 1606941129.759299,
-      "modDate": 1606941129.759299,
-      "value": false,
-      "mdNames": []
-    },
-    "title": {
-      "type": "Text",
-      "creDate": 1606941129.759299,
-      "modDate": 1606941129.759299,
+      "creDate": 1606996839.7618816,
+      "modDate": 1606996839.7618816,
       "value": "The Shawshank Redemption",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606941129.759299,
-      "modDate": 1606941129.759299,
-      "value": "Grauman’s Chinese Theatre",
+      "creDate": 1606996839.7618816,
+      "modDate": 1606996839.7618816,
+      "value": "Village Cinemas",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606941129.759299,
-      "modDate": 1606941129.759299,
-      "value": "2021-02-27",
+      "creDate": 1606996839.7618816,
+      "modDate": 1606996839.7618816,
+      "value": "2020-12-27",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606941129.759299,
-      "modDate": 1606941129.759299,
-      "value": "2021-07-01",
+      "creDate": 1606996839.7618816,
+      "modDate": 1606996839.7618816,
+      "value": "2021-05-04",
       "mdNames": []
     }
   },
-  "creDate": 1606941129.759299,
-  "modDate": 1606941129.759299,
-  "lastCorrelator": "73a42bfe-34dd-11eb-8988-0242ac12010f"
+  "creDate": 1606996839.7618816,
+  "modDate": 1606996839.7618816,
+  "lastCorrelator": "29655784-355f-11eb-a61e-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7f9f7ba65b72be171e332",
+    "id": "5fc8d3bbb58d5731f177ea47",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -442,59 +320,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606941175.1780646,
-      "modDate": 1606941175.1780646,
+      "creDate": 1606996923.9861312,
+      "modDate": 1606996923.9861312,
       "value": false,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606941175.1780646,
-      "modDate": 1606941175.1780646,
+      "creDate": 1606996923.9861312,
+      "modDate": 1606996923.9861312,
       "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606941175.1780646,
-      "modDate": 1606941175.1780646,
+      "creDate": 1606996923.9861312,
+      "modDate": 1606996923.9861312,
       "value": "The Godfather",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606941175.1780646,
-      "modDate": 1606941175.1780646,
+      "creDate": 1606996923.9861312,
+      "modDate": 1606996923.9861312,
       "value": "Grauman’s Chinese Theatre",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606941175.1780646,
-      "modDate": 1606941175.1780646,
-      "value": "2021-03-09",
+      "creDate": 1606996923.9861312,
+      "modDate": 1606996923.9861312,
+      "value": "2021-03-19",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606941175.1780646,
-      "modDate": 1606941175.1780646,
-      "value": "2021-08-27",
+      "creDate": 1606996923.9861312,
+      "modDate": 1606996923.9861312,
+      "value": "2021-09-06",
       "mdNames": []
     }
   },
-  "creDate": 1606941175.1780646,
-  "modDate": 1606941175.1780646,
-  "lastCorrelator": "8eb7f24a-34dd-11eb-9161-0242ac12010f"
+  "creDate": 1606996923.9861312,
+  "modDate": 1606996923.9861312,
+  "lastCorrelator": "5b98ee3c-355f-11eb-aa61-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7fa30d38b3546c26bfe65",
+    "id": "5fc8d3d24332c9010344c566",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -503,59 +381,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606941232.2376363,
-      "modDate": 1606941232.2376363,
+      "creDate": 1606996946.9115915,
+      "modDate": 1606996946.9115915,
       "value": false,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606941232.2376363,
-      "modDate": 1606941232.2376363,
+      "creDate": 1606996946.9115915,
+      "modDate": 1606996946.9115915,
       "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606941232.2376363,
-      "modDate": 1606941232.2376363,
-      "value": "Inception",
+      "creDate": 1606996946.9115915,
+      "modDate": 1606996946.9115915,
+      "value": "The Intouchables",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606941232.2376363,
-      "modDate": 1606941232.2376363,
-      "value": "The Senator",
+      "creDate": 1606996946.9115915,
+      "modDate": 1606996946.9115915,
+      "value": "Grauman’s Chinese Theatre",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606941232.2376363,
-      "modDate": 1606941232.2376363,
-      "value": "2021-04-02",
+      "creDate": 1606996946.9115915,
+      "modDate": 1606996946.9115915,
+      "value": "2021-01-04",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606941232.2376363,
-      "modDate": 1606941232.2376363,
-      "value": "2021-07-10",
+      "creDate": 1606996946.9115915,
+      "modDate": 1606996946.9115915,
+      "value": "2021-09-10",
       "mdNames": []
     }
   },
-  "creDate": 1606941232.2376363,
-  "modDate": 1606941232.2376363,
-  "lastCorrelator": "b0ba8754-34dd-11eb-8b55-0242ac12010f"
+  "creDate": 1606996946.9115915,
+  "modDate": 1606996946.9115915,
+  "lastCorrelator": "694316b6-355f-11eb-92a3-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7fa73d38b3546c26bfe66",
+    "id": "5fc8d4234332c9010344c567",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -564,120 +442,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606941299.1891634,
-      "modDate": 1606941299.1891634,
+      "creDate": 1606997027.0817218,
+      "modDate": 1606997027.0817218,
       "value": false,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606941299.1891634,
-      "modDate": 1606941299.1891634,
-      "value": false,
+      "creDate": 1606997027.0817218,
+      "modDate": 1606997027.0817218,
+      "value": true,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606941299.1891634,
-      "modDate": 1606941299.1891634,
-      "value": "The Matrix",
-      "mdNames": []
-    },
-    "cin_name": {
-      "type": "Text",
-      "creDate": 1606941299.1891634,
-      "modDate": 1606941299.1891634,
-      "value": "Cinema Paradiso",
-      "mdNames": []
-    },
-    "start_date": {
-      "type": "Text",
-      "creDate": 1606941299.1891634,
-      "modDate": 1606941299.1891634,
-      "value": "2021-03-12",
-      "mdNames": []
-    },
-    "end_date": {
-      "type": "Text",
-      "creDate": 1606941299.1891634,
-      "modDate": 1606941299.1891634,
-      "value": "2021-07-04",
-      "mdNames": []
-    }
-  },
-  "creDate": 1606941299.1891634,
-  "modDate": 1606941299.1891634,
-  "lastCorrelator": "d8a280b4-34dd-11eb-b1c3-0242ac12010f"
-},{
-  "_id": {
-    "id": "5fc7fae4f51b16599566ff16",
-    "type": "Movie",
-    "servicePath": "/"
-  },
-  "attrNames": [
-    "soon",
-    "playing_now",
-    "title",
-    "cin_name",
-    "start_date",
-    "end_date"
-  ],
-  "attrs": {
-    "soon": {
-      "type": "Boolean",
-      "creDate": 1606941412.6951985,
-      "modDate": 1606941412.6951985,
-      "value": false,
-      "mdNames": []
-    },
-    "playing_now": {
-      "type": "Boolean",
-      "creDate": 1606941412.6951985,
-      "modDate": 1606941412.6951985,
-      "value": false,
-      "mdNames": []
-    },
-    "title": {
-      "type": "Text",
-      "creDate": 1606941412.6951985,
-      "modDate": 1606941412.6951985,
+      "creDate": 1606997027.0817218,
+      "modDate": 1606997027.0817218,
       "value": "The Lives of Others",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606941412.6951985,
-      "modDate": 1606941412.6951985,
-      "value": "Matadero Cineteca",
+      "creDate": 1606997027.0817218,
+      "modDate": 1606997027.0817218,
+      "value": "The Senator",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606941412.6951985,
-      "modDate": 1606941412.6951985,
-      "value": "2021-04-08",
+      "creDate": 1606997027.0817218,
+      "modDate": 1606997027.0817218,
+      "value": "2020-07-05",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606941412.6951985,
-      "modDate": 1606941412.6951985,
-      "value": "2021-10-26",
+      "creDate": 1606997027.0817218,
+      "modDate": 1606997027.0817218,
+      "value": "2020-08-31",
       "mdNames": []
     }
   },
-  "creDate": 1606941412.6951985,
-  "modDate": 1606941412.6951985,
-  "lastCorrelator": "1c4a2e48-34de-11eb-96a0-0242ac12010f"
+  "creDate": 1606997027.0817218,
+  "modDate": 1606997027.0817218,
+  "lastCorrelator": "990c23b0-355f-11eb-af9a-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7fb12886f6d399009ef73",
+    "id": "5fc8d4524332c9010344c568",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -686,59 +503,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606941458.6515028,
-      "modDate": 1606941458.6515028,
-      "value": false,
+      "creDate": 1606997074.352616,
+      "modDate": 1606997074.352616,
+      "value": true,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606941458.6515028,
-      "modDate": 1606941458.6515028,
+      "creDate": 1606997074.352616,
+      "modDate": 1606997074.352616,
       "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606941458.6515028,
-      "modDate": 1606941458.6515028,
-      "value": "Parasite",
+      "creDate": 1606997074.352616,
+      "modDate": 1606997074.352616,
+      "value": "American History X",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606941458.6515028,
-      "modDate": 1606941458.6515028,
-      "value": "Matadero Cineteca",
+      "creDate": 1606997074.352616,
+      "modDate": 1606997074.352616,
+      "value": "Cinema Paradiso",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606941458.6515028,
-      "modDate": 1606941458.6515028,
-      "value": "2021-04-28",
+      "creDate": 1606997074.352616,
+      "modDate": 1606997074.352616,
+      "value": "2020-12-27",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606941458.6515028,
-      "modDate": 1606941458.6515028,
-      "value": "2021-12-31",
+      "creDate": 1606997074.352616,
+      "modDate": 1606997074.352616,
+      "value": "2021-09-11",
       "mdNames": []
     }
   },
-  "creDate": 1606941458.6515028,
-  "modDate": 1606941458.6515028,
-  "lastCorrelator": "37ae8580-34de-11eb-8a55-0242ac12010f"
+  "creDate": 1606997074.352616,
+  "modDate": 1606997074.352616,
+  "lastCorrelator": "b5390bf2-355f-11eb-ab1b-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7fb8c886f6d399009ef74",
+    "id": "5fc8d4894332c9010344c569",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -747,59 +564,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606941580.2260964,
-      "modDate": 1606941580.2260964,
+      "creDate": 1606997129.2114415,
+      "modDate": 1606997129.2114415,
       "value": false,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606941580.2260964,
-      "modDate": 1606941580.2260964,
+      "creDate": 1606997129.2114415,
+      "modDate": 1606997129.2114415,
       "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606941580.2260964,
-      "modDate": 1606941580.2260964,
+      "creDate": 1606997129.2114415,
+      "modDate": 1606997129.2114415,
       "value": "Whiplash",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606941580.2260964,
-      "modDate": 1606941580.2260964,
-      "value": "The Castro Theatre",
+      "creDate": 1606997129.2114415,
+      "modDate": 1606997129.2114415,
+      "value": "Cinema Paradiso",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606941580.2260964,
-      "modDate": 1606941580.2260964,
-      "value": "2021-01-14",
+      "creDate": 1606997129.2114415,
+      "modDate": 1606997129.2114415,
+      "value": "2021-04-09",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606941580.2260964,
-      "modDate": 1606941580.2260964,
-      "value": "2021-05-22",
+      "creDate": 1606997129.2114415,
+      "modDate": 1606997129.2114415,
+      "value": "2021-07-27",
       "mdNames": []
     }
   },
-  "creDate": 1606941580.2260964,
-  "modDate": 1606941580.2260964,
-  "lastCorrelator": "80255de8-34de-11eb-b6dc-0242ac12010f"
+  "creDate": 1606997129.2114415,
+  "modDate": 1606997129.2114415,
+  "lastCorrelator": "d5ebfc2e-355f-11eb-996d-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7fbc513700250d10bbd25",
+    "id": "5fc8d6cd1f6b3e63884bcb67",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -808,59 +625,59 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606941637.523219,
-      "modDate": 1606941637.523219,
+      "creDate": 1606997709.5910869,
+      "modDate": 1606997709.5910869,
       "value": false,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606941637.523219,
-      "modDate": 1606941637.523219,
+      "creDate": 1606997709.5910869,
+      "modDate": 1606997709.5910869,
       "value": false,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606941637.523219,
-      "modDate": 1606941637.523219,
+      "creDate": 1606997709.5910869,
+      "modDate": 1606997709.5910869,
       "value": "Django Unchained",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606941637.523219,
-      "modDate": 1606941637.523219,
-      "value": "The Castro Theatre",
+      "creDate": 1606997709.5910869,
+      "modDate": 1606997709.5910869,
+      "value": "Matadero Cineteca",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606941637.523219,
-      "modDate": 1606941637.523219,
-      "value": "2021-03-27",
+      "creDate": 1606997709.5910869,
+      "modDate": 1606997709.5910869,
+      "value": "2021-04-29",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606941637.523219,
-      "modDate": 1606941637.523219,
-      "value": "2021-07-31",
+      "creDate": 1606997709.5910869,
+      "modDate": 1606997709.5910869,
+      "value": "2021-07-28",
       "mdNames": []
     }
   },
-  "creDate": 1606941637.523219,
-  "modDate": 1606941637.523219,
-  "lastCorrelator": "a24c2fd2-34de-11eb-8f4e-0242ac12010f"
+  "creDate": 1606997709.5910869,
+  "modDate": 1606997709.5910869,
+  "lastCorrelator": "2fdae014-3561-11eb-9c68-0242ac12010f"
 },{
   "_id": {
-    "id": "5fc7fc96f51b16599566ff17",
+    "id": "5fc8d700e8d89934a1128119",
     "type": "Movie",
     "servicePath": "/"
   },
   "attrNames": [
     "soon",
-    "playing_now",
+    "stop_playing",
     "title",
     "cin_name",
     "start_date",
@@ -869,48 +686,109 @@
   "attrs": {
     "soon": {
       "type": "Boolean",
-      "creDate": 1606941846.3461924,
-      "modDate": 1606941846.3461924,
+      "creDate": 1606997760.999602,
+      "modDate": 1606997760.999602,
       "value": false,
       "mdNames": []
     },
-    "playing_now": {
+    "stop_playing": {
       "type": "Boolean",
-      "creDate": 1606941846.3461924,
-      "modDate": 1606941846.3461924,
-      "value": false,
+      "creDate": 1606997760.999602,
+      "modDate": 1606997760.999602,
+      "value": true,
       "mdNames": []
     },
     "title": {
       "type": "Text",
-      "creDate": 1606941846.3461924,
-      "modDate": 1606941846.3461924,
+      "creDate": 1606997760.999602,
+      "modDate": 1606997760.999602,
       "value": "Braveheart",
       "mdNames": []
     },
     "cin_name": {
       "type": "Text",
-      "creDate": 1606941846.3461924,
-      "modDate": 1606941846.3461924,
+      "creDate": 1606997760.999602,
+      "modDate": 1606997760.999602,
       "value": "Matadero Cineteca",
       "mdNames": []
     },
     "start_date": {
       "type": "Text",
-      "creDate": 1606941846.3461924,
-      "modDate": 1606941846.3461924,
-      "value": "2021-04-26",
+      "creDate": 1606997760.999602,
+      "modDate": 1606997760.999602,
+      "value": "2020-04-26",
       "mdNames": []
     },
     "end_date": {
       "type": "Text",
-      "creDate": 1606941846.3461924,
-      "modDate": 1606941846.3461924,
-      "value": "2021-09-19",
+      "creDate": 1606997760.999602,
+      "modDate": 1606997760.999602,
+      "value": "2020-09-06",
       "mdNames": []
     }
   },
-  "creDate": 1606941846.3461924,
-  "modDate": 1606941846.3461924,
-  "lastCorrelator": "1ec407e2-34df-11eb-b6a3-0242ac12010f"
+  "creDate": 1606997760.999602,
+  "modDate": 1606997760.999602,
+  "lastCorrelator": "4e7f0e96-3561-11eb-ab79-0242ac12010f"
+},{
+  "_id": {
+    "id": "5fc8d8501ea182027155ab83",
+    "type": "Movie",
+    "servicePath": "/"
+  },
+  "attrNames": [
+    "soon",
+    "stop_playing",
+    "title",
+    "cin_name",
+    "start_date",
+    "end_date"
+  ],
+  "attrs": {
+    "soon": {
+      "type": "Boolean",
+      "creDate": 1606998096.481875,
+      "modDate": 1606998096.481875,
+      "value": false,
+      "mdNames": []
+    },
+    "stop_playing": {
+      "type": "Boolean",
+      "creDate": 1606998096.481875,
+      "modDate": 1606998096.481875,
+      "value": false,
+      "mdNames": []
+    },
+    "title": {
+      "type": "Text",
+      "creDate": 1606998096.481875,
+      "modDate": 1606998096.481875,
+      "value": "Ford v Ferrari",
+      "mdNames": []
+    },
+    "cin_name": {
+      "type": "Text",
+      "creDate": 1606998096.481875,
+      "modDate": 1606998096.481875,
+      "value": "The Castro Theatre",
+      "mdNames": []
+    },
+    "start_date": {
+      "type": "Text",
+      "creDate": 1606998096.481875,
+      "modDate": 1606998096.481875,
+      "value": "2021-03-19",
+      "mdNames": []
+    },
+    "end_date": {
+      "type": "Text",
+      "creDate": 1606998096.481875,
+      "modDate": 1606998096.481875,
+      "value": "2021-04-26",
+      "mdNames": []
+    }
+  },
+  "creDate": 1606998096.481875,
+  "modDate": 1606998096.481875,
+  "lastCorrelator": "1675964a-3562-11eb-853c-0242ac12010f"
 }]

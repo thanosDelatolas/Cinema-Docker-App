@@ -1,6 +1,144 @@
 [{
   "_id": {
-    "$oid": "5fc7fcfe9789ecfb81e25b85"
+    "$oid": "5fc8d9631d3c2bebd529120f"
+  },
+  "expiration": 2524658400,
+  "reference": "http://172.18.1.8/orion_notification.php",
+  "custom": false,
+  "throttling": 0,
+  "servicePath": "/#",
+  "description": "0b10e960-70d4-4318-b6d0-e9132430ab09",
+  "status": "active",
+  "entities": [
+    {
+      "id": "5fc8d8501ea182027155ab83",
+      "isPattern": "false",
+      "type": "Movie",
+      "isTypePattern": false
+    }
+  ],
+  "attrs": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "soon",
+    "stop_playing"
+  ],
+  "metadata": [],
+  "blacklist": false,
+  "onlyChanged": false,
+  "conditions": [
+    "soon",
+    "stop_playing"
+  ],
+  "lastNotification": 1606998371,
+  "count": 1,
+  "expression": {
+    "q": "",
+    "mq": "",
+    "geometry": "",
+    "coords": "",
+    "georel": ""
+  },
+  "format": "normalized",
+  "lastSuccess": 1606998371,
+  "lastSuccessCode": 200
+},{
+  "_id": {
+    "$oid": "5fc8d9941d3c2bebd5291210"
+  },
+  "expiration": 2524658400,
+  "reference": "http://172.18.1.8/orion_notification.php",
+  "custom": false,
+  "throttling": 0,
+  "servicePath": "/#",
+  "description": "0b10e960-70d4-4318-b6d0-e9132430ab09",
+  "status": "active",
+  "entities": [
+    {
+      "id": "5fc8d700e8d89934a1128119",
+      "isPattern": "false",
+      "type": "Movie",
+      "isTypePattern": false
+    }
+  ],
+  "attrs": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "soon",
+    "stop_playing"
+  ],
+  "metadata": [],
+  "blacklist": false,
+  "onlyChanged": false,
+  "conditions": [
+    "soon",
+    "stop_playing"
+  ],
+  "lastNotification": 1606998420,
+  "count": 1,
+  "expression": {
+    "q": "",
+    "mq": "",
+    "geometry": "",
+    "coords": "",
+    "georel": ""
+  },
+  "format": "normalized",
+  "lastSuccess": 1606998420,
+  "lastSuccessCode": 200
+},{
+  "_id": {
+    "$oid": "5fc8d9c21d3c2bebd5291211"
+  },
+  "expiration": 2524658400,
+  "reference": "http://172.18.1.8/orion_notification.php",
+  "custom": false,
+  "throttling": 0,
+  "servicePath": "/#",
+  "description": "ce057e40-c344-4da4-9d4d-8c58c412c827",
+  "status": "active",
+  "entities": [
+    {
+      "id": "5fc8d367e8d89934a1128117",
+      "isPattern": "false",
+      "type": "Movie",
+      "isTypePattern": false
+    }
+  ],
+  "attrs": [
+    "start_date",
+    "end_date",
+    "cin_name",
+    "title",
+    "soon",
+    "stop_playing"
+  ],
+  "metadata": [],
+  "blacklist": false,
+  "onlyChanged": false,
+  "conditions": [
+    "soon",
+    "stop_playing"
+  ],
+  "lastNotification": 1606998466,
+  "count": 1,
+  "expression": {
+    "q": "",
+    "mq": "",
+    "geometry": "",
+    "coords": "",
+    "georel": ""
+  },
+  "format": "normalized",
+  "lastSuccess": 1606998466,
+  "lastSuccessCode": 200
+},{
+  "_id": {
+    "$oid": "5fc8da0c1d3c2bebd5291213"
   },
   "expiration": 2524658400,
   "reference": "http://172.18.1.8/orion_notification.php",
@@ -11,7 +149,7 @@
   "status": "active",
   "entities": [
     {
-      "id": "5fc7f9f7ba65b72be171e332",
+      "id": "5fc8ce911f6b3e63884bcb66",
       "isPattern": "false",
       "type": "Movie",
       "isTypePattern": false
@@ -23,16 +161,16 @@
     "cin_name",
     "title",
     "soon",
-    "playing_now"
+    "stop_playing"
   ],
   "metadata": [],
   "blacklist": false,
   "onlyChanged": false,
   "conditions": [
     "soon",
-    "playing_now"
+    "stop_playing"
   ],
-  "lastNotification": 1606941951,
+  "lastNotification": 1606998540,
   "count": 1,
   "expression": {
     "q": "",
@@ -42,190 +180,6 @@
     "georel": ""
   },
   "format": "normalized",
-  "lastSuccess": 1606941951,
-  "lastSuccessCode": 200
-},{
-  "_id": {
-    "$oid": "5fc7fd239789ecfb81e25b86"
-  },
-  "expiration": 2524658400,
-  "reference": "http://172.18.1.8/orion_notification.php",
-  "custom": false,
-  "throttling": 0,
-  "servicePath": "/#",
-  "description": "31d15af9-0ead-4f50-bf00-17a06a49f0ac",
-  "status": "active",
-  "entities": [
-    {
-      "id": "5fc7fc96f51b16599566ff17",
-      "isPattern": "false",
-      "type": "Movie",
-      "isTypePattern": false
-    }
-  ],
-  "attrs": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "soon",
-    "playing_now"
-  ],
-  "metadata": [],
-  "blacklist": false,
-  "onlyChanged": false,
-  "conditions": [
-    "soon",
-    "playing_now"
-  ],
-  "lastNotification": 1606941987,
-  "count": 1,
-  "expression": {
-    "q": "",
-    "mq": "",
-    "geometry": "",
-    "coords": "",
-    "georel": ""
-  },
-  "format": "normalized",
-  "lastSuccess": 1606941987,
-  "lastSuccessCode": 200
-},{
-  "_id": {
-    "$oid": "5fc7fd389789ecfb81e25b87"
-  },
-  "expiration": 2524658400,
-  "reference": "http://172.18.1.8/orion_notification.php",
-  "custom": false,
-  "throttling": 0,
-  "servicePath": "/#",
-  "description": "0b10e960-70d4-4318-b6d0-e9132430ab09",
-  "status": "active",
-  "entities": [
-    {
-      "id": "5fc7f149f51b16599566ff13",
-      "isPattern": "false",
-      "type": "Movie",
-      "isTypePattern": false
-    }
-  ],
-  "attrs": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "soon",
-    "playing_now"
-  ],
-  "metadata": [],
-  "blacklist": false,
-  "onlyChanged": false,
-  "conditions": [
-    "soon",
-    "playing_now"
-  ],
-  "lastNotification": 1606942008,
-  "count": 1,
-  "expression": {
-    "q": "",
-    "mq": "",
-    "geometry": "",
-    "coords": "",
-    "georel": ""
-  },
-  "format": "normalized",
-  "lastSuccess": 1606942008,
-  "lastSuccessCode": 200
-},{
-  "_id": {
-    "$oid": "5fc7fd399789ecfb81e25b88"
-  },
-  "expiration": 2524658400,
-  "reference": "http://172.18.1.8/orion_notification.php",
-  "custom": false,
-  "throttling": 0,
-  "servicePath": "/#",
-  "description": "0b10e960-70d4-4318-b6d0-e9132430ab09",
-  "status": "active",
-  "entities": [
-    {
-      "id": "5fc7fae4f51b16599566ff16",
-      "isPattern": "false",
-      "type": "Movie",
-      "isTypePattern": false
-    }
-  ],
-  "attrs": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "soon",
-    "playing_now"
-  ],
-  "metadata": [],
-  "blacklist": false,
-  "onlyChanged": false,
-  "conditions": [
-    "soon",
-    "playing_now"
-  ],
-  "lastNotification": 1606942009,
-  "count": 1,
-  "expression": {
-    "q": "",
-    "mq": "",
-    "geometry": "",
-    "coords": "",
-    "georel": ""
-  },
-  "format": "normalized",
-  "lastSuccess": 1606942009,
-  "lastSuccessCode": 200
-},{
-  "_id": {
-    "$oid": "5fc7fd3a9789ecfb81e25b89"
-  },
-  "expiration": 2524658400,
-  "reference": "http://172.18.1.8/orion_notification.php",
-  "custom": false,
-  "throttling": 0,
-  "servicePath": "/#",
-  "description": "0b10e960-70d4-4318-b6d0-e9132430ab09",
-  "status": "active",
-  "entities": [
-    {
-      "id": "5fc7fc96f51b16599566ff17",
-      "isPattern": "false",
-      "type": "Movie",
-      "isTypePattern": false
-    }
-  ],
-  "attrs": [
-    "start_date",
-    "end_date",
-    "cin_name",
-    "title",
-    "soon",
-    "playing_now"
-  ],
-  "metadata": [],
-  "blacklist": false,
-  "onlyChanged": false,
-  "conditions": [
-    "soon",
-    "playing_now"
-  ],
-  "lastNotification": 1606942010,
-  "count": 1,
-  "expression": {
-    "q": "",
-    "mq": "",
-    "geometry": "",
-    "coords": "",
-    "georel": ""
-  },
-  "format": "normalized",
-  "lastSuccess": 1606942010,
+  "lastSuccess": 1606998540,
   "lastSuccessCode": 200
 }]

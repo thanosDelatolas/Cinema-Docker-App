@@ -1,27 +1,31 @@
 [{
   "_id": {
-    "$oid": "5fc2a508aa04b33ac261ae4c"
+    "$oid": "5fc8d9948caaa77356151c44"
   },
-  "subID": "5fc2a39dff0629c215775fa6",
-  "mov_id": "5fc299df6d5ae441987501e7",
-  "start_date": "2021-02-25",
-  "end_date": "2022-11-25",
-  "cin_name": "Cinema Paradiso",
-  "category": "Comedy, Drama, Romance",
-  "title": "Life Is Beautiful",
+  "subID": "5fc8d9941d3c2bebd5291210",
+  "mov_id": "5fc8d700e8d89934a1128119",
+  "start_date": "2020-04-26",
+  "end_date": "2020-09-06",
+  "cin_name": "Matadero Cineteca",
+  "soon": "0",
+  "stop_playing": "1",
+  "title": "Braveheart",
   "user_id": "0b10e960-70d4-4318-b6d0-e9132430ab09",
-  "read": false
+  "received": "2020-12-03 02:27:00pm",
+  "read": true
 },{
   "_id": {
-    "$oid": "5fc2a5087079aa10ee44d6eb"
+    "$oid": "5fc8d9c240f99e5d187ebe33"
   },
-  "subID": "5fc2a3b2ff0629c215775faa",
-  "mov_id": "5fc299df6d5ae441987501e7",
-  "start_date": "2021-02-25",
-  "end_date": "2022-11-25",
-  "cin_name": "Cinema Paradiso",
-  "category": "Comedy, Drama, Romance",
-  "title": "Life Is Beautiful",
+  "subID": "5fc8d9c21d3c2bebd5291211",
+  "mov_id": "5fc8d367e8d89934a1128117",
+  "start_date": "2020-12-27",
+  "end_date": "2021-05-04",
+  "cin_name": "Village Cinemas",
+  "soon": "1",
+  "stop_playing": "0",
+  "title": "The Shawshank Redemption",
   "user_id": "ce057e40-c344-4da4-9d4d-8c58c412c827",
-  "read": false
+  "received": "2020-12-03 02:27:46pm",
+  "read": true
 }]
