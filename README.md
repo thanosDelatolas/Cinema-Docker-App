@@ -12,12 +12,17 @@ I developed from scratch:
 * Application-Logic  
 * Data-Storage
 
-## Compilation
+## Running
 You need to have already installed only docker and docker-compose.\
-Go to the downloaded folder:  
-* `sudo docker-compose up -d`  
-
-
-If you want to stop the containers:  
-* `sudo docker-compose down`    
+Go to the downloaded folder: 
+```
+sudo docker-compose up -d 
+```
+Now you can visit `http://localhost/`.  
+  
+  
+If you want to stop the containers: 
+```
+sudo docker-compose down
+```
 
