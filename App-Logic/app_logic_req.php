@@ -126,13 +126,13 @@
      *      => add favorites to data storage 
      *      => subscribe for this movie!
      */
-    if (isset($_POST['add_fav']) && $_POST['add_fav'] == true){
+    if (isset($_GET['add_fav']) && $_GET['add_fav'] == true){
                 
         $ch = curl_init();
         $url = $GLOBALS['Data-Storage']."?" .http_build_query([
             'add_fav' => true, //a flag to execute the right code in App-Logic! 
-            'user_id' => $_POST['user_id'],
-            'mov_id' => $_POST['mov_id']
+            'user_id' => $_GET['user_id'],
+            'mov_id' => $_GET['mov_id']
         ]);
         
         
@@ -152,7 +152,7 @@
              * function in orion_request
              * if something goes wron with subscription the user just will not be notified!
              */ 
-            subscribe($_POST['user_id'],$_POST['mov_id']);
+            subscribe($_GET['user_id'],$_GET['mov_id']);
         }
 
         

@@ -5,11 +5,12 @@
 $(document).ready(function(){
     
     //*********** jquery for movies.php **********************
-    var application_logic_url = "http://app_logic_apache/app_logic_req.php";
+    var application_logic_url = "http://172.18.1.8/app_logic_req.php";
 
 
     //for all buttons with id=fav_1,fav_2,...etc
     $(document).on('click','button[id^="fav_"]',function(){
+       
         var curr_id =  $(this).attr('id');
 
         var user_id = $(this).closest("tr").find('td:eq(5)').text();
@@ -18,7 +19,7 @@ $(document).ready(function(){
         if($(this).hasClass('ic')){
             //make the request!
             $.ajax({
-                type: "post",
+                type: "GET",
                 //allow ajax to make the request in application logic
                 //header: {'Access-Control': application_logic_url },
                 url: application_logic_url,
