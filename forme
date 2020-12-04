@@ -3,7 +3,7 @@ sudo docker image prune -a
 
 sudo docker-compose up -d
 
-sudo docker exec -it mongo_db_data_storage mongo --username "root" --password 
+sudo docker exec -it mongo_db_data_storage mongo 
 
 phpmyadmin: http://localhost:4040/  => keyrock db!
 mongo-express : http://localhost:8081/
