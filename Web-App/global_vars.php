@@ -8,5 +8,5 @@
     
     $GLOBALS['keyrock_official']="http://172.18.1.21:3005/";
     $GLOBALS['keyrock_official_signup']="http://172.18.1.21:3005/sign_up/";
-    $GLOBALS['welcome']="http://172.18.1.9/welcome.php";
+    $GLOBALS['welcome']="/welcome.php";
 ?>
