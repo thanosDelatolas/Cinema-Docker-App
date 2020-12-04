@@ -38,6 +38,9 @@ $(document).ready(function(){
                         //$("#searchable_table #"+rowid).find('td:eq(7)').toggleClass('ic')
                     }
                     console.log("Favorites inserted: "+response);
+                },
+                error: function() {
+                    console.log($.makeArray(arguments));
                 }
             });
         }
@@ -63,6 +66,9 @@ $(document).ready(function(){
                         $("#"+curr_id).addClass('ic');
                     }
                     console.log("Favorites Deleted: "+response);
+                },
+                error: function() {
+                    console.log($.makeArray(arguments));
                 }
             });
 
