@@ -10,7 +10,6 @@ $(document).ready(function(){
 
     //for all buttons with id=fav_1,fav_2,...etc
     $(document).on('click','button[id^="fav_"]',function(){
-       
         var curr_id =  $(this).attr('id');
 
         var user_id = $(this).closest("tr").find('td:eq(5)').text();
@@ -21,7 +20,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "post",
                 //allow ajax to make the request in application logic
-                //header: {'Access-Control': application_logic_url },
+                header: {'Access-Control': application_logic_url },
                 url: application_logic_url,
                 dataType:"json",
                 data: {
@@ -47,7 +46,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "post",
                 //allow ajax to make the request in application logic
-                //header: {'Access-Control': application_logic_url },
+                header: {'Access-Control': application_logic_url },
                 url: application_logic_url,
                 dataType:"json",
                 data: {
