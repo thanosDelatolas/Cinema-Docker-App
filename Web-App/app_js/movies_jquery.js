@@ -27,7 +27,7 @@ $(document).ready(function(){
                 data: {
                     add_fav: true, //to know which section of code will be executed!
                     mov_id : mov_id,
-                    user_id : user_id,
+                    user_id : user_id
                 },
 
                 success: function (response) {
@@ -56,7 +56,7 @@ $(document).ready(function(){
                 data: {
                     remove_fav: true, //to know which section of code will be executed!
                     mov_id : mov_id,
-                    user_id : user_id,
+                    user_id : user_id
                 },
     
                 success: function (response) {
