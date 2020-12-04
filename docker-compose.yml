@@ -36,59 +36,64 @@ services:
 
   #mysql section..    
   mysql_db:
-    build: 
-      context: './dockerfiles/mysql/'
+    image: mysql:5.7
     container_name: mysql_db
     hostname: mysql_db
     restart: always
     ports:
       - '3306:3306' 
     environment:
-    
       - MYSQL_ROOT_PASSWORD=root_pass
       - MYSQL_ROOT_HOST=172.18.1.5 # allows root connections from 172.18.1.5 which is keyrock 
-     
+      - MYSQL_DATABASE=idm
     networks:
       default:
         ipv4_address: 172.18.1.6
     volumes:
       - keyrock_data:/var/lib/mysql
+      - ./backups/keyrock_backup:/docker-entrypoint-initdb.d 
 
-   #phpmyadmin for mysql keyrock!!
-  phpmyadmin_keyrock:
-    depends_on:
-      - mysql_db
-    image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin_keyrock
-    restart: always
-    ports:
-      - '4040:80' #expose in port 4040 to local machine 
-    environment:
-      PMA_HOST: mysql_db
-      MYSQL_ROOT_PASSWORD: root_pass 
-    networks:
-      default:
-        ipv4_address: 172.18.1.7 
+  #phpmyadmin for mysql keyrock!!
+  #phpmyadmin_keyrock:
+  #  depends_on:
+  #    - mysql_db
+  #  image: phpmyadmin/phpmyadmin
+  #  container_name: phpmyadmin_keyrock
+  #  restart: always
+  #  ports:
+  #    - '4040:80' #expose in port 4040 to local machine 
+  #  environment:
+  #    PMA_HOST: mysql_db
+  #    MYSQL_ROOT_PASSWORD: root_pass 
+  #  networks:
+  #    default:
+  #      ipv4_address: 172.18.1.7 
     
   #mongo db section for data storage
   mongo_db_data_storage:
-    build: 
-      context: './dockerfiles/mongo_db_data_storage/'
+    image: mongo:latest
     restart: always
-    environment:
-     
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root_pass
+    hostname: mongo_db_data_storage
     container_name: mongo_db_data_storage
     ports: 
       - '27018:27017'  #expose in port 27017 to (local)27018
     volumes: 
       - mongo_data_storage_vol:/data/db   
-    
+
     networks:
       default:
         ipv4_address: 172.18.1.10
-
+  
+  #import data to MONGO DATABASES!! 
+  mongo_seed:
+    container_name: mongo_seed
+    image: mongo:latest
+    links:
+      - mongo_db_data_storage
+    volumes:
+    - ./mongo-seed:/mongo-seed
+    command:
+      /mongo-seed/import.sh
         
   keyrock:
     image: fiware/idm:latest
@@ -138,7 +143,7 @@ services:
   #mongo db for orion
   mongo_db_orion:
     image: mongo:3.2
-
+    hostname: mongo_db_orion
     container_name: mongo_db_orion
     command: --nojournal
     ports: 
@@ -191,7 +196,7 @@ services:
         ipv4_address: 172.18.1.20
 
 
-   #wilma for orion!
+   #wilma for datastorage!
   data_storage_proxy:
     image: fiware/pep-proxy 
     container_name: data_storage_proxy
@@ -218,8 +223,6 @@ services:
     networks:
       default:
         ipv4_address: 172.18.1.21
-   
-   
     
         
 networks:
