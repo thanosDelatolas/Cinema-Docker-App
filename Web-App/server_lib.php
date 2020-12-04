@@ -22,9 +22,9 @@
         if(!isset($_SESSION['loggedin'])){
 
             $_SESSION['server_msg'] = 'You are not logged in yet ';
-            $_SESSION['next_page'] ='http://localhost/index.php';
+            $_SESSION['next_page'] ='http://172.18.1.9/index.php';
            
-            header("Location:  http://localhost/err_page.php");
+            header("Location:  http://172.18.1.9/err_page.php");
             exit;
             
         }
@@ -33,14 +33,14 @@
             $_SESSION['server_msg'] = 'Please wait an admin to confirm your registration';
             $_SESSION['next_page'] =$GLOBALS['keyrock_official'];
           
-            header("Location:  http://localhost/err_page.php");
+            header("Location:  http://172.18.1.9/err_page.php");
             exit;
         }
         if($page=='movies' and $_SESSION['role'] != 'USER'){
             $_SESSION['server_msg'] = 'Only USERS can access this page.';
             $_SESSION['next_page'] =$GLOBALS['welcome'];
           
-            header("Location:  http://localhost/err_page.php");
+            header("Location:  http://172.18.1.9/err_page.php");
             exit;
         }
 
@@ -48,7 +48,7 @@
             $_SESSION['server_msg'] = 'Only CINEMAOWNER can access this page.';
             $_SESSION['next_page'] =$GLOBALS['welcome'];
           
-            header("Location:  http://localhost/err_page.php");
+            header("Location:  http://172.18.1.9/err_page.php");
             exit;
         }
         

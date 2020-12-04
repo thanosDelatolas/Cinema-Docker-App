@@ -67,7 +67,7 @@
                 session_destroy();
                 echo "<script>
                     alert('$username created! You can login now :)');
-                    window.location.href='http://localhost/index.php';
+                    window.location.href='http://172.18.1.9/index.php';
                 </script>";
                 
             }
@@ -133,7 +133,7 @@
                     <td colspan="3" align="center" > <input name= "submit" class="btn" type="submit" value="Register"></td>
                 </tr>
                 <tr>
-                    <td colspan="3" align="center" ><a href="http://localhost/index.php" class="reg">Already have an account?</p> </td>
+                    <td colspan="3" align="center" ><a href="http://172.18.1.9/index.php" class="reg">Already have an account?</p> </td>
                 </tr>
 
                 <tr>

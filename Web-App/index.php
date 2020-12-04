@@ -50,12 +50,12 @@
         
     }
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon.ico">
 <html>
     <head>
         <title>TD Cinemas</title>
         <link rel="stylesheet" type="text/css" href="app_style/login.css"> 
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon.ico">
+        
 
     </head>
     <body>
@@ -87,7 +87,7 @@
                     <td colspan="1">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td colspan="3" align="center" ><a href="http://localhost/register.php" class="reg">Don't have an account?</p> </td>
+                    <td colspan="3" align="center" ><a href="http://172.18.1.9/register.php" class="reg">Don't have an account?</p> </td>
                 </tr>
                 <tr>
                     <td colspan="3" align="center" >
