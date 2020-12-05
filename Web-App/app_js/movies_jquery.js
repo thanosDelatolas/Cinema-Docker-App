@@ -19,7 +19,7 @@ $(document).ready(function(){
         if($(this).hasClass('ic')){
             //make the request!
             $.ajax({
-                type: "GET",
+                type: "POST",
                 //allow ajax to make the request in application logic
                 //header: {'Access-Control': application_logic_url },
                 url: application_logic_url,
