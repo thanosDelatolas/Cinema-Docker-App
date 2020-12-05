@@ -20,10 +20,11 @@
     <link rel="stylesheet" type="text/css" href="app_style/welcome_page_user.css">
     <link rel="stylesheet" type="text/css" href="app_style/sidebar.css"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- Add jquery -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon.ico">
+
+    
     <title>Main page</title>
 </head>
        
