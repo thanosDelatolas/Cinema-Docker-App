@@ -6,7 +6,10 @@
 
     if (isset($_GET['get_movies']) && $_GET['get_movies'] == true){
         /* Query for all the items in the collection */
-        $query = new \MongoDB\Driver\Query( []);
+
+        $filter = [];
+        $options = ['sort' => ['_id' => -1]];
+        $query = new \MongoDB\Driver\Query($filter, $options);
 
         $cinemas = $manager->executeQuery("cinema_db.Cinemas", $query);
         $cinemas = $cinemas->toArray();
@@ -529,7 +532,7 @@
 
     /**
      * A cinemaowner wants to delete a cinema!
-     *
+     * this requests isn't executed beacause of orion
     */
     
     if (isset($_GET['del_cinema']) && $_GET['del_cinema'] == true){
