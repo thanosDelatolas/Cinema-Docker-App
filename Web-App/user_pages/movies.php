@@ -18,8 +18,6 @@
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 
-    <!-- maybe for gcp....... -->
-    <script src="https://apis.google.com/js/client.js"></script>
     
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon.ico">
     <title>Movies</title>

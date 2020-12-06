@@ -15,7 +15,7 @@ services:
       - ./App-Logic:/var/www/html/
     
     expose: 
-      -"80"
+      - "80"
     networks:
       default:
         ipv4_address: 172.18.1.8
