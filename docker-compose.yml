@@ -14,7 +14,8 @@ services:
     volumes:
       - ./App-Logic:/var/www/html/
     
-    #dont expose this container!! no ports!
+    expose: 
+      -"80"
     networks:
       default:
         ipv4_address: 172.18.1.8
@@ -128,8 +129,7 @@ services:
     container_name: dataStorage
     hostname: dataStorage
     restart: always
-    ports: 
-      - "4000:80"
+
     expose: 
       - "80"  #for wilma!
 
