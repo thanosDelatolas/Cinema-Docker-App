@@ -29,7 +29,7 @@ $(document).ready(function(){
                     mov_id : mov_id,
                     user_id : user_id
                 },
-                timeout:10000,
+                timeout:100000,
                 success: function (response) {
                     //if rows added
                     if(response>0){
@@ -53,7 +53,7 @@ $(document).ready(function(){
                 //header: {'Origin': 'http://172.18.1.9/' },
                 url: application_logic_url,
                 dataType:"json",
-                timeout:10000,
+                timeout:100000,
                 data: {
                     remove_fav: true, //to know which section of code will be executed!
                     mov_id : mov_id,
