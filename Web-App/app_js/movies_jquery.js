@@ -21,7 +21,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "POST",
                 //allow ajax to make the request in application logic
-                //header: {'Access-Control': application_logic_url },
+                header: {'Origin': 'http://172.18.1.9/' },
                 url: application_logic_url,
                 dataType:"json",
                 data: {
@@ -50,7 +50,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "post",
                 //allow ajax to make the request in application logic
-                //header: {'Access-Control': application_logic_url },
+                header: {'Origin': 'http://172.18.1.9/' },
                 url: application_logic_url,
                 dataType:"json",
                 data: {
