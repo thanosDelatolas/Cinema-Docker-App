@@ -5,7 +5,7 @@
 $(document).ready(function(){
     
     //*********** jquery for movies.php **********************
-    var application_logic_url = "http://172.18.1.8/app_logic_req.php";
+    var application_logic_url = "http://172.18.1.8:80/app_logic_req.php";
 
 
     //for all buttons with id=fav_1,fav_2,...etc
@@ -21,7 +21,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "POST",
                 //allow ajax to make the request in application logic
-                header: {'Origin': 'http://172.18.1.9/' },
+                //header: {'Origin': 'http://172.18.1.9/' },
                 url: application_logic_url,
                 dataType:"json",
                 data: {
@@ -50,7 +50,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "post",
                 //allow ajax to make the request in application logic
-                header: {'Origin': 'http://172.18.1.9/' },
+                //header: {'Origin': 'http://172.18.1.9/' },
                 url: application_logic_url,
                 dataType:"json",
                 data: {
