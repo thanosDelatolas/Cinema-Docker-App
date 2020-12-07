@@ -9,6 +9,7 @@ services:
       context: .
       dockerfile:  './dockerfiles/apache_app_logic/Dockerfile'
     container_name: app_logic_apache
+    hostname: app_logic_apache
     restart: always
 
     volumes:
