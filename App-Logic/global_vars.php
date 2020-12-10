@@ -8,7 +8,7 @@
     $GLOBALS['auth_url'] ="http://172.18.1.5:3005/oauth2/authorize";
     $GLOBALS['access_token_url'] ="http://172.18.1.5:3005/oauth2/token";
     $GLOBALS['user_info_url']="http://172.18.1.5:3005/user";
-    $GLOBALS['keyrock_official']="http://localhost:3005/";
+    $GLOBALS['keyrock_official']="http://172.18.1.5:3005/";
 
     // global variables to make requests to wilma for data storage!
     $GLOBALS['Data-Storage']="http://data_storage_proxy:1028/receive_req.php";
