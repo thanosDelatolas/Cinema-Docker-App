@@ -7,7 +7,7 @@ $(document).ready(function(){
     //*********** jquery for movies.php **********************
     var application_logic_url = "http://172.18.1.8:80/app_logic_req.php";
 
-
+        
     //for all buttons with id=fav_1,fav_2,...etc
     $(document).on('click','button[id^="fav_"]',function(){
        
@@ -29,7 +29,6 @@ $(document).ready(function(){
                     mov_id : mov_id,
                     user_id : user_id
                 },
-                timeout:100000,
                 success: function (response) {
                     //if rows added
                     if(response>0){
@@ -53,7 +52,6 @@ $(document).ready(function(){
                 //header: {'Origin': 'http://172.18.1.9/' },
                 url: application_logic_url,
                 dataType:"json",
-                timeout:100000,
                 data: {
                     remove_fav: true, //to know which section of code will be executed!
                     mov_id : mov_id,
