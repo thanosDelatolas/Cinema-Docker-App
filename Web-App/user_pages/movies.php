@@ -18,6 +18,13 @@
    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 
+    <script src="../app_js/movies_page.js"></script>
+
+    <!--movies_jquery.js has the 
+    -> REQUESTS TO APP-LOGIC
+    -->
+    <script src="../app_js/movies_jquery.js"></script>
+
     
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon.ico">
     <title>Movies</title>
@@ -30,12 +37,6 @@
 <!--movies_page.js has the 
     -> search_movies function 
 -->
-<script src="../app_js/movies_page.js"></script>
-
-<!--movies_jquery.js has the 
-    -> REQUESTS TO APP-LOGIC
--->
-<script src="../app_js/movies_jquery.js"></script>
 
 
 <body>
