@@ -3,14 +3,14 @@
 */
 
 $(document).ready(function(){
-    
+
     //*********** jquery for movies.php **********************
-    var application_logic_url = "http://34.65.60.180:81/app_logic_req.php";
+    var application_logic_url = app_logic_ip;
 
         
     //for all buttons with id=fav_1,fav_2,...etc
     $(document).on('click','button[id^="fav_"]',function(){
-       
+        
         var curr_id =  $(this).attr('id');
 
         var user_id = $(this).closest("tr").find('td:eq(5)').text();
@@ -72,7 +72,9 @@ $(document).ready(function(){
             });
 
         }  
-       
+        
     });
 
 });
+
+

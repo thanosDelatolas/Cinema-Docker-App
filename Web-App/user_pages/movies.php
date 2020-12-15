@@ -21,9 +21,10 @@
     <script src="../app_js/movies_page.js"></script>
 
     <!--movies_jquery.js has the 
-    -> REQUESTS TO APP-LOGIC
+        -> REQUESTS TO APP-LOGIC
     -->
     <script src="../app_js/movies_jquery.js"></script>
+    <script src="../app_js/global.js"></script>
 
     
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon.ico">

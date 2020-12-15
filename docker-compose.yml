@@ -2,7 +2,6 @@ version: '3.7'
 
 services:
 
-
   #Application logic...
   app_logic_apache:
     build: 
@@ -16,7 +15,6 @@ services:
       - ./App-Logic:/var/www/html/
     ports: 
       - "81:80"
-
     expose: 
       - "80"
     networks:

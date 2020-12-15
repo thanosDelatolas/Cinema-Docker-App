@@ -34,6 +34,7 @@
     -> the modal functionality
 -->
 <script src="../app_js/owner_jquery.js"></script>
+<script src="../app_js/global.js"></script>
 
 <body>
     <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">

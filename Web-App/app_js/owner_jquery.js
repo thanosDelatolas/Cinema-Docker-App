@@ -1,7 +1,5 @@
 $(document).ready(function(){
     //***********jquery for owner.php**********************
-
-
     
     var cinema_input;
     var title_input;
@@ -77,13 +75,11 @@ $(document).ready(function(){
         }
         
         else{
-            var application_logic_url = "http://172.18.1.8/app_logic_req.php";
 
             $.ajax({
                 type: "post",
-                //allow ajax to make the request in application logic
-                //header: {'Access-Control': application_logic_url },
-                url: application_logic_url,
+                
+                url: app_logic_ip,
                 dataType:"json",
                 data: {
                     modify_movie: true, //to know which section of code will be executed!
@@ -131,11 +127,10 @@ $(document).ready(function(){
         var movid = $(this).closest("tr").find('td:eq(6)').text();
         var r = confirm("Do you really want to delete movie with id:\n "+movid);
         if(r){
-            var application_logic_url = "http://172.18.1.8/app_logic_req.php";
 
             $.ajax({
                 type: "post",
-                url: application_logic_url,
+                url: app_logic_ip,
                 dataType:"json",
                 data: {
                     del_movie: true, //to know which section of code will be executed!

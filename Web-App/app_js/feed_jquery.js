@@ -4,8 +4,8 @@
 
 $(document).ready(function(){
     
-    //*********** jquery for movies.php **********************
-    var application_logic_url = "http://172.18.1.8/app_logic_req.php";
+    //*********** jquery for movies.php for users **********************
+    
     /**
      * this function is executed every 5 seconds!
      * new notifications has read=false in Mongo DB!
@@ -16,9 +16,8 @@ $(document).ready(function(){
        
         $.ajax({
             type: "post",
-            //allow ajax to make the request in application logic
-            //header: {'Access-Control': application_logic_url },
-            url: application_logic_url,
+            
+            url: app_logic_ip,
             dataType:"json",
             data: {
                 get_new_notifications: true, //to know which section of code will be executed!

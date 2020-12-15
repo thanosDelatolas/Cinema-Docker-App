@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon.ico">
+
     <title>Main page</title>
 </head>
        
@@ -73,6 +74,7 @@
             ?>  
                 <!-- ONLY FOR USERS THIS SCRIPT! -->
                 <script src="app_js/feed_jquery.js"></script>
+                <script src="app_js/global.js"></script>
                 <!-- HTML GOES HERE -->
                 <h1 id="user_id" hidden='true'> <?php echo $_SESSION['user_id']; ?> </h1>
                 <h1 class="mytitle">You can see all your notifications, <?php echo $_SESSION['username']; ?></h1>

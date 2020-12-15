@@ -50,12 +50,10 @@ $(document).ready(function(){
         //send requests to application logic!
         else{
            
-            var application_logic_url = "http://172.18.1.8/app_logic_req.php";
             $.ajax({
                 type: "post",
-                //allow ajax to make the request in application logic
-                //header: {'Access-Control': application_logic_url },
-                url: application_logic_url,
+                
+                url: app_logic_ip,
                 dataType:"json",
                 data: {
                     add_movie: true, //to know which section of code will be executed!
@@ -108,12 +106,10 @@ $(document).ready(function(){
         }
         else{
             //make request to app logic
-            var application_logic_url = "http://172.18.1.8/app_logic_req.php";
             $.ajax({
                 type: "post",
-                //allow ajax to make the request in application logic
-                //header: {'Access-Control': application_logic_url },
-                url: application_logic_url,
+            
+                url: app_logic_ip,
                 dataType:"json",
                 data: {
                     add_cinema: true, //to know which section of code will be executed!
