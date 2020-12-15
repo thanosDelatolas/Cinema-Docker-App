@@ -5,7 +5,7 @@
 $(document).ready(function(){
     
     //*********** jquery for movies.php **********************
-    var application_logic_url = "http://34.65.60.180:80/app_logic_req.php";
+    var application_logic_url = "http://34.65.60.180:81/app_logic_req.php";
 
         
     //for all buttons with id=fav_1,fav_2,...etc

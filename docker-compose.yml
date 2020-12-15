@@ -14,7 +14,9 @@ services:
 
     volumes:
       - ./App-Logic:/var/www/html/
-    
+    ports: 
+      - "81:80"
+
     expose: 
       - "80"
     networks:
