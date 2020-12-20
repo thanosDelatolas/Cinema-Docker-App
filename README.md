@@ -26,3 +26,13 @@ If you want to stop the containers:
 sudo docker-compose down
 ```
 
+## Logins  
+* `user1@test.com`
+* `user2@test.com`  
+* `user3@test.com`  
+* `owner1@test.com`  
+* `owner2@test.com`  
+* `owner3@test.com`  
+  
+    
+The password all the above users is `1234`.
