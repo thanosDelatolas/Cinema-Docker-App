@@ -35,4 +35,4 @@ sudo docker-compose down
 * `owner3@test.com`  
   
     
-The password all the above users is `1234`.
+The password for all the above users is `1234`.
